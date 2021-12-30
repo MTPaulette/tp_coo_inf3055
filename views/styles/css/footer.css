@@ -1,0 +1,33 @@
+
+/*****foooter***/
+
+.footer {
+    background-color: rgb(29, 32, 46);
+    height: 35vh;
+    color: black;
+    font-style: italic;
+}
+.moreInformations {
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: rgba(50, 13, 218, 0.986); */
+}
+.contactUs {
+    height: 60%;
+    width: 35%;
+    /* background-color: rgb(113, 206, 25); */
+}
+.links {
+    height: 60%;
+    width: 35%;
+    /* background-color: rgb(206, 112, 25); */
+}
+.copyright {
+    height: 10%;
+    /* background-color: rgb(23, 152, 212); */
+    padding: 5px;
+    text-align: center;
+}
