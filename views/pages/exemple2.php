@@ -13,7 +13,7 @@
 </head>
 <body>
 <br /><br />
-	<p class="tt">Menu d�pliant � la google nexus</p><br /><br />
+	<p class="tt">Menu d�pliant la google nexus</p><br /><br />
 		<div class="container">
     		<?php include("../components/header.html"); ?>  
 
