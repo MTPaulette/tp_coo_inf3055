@@ -5,7 +5,7 @@ body{
     #container{    
     width:400px;    
     margin:0 auto;    
-    margin-top:10%;
+    margin-top:7%;
     }
     /* bordure du form */
     form {    
@@ -33,7 +33,7 @@ body{
     
     /* les styles pour les boutons submit */
     input[type=submit] {    
-    background-color: #53af57;    
+    background-color: #34495e;
     color: white;    
     padding: 14px 20px;    
     margin: 8px 0;    
@@ -44,8 +44,8 @@ body{
     
     input[type=submit]:hover {    
     background-color: white;    
-    color: #53af57;    
-    border: 1px solid #53af57;
+    color: #34495e;    
+    border: 1px solid #34495e;
     }
     #error {
         color: red;

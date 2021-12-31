@@ -5,14 +5,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../styles/css/authentification.css" />
-	<title>signin</title>
+    <link rel="stylesheet" href="../plugins/bootstrap.min.css">
+	<title>sign in</title>
 
 </head>
 <body>
     <div id="container">
     <!-- zone de connexion -->
         <form action="signin.php" method="post" name="enregistrement">
-            <h1>S'enregistrer</h1>
+            <p class="icon"><img src="../plugins/icons/person-circle.svg"></p>
+            <!--h1><img src="../plugins/icons/person-circle.svg">S'enregistrer</h1-->
             <p id="error"></p>
             <label for="nom"><b>nom</b></label>                
             <input type="text" placeholder="Entrer votre nom" id="nom" name="nom" required>
@@ -26,6 +28,16 @@
             <a href="login.php" >se connecter<a>                           
         </form>        
     </div>
+    <style>
+        .icon {
+          /* background-color: pink;*/
+        }
+        .icon > img {
+            margin: auto 37%;
+            width: 90px;
+            height: 90px;
+        }
+    </style>
 <script src="../../controllers/js/authentification.js"></script>
 <script src="../../controllers/ajax/dynamic_authentification.js"></script>
 </body>

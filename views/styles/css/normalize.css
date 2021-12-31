@@ -1,5 +1,5 @@
 article,aside,details,figcaption,figure,footer,
-header,hgroup,main,nav,section,summary{
+header,hgroup,main,nav,section,summary, .main-content{
     display:block;
 }
 

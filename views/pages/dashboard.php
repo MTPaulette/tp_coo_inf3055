@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../styles/css/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="../styles/css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="../styles/css/global.css" />
 	<link rel="stylesheet" type="text/css" href="../styles/css/component.css" />
     <link rel="stylesheet" href="../plugins/bootstrap.min.css">
     <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"-->
@@ -18,11 +18,11 @@
 <br /><br />
 	<p class="tt">Menu d�pliant la google nexus</p><br /><br />
 		<div class="main">
-    		<?php include("../components/header.html"); ?>  
+    		<?php include("../components/headerIcon.html"); ?>  
 
-			<header>
+			<div class="main-content">
 				<h1>Menu du site du Google Nexus 7<span>Menu barre lat�rale comme sur le site <a href="http://www.google.com/nexus/index.html">Google Nexus 7</a> en haut � gauche :-)</span></h1>	
-			</header> 
+</div> 
 
 
 

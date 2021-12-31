@@ -5,7 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../styles/css/authentification.css" />
-	<title>login</title>
+    <link rel="stylesheet" href="../plugins/bootstrap.min.css">
+	<title>log in</title>
 </head>
 <body>
 	<div id="container">
@@ -13,7 +14,7 @@
 		<form action="login.php?"  method="post" name="connexion">
 			<h1>Connexion</h1>
 			<p id="error"></p>
-			<label for="login"><b>login</b></label>                
+			<label for="login"><b>login</b></label>             
 			<input type="text" placeholder="Entrer votre login" id="login" name="login" required>                
 			<label><b>Mot de passe</b></label>                
 			<input type="password" placeholder="Entrer le mot de passe" id="password" name="password" required>                
