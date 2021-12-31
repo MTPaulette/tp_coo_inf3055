@@ -7,14 +7,17 @@
 	<link rel="stylesheet" type="text/css" href="../styles/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="../styles/css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="../styles/css/component.css" />
-	<link rel="stylesheet" type="text/css" href="../styles/css/footer.css" />
+    <link rel="stylesheet" href="../plugins/bootstrap.min.css">
+    <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"-->
+    <link rel="stylesheet" href="../styles/css/footer.css">
+	
 	<script src="../js/modernizr.custom.js"></script>
 	<title>dashbord-adminPharmacie</title>
 </head>
 <body>
 <br /><br />
 	<p class="tt">Menu d�pliant la google nexus</p><br /><br />
-		<div class="container">
+		<div class="main">
     		<?php include("../components/header.html"); ?>  
 
 			<header>
@@ -25,6 +28,10 @@
 
 			<?php include("../components/footer.html"); ?> 			
 		</div><!-- /container -->
+
+		<script src="../plugins/jquery.min.js"></script>
+    	<script src="../plugins/bootstrap.bundle.min.js"></script>
+
 		<script src="../js/classie.js"></script>
 		<script src="../js/gnmenu.js"></script>
 		<script>
