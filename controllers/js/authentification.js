@@ -12,7 +12,6 @@ function validateEnregistrement(){
         e.preventDefault();
     }else 
     if(nom == ""){
-        alert("loremmmmmmmmmmmmmmmmmmmmmmmm");
         p.textContent = "Veuillez entrer votre nom";
         e.preventDefault();
     }else if(login == ""){

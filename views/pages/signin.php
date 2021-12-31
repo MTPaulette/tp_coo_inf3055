@@ -11,7 +11,7 @@
 <body>
     <div id="container">
     <!-- zone de connexion -->
-        <form action="enregistrement.php" method="post" name="enregistrement">
+        <form action="signin.php" method="post" name="enregistrement">
             <h1>S'enregistrer</h1>
             <p id="error"></p>
             <label for="nom"><b>nom</b></label>                
@@ -23,7 +23,7 @@
             <label><b>Mot de passe</b></label>                
             <input type="password" placeholder="Entrer le mot de passe" id="password" name="password" required>                
             <input type="submit" id='submit' name="auth" id="auth" value="creer compte" class="submit" onclick="return validateEnregistrement()">
-            <a href="index.php" >se connecter<a>                           
+            <a href="login.php" >se connecter<a>                           
         </form>        
     </div>
 <script src="../../controllers/js/authentification.js"></script>
