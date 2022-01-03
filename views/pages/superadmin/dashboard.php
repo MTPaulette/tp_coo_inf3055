@@ -18,7 +18,7 @@
 <br /><br />
 	<p class="tt">Menu d�pliant la google nexus</p><br /><br />
 		<div class="main">
-    		<?php include("../components/headerIcon.html"); ?>  
+    		<?php include("../components/superadmin/header.html"); ?> 
 
 			<div class="main-content">
 				<h1>Menu du site du Google Nexus 7<span>Menu barre lat�rale comme sur le site <a href="http://www.google.com/nexus/index.html">Google Nexus 7</a> en haut � gauche :-)</span></h1>	
