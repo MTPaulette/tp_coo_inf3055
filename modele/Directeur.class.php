@@ -35,11 +35,13 @@
 			if(empty($resulat) and !empty($idDirecteur)){
 				$dateJour = new \DateTime('now');
 				$date = $dateJour->format('y-m-d H:i:s');
-				$reponse2 = $bd->prepare('INSERT INTO employe(nom,prenom, telephone, adresse, etat, dateConnexion, heureConnexion, login, motDePasse, idDirecteur) VALUES(?,?,?,?,?,?,?,?,?,?)');
+				$reponse2 = $bd->prepare('INSERT INTO employe(nom,prenom, telephone, adresse, etat, dateConnexion, heureConnexion, login, motDePasse, idDirecteur) VALUES(?,?,?,?,?,?,?,?,PASSWORD(?),?)');
 				$reponse2->execute(array($nom, $prenom,$tel,$adresse,$etat,$date,$date,$login,$password,$idDirecteur['id']));
+				
 				return true;
 			}
 			else{
+				
 				return false;
 			}
 		}
@@ -63,11 +65,11 @@
 			$param = $req->fetch();
 			if(empty($param))
 			{
-            			return false;
+            	return false;
 			}
 			else
 			{
-           			return true;
+           		return true;
 			}
 
 		}
