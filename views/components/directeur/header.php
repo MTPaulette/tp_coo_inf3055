@@ -30,10 +30,12 @@
 						</div><!-- /gn-scroller -->
 					</nav>
 				</li>
+				<li class="wanda"> <?php echo '<span> welcome '.var_dump($_SESSION).'</span>';?>  </li>
+				<!--li class="wanda"> <?php echo '<span> welcome '.$_SESSION['directeur'].'</span>';?>  </li>
 				<li class="wanda">
 					<input placeholder="Recherche" type="search" class="">
 					<a class="gn-icon gn-icon-search wwanda"><span>Recherche</span></a>
-				</li>
+				</li-->
 				
 				<li><a href="">Boutique</a></li>
 				

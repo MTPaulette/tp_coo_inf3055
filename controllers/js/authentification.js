@@ -10,8 +10,7 @@ function validateEnregistrement(){
  //   if(nom == "" || prenom == "" || login == "" || region == "" || departement == "" || arrondissement == ""){
         p.textContent = "Veuillez remplir tous les champs du formulaire";
         e.preventDefault();
-    }else 
-    if(nom == ""){
+    }else if(nom == ""){
         p.textContent = "Veuillez entrer votre nom";
         e.preventDefault();
     }else if(login == ""){
@@ -20,6 +19,8 @@ function validateEnregistrement(){
     }else if(password == ""){
         p.textContent = "Veuillez entrer votre mot de passe";
         e.preventDefault();
+    }else {
+        validatePassword();
     }
 }   
 

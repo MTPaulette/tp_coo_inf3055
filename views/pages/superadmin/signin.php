@@ -4,16 +4,16 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="../styles/css/authentification.css" />
-    <link rel="stylesheet" href="../plugins/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/css/authentification.css" />
+    <link rel="stylesheet" href="../../plugins/bootstrap.min.css">
 	<title>sign in</title>
 
 </head>
 <body>    
     <div id="container">
     <!-- zone de connexion -->
-        <form action="../../controllers/php/signin.php" method="post" name="enregistrement">
-            <p class="icon"><img src="../plugins/icons/person-circle.svg"></p>
+        <form action="../../../controllers/php/superadmin/signin.php" method="post" name="enregistrement">
+            <p class="icon"><img src="../../plugins/icons/person-circle.svg"></p>
             <!--h1><img src="../plugins/icons/person-circle.svg">S'enregistrer</h1-->
             <p id="error"></p>
             <label for="nom"><b>nom</b></label>                
@@ -31,7 +31,7 @@
             <!--label for="email"><b>email</b></label>                
             <input type="email" placeholder="Entrer votre email" id="email" name="email" required-->                
             <label><b>Mot de passe</b></label>                
-            <input type="password" placeholder="Entrer le mot de passe" id="motDePasse" name="motDePasse" required>                
+            <input type="password" placeholder="Entrer le mot de passe" id="password" name="password" required>                
             <input type="submit" id='submit' name="auth" id="auth" value="creer compte" class="submit" onclick="return validateEnregistrement()">
             <a href="login.php" >se connecter<a>                           
         </form>        
@@ -46,7 +46,7 @@
             height: 90px;
         }
     </style>
-<script src="../../controllers/js/authentification.js"></script>
-<script src="../../controllers/ajax/dynamic_authentification.js"></script>
+<script src="../../../controllers/js/authentification.js"></script>
+<script src="../../../controllers/ajax/dynamic_authentification.js"></script>
 </body>
 </html>

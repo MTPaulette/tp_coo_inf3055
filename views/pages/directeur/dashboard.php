@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html  lang="fr">
 <head>
@@ -16,17 +17,28 @@
 </head>
 <body>
 <br /><br />
-		<p class="tt">Menu d�pliant la google nexus</p><br /><br />
+	<p class="tt">Menu d�pliant la google nexus</p><br /><br />
 		<div class="main">
-    		<?php include("../../components/pharmacien/header.html"); ?>
-			<div class="main-content">
-				<h1>Menu du site du Google Nexus 7
-					<span>Menu barre lat�rale comme sur le site 
-						<a href="http://www.google.com/nexus/index.html">Google Nexus 7</a> en haut � gauche :-
-					</span>
-				</h1>	
-			</div> 
+			<?php include("../../components/directeur/header.php"); ?> 
 
-			<?php include("../../components/footer.html"); ?>
+
+			<div class="main-content">
+				<li class="wanda"> <?php echo '<span> welcome '.var_dump($_SESSION['directeur']).'</span>';?>  </li>
+				<h1>Menu du site du Google Nexus 7<span>Menu barre lat�rale comme sur le site <a href="http://www.google.com/nexus/index.html">Google Nexus 7</a> en haut � gauche :-)</span></h1>	
+		</div> 
+
+
+
+			<?php include("../../components/footer.html"); ?> 			
+		</div><!-- /container -->
+
+		<script src="../../plugins/jquery.min.js"></script>
+    	<script src="../../plugins/bootstrap.bundle.min.js"></script>
+
+		<script src="../../js/classie.js"></script>
+		<script src="../../js/gnmenu.js"></script>
+		<script>
+			new gnMenu( document.getElementById( 'gn-menu' ) );
+		</script>
 </body>
 </html>

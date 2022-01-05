@@ -55,9 +55,10 @@ CREATE TABLE `directeur` (
   `id` int(11) NOT NULL,
   `nom` varchar(100) NOT NULL,
   `prenom` varchar(100) NOT NULL,
-  `telephone` int(9) NOT NULL,
+  `tel` int(9) NOT NULL,
   `adresse` varchar(100) NOT NULL,
-  `dateConnexion` date NOT NULL,
+  `date` date NOT NULL,
+  `heure` time NOT NULL,
   `login` varchar(100) NOT NULL,
   `motDePasse` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
