@@ -7,35 +7,40 @@
 							<ul class="gn-menu">
 								<li class="gn-search-item">
 									<input placeholder="Recherche" type="search" class="gn-search">
-									<a class="gn-icon gn-icon-search"><span>Recherche</span></a>
+									<a class="gn-icon gn-icon-search">
+										<!--img src="../../plugins/icons/search.svg"-->
+										<span>Recherche</span>
+									</a>
 								</li>
 								<li>
-									<a class="gn-icon gn-icon-download">T�l�chargements</a>
+									<a class="gn-icon gn-icon-download">Employe</a>
 									<ul class="gn-submenu">
-										<li><a class="gn-icon gn-icon-illustrator">Images Vectorielles</a></li>
-										<li><a class="gn-icon gn-icon-photoshop">Images Photoshop</a></li>
+										<li><a class="gn-icon gn-icon-illustrator">Ajouter E</a></li>
+										<li><a class="gn-icon gn-icon-photoshop">Supprimer E</a></li>
+										<li><a class="gn-icon gn-icon-illustrator">Suspendre E</a></li>
+										<li><a class="gn-icon gn-icon-photoshop">Restaurer E</a></li>
 									</ul>
 								</li>
-								<li><a class="gn-icon gn-icon-cog">Param�tres</a></li>
+								<li>
+									<a class="gn-icon gn-icon-stat">Statistique</a>
+									<ul class="gn-submenu">
+										<li><a class="gn-icon gn-icon-article">Relevé des ventes</a></li>
+										<li><a class="gn-icon gn-icon-pictures">Relevé des ajouts</a></li>
+									</ul>
+								</li>
+								<li>
+									<a class="gn-icon gn-icon-parameter">Parametre</a>
+									<ul class="gn-submenu">
+										<li><a class="gn-icon gn-icon-article">Modifier infos</a></li>
+										<li><a class="gn-icon gn-icon-logout" href="../../pages/directeur/logout.php">Deconnexion</a></li>
+									</ul>
+								</li>
 								<li><a class="gn-icon gn-icon-help">Aide</a></li>
-								<li>
-									<a class="gn-icon gn-icon-archive">Archives</a>
-									<ul class="gn-submenu">
-										<li><a class="gn-icon gn-icon-article">Articles</a></li>
-										<li><a class="gn-icon gn-icon-pictures">Images</a></li>
-										<li><a class="gn-icon gn-icon-videos">Videos</a></li>
-									</ul>
-								</li>
 							</ul>
 						</div><!-- /gn-scroller -->
 					</nav>
 				</li>
-				<li class="wanda"> <?php echo '<span> welcome '.var_dump($_SESSION).'</span>';?>  </li>
-				<!--li class="wanda"> <?php echo '<span> welcome '.$_SESSION['directeur'].'</span>';?>  </li>
-				<li class="wanda">
-					<input placeholder="Recherche" type="search" class="">
-					<a class="gn-icon gn-icon-search wwanda"><span>Recherche</span></a>
-				</li-->
+				<span class="welcome" style="margin-left: 37%"> <?php echo '<span> welcome '.$_SESSION['directeur'].'</span>';?>  </span>
 				
 				<li><a href="">Boutique</a></li>
 				

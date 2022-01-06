@@ -1,4 +1,8 @@
-<?php session_start() ?>
+<?php session_start() ;
+	if(!$_SESSION['directeur']) {
+    	header("Location:login.php");
+	}
+?>
 <!DOCTYPE html>
 <html  lang="fr">
 <head>
@@ -7,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../../styles/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="../../styles/css/global.css" />
-	<link rel="stylesheet" type="text/css" href="../../styles/css/component.css" />
+	<link rel="stylesheet" type="text/css" href="../../styles/css/menu.css" />
     <link rel="stylesheet" href="../../plugins/bootstrap.min.css">
     <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"-->
     <link rel="stylesheet" href="../../styles/css/footer.css">
@@ -23,7 +27,6 @@
 
 
 			<div class="main-content">
-				<li class="wanda"> <?php echo '<span> welcome '.var_dump($_SESSION['directeur']).'</span>';?>  </li>
 				<h1>Menu du site du Google Nexus 7<span>Menu barre lat�rale comme sur le site <a href="http://www.google.com/nexus/index.html">Google Nexus 7</a> en haut � gauche :-)</span></h1>	
 		</div> 
 
@@ -41,4 +44,4 @@
 			new gnMenu( document.getElementById( 'gn-menu' ) );
 		</script>
 </body>
-</html>
+</html

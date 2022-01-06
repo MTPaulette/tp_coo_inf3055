@@ -135,12 +135,7 @@ body {
 
 /*search in navbar */
 
-.wanda {
-	background-color: red;
-	margin-left: 30vw;
-}
-
-.wwanda{
-	margin-left: 25vw;
+.welcome {
+	margin-left: 45%;
 	background-color: pink;
 }
