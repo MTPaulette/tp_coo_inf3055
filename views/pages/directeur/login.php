@@ -13,7 +13,8 @@
 	<div id="container">
 	<!-- zone de connexion -->
         <form action="../../../controllers/php/directeur/login.php" method="post" name="connexion">
-			<h1>Connexion</h1>
+            <p class="icon"><img src="../../plugins/icons/authentification.svg"></p>
+			<!--h1>Connexion</h1-->
 			<p id="error"></p>
 			<label for="login"><b>login</b></label>             
 			<input type="text" placeholder="Entrer votre login" id="login" name="login" required>                

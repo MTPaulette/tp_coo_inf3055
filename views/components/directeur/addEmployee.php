@@ -1,22 +1,21 @@
-<?php session_start() ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="../../styles/css/authentification.css" />
-    <link rel="stylesheet" href="../../plugins/bootstrap.min.css">
-	<title>sign in</title>
-
-</head>
-<body>    
+  
     <div id="container">
     <!-- zone de connexion -->
         <form action="../../../controllers/php/directeur/signin.php" method="post" name="enregistrement">
-            <p class="icon"><img src="../../plugins/icons/person-circle.svg"></p>
-            <!--h1><img src="../plugins/icons/person-circle.svg">S'enregistrer</h1-->
+            <!--p class="icon"><img src="../../plugins/icons/person-circle.svg"></p>
+            <h1><img src="../plugins/icons/person-circle.svg">S'enregistrer</h1-->
             <p id="error"></p>
+            <fieldset>
+                <legend>Nouvelle pharmacie</legend>
+                <label for="nom"><b>nom</b></label>                
+                <input type="text" placeholder="Entrer votre nom" id="nom" name="nom" required>
+                <label for="prenom"><b>localisation</b></label>                
+                <input type="text" placeholder="Entrer votre prenom" id="prenom" name="prenom" required>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Directeur de la pharmacie</legend>
             <label for="nom"><b>nom</b></label>                
             <input type="text" placeholder="Entrer votre nom" id="nom" name="nom" required>
             <label for="prenom"><b>prenom</b></label>                
@@ -33,13 +32,14 @@
             <input type="email" placeholder="Entrer votre email" id="email" name="email" required-->                
             <label><b>Mot de passe</b></label>                
             <input type="password" placeholder="Entrer le mot de passe" id="password" name="password" required>                
-            <input type="submit" id='submit' name="auth" id="auth" value="creer compte" class="submit" onclick="return validateEnregistrement()">
-            <a href="login.php" >se connecter<a>                           
+            <!--input type="submit" id='submit' name="auth" id="auth" value="creer compte" class="submit" onclick="return validateEnregistrement()"--> 
+            </fieldset>
+            <fieldset>
+                <input type="submit" id='submit' name="auth" id="auth" value="creer" class="submit" onclick="return validateEnregistrement()"--> 
+                <input type="submit" id='submit' name="auth" id="auth" value="annuler" class="submit" onclick="return validateEnregistrement()"--> 
+                <a href="#" class="btn btn-success">creer</a>
+                <a href="#" class="btn btn-danger">annuler</a>
+            </fieldset>                         
         </form>        
     </div>
  
-    </script>
-<script src="../../../controllers/js/authentification.js"></script>
-<script src="../../../controllers/ajax/dynamic_authentification.js"></script>
-</body>
-</html>

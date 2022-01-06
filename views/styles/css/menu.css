@@ -245,20 +245,30 @@ input.gn-search:focus {
 }
 
 .gn-icon-search::before {
-		content: url(../../plugins/icons/search.svg);
+	content: url(../../plugins/icons/search.svg);
 }
 
-.gn-icon-download::before {
-		content: "\e007"
+.gn-icon-logout::before {
+	content: url(../../plugins/icons/box-arrow-right.svg);
 }
 
-.gn-icon-photoshop::before {
-		content: "\e001"
+
+.gn-icon-addE::before {		
+	content: url(../../plugins/icons/addE.svg);
 }
 
-.gn-icon-illustrator::before {
-		content: "\e002"
+.gn-icon-deleteE::before {		
+	content: url(../../plugins/icons/deleteE.svg);
 }
+
+.gn-icon-suspendE::before {		
+	content: url(../../plugins/icons/suspendE.svg);
+}
+
+.gn-icon-restoreE::before {		
+	content: url(../../plugins/icons/restoreE.svg);
+}
+
 
 .gn-icon-archive::before {
 		content: "\e00d"
@@ -268,9 +278,6 @@ input.gn-search:focus {
 		content: "\e003"
 }
 
-.gn-icon-logout::before {
-		content: url(../../plugins/icons/box-arrow-right.svg);
-}
 
 .gn-icon-videos::before {
 		content: "\e009"

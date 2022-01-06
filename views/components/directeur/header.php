@@ -13,12 +13,12 @@
 									</a>
 								</li>
 								<li>
-									<a class="gn-icon gn-icon-download">Employe</a>
+									<a class="gn-icon gn-icon-download">Gestion Employe</a>
 									<ul class="gn-submenu">
-										<li><a class="gn-icon gn-icon-illustrator">Ajouter E</a></li>
-										<li><a class="gn-icon gn-icon-photoshop">Supprimer E</a></li>
-										<li><a class="gn-icon gn-icon-illustrator">Suspendre E</a></li>
-										<li><a class="gn-icon gn-icon-photoshop">Restaurer E</a></li>
+										<li><a class="gn-icon gn-icon-addE">Ajouter E</a></li>
+										<li><a class="gn-icon gn-icon-deleteE">Supprimer E</a></li>
+										<li><a class="gn-icon gn-icon-suspendE">Suspendre E</a></li>
+										<li><a class="gn-icon gn-icon-restoreE">Restaurer E</a></li>
 									</ul>
 								</li>
 								<li>
@@ -42,6 +42,6 @@
 				</li>
 				<span class="welcome" style="margin-left: 37%"> <?php echo '<span> welcome '.$_SESSION['directeur'].'</span>';?>  </span>
 				
-				<li><a href="">Boutique</a></li>
+				<li><a href="">Pharmacie</a></li>
 				
 			</ul>

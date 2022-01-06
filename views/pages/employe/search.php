@@ -13,15 +13,15 @@
     <link rel="stylesheet" href="../../styles/css/search.css">
 	
 	<script src="../../js/modernizr.custom.js"></script>
-	<title>dashbord-adminPharmacie</title>
+	<title>employe</title>
 </head>
 <body>
 		<p class="tt">Menu d�pliant la google nexus</p><br /><br />
 		<div class="main">
-    		<?php include("../../components/pharmacien/header.html"); ?>
+    		<?php include("../../components/employe/header.html"); ?>
 			<div class="" style='background: red'>
-                <?php include("../../components/pharmacien/searchComponent.html"); ?>
-                <?php include("../../components/pharmacien/searchComponent.html"); ?>
+                <?php include("../../components/employe/searchComponent.html"); ?>
+                <?php include("../../components/employe/searchComponent.html"); ?>
 			</div> 
 
 			<?php include("../../components/footer.html"); ?>
