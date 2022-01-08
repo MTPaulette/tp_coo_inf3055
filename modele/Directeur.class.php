@@ -21,6 +21,7 @@
 			setMotDePasse($password);
 		}
 
+
 		public function addEmploye($nom, $prenom, $tel, $adresse, $etat, $login, $motDePasse){
 			
 			if (!empty(isset($nom))) {
@@ -31,7 +32,6 @@
 								if (!empty(isset($login))) {
 									if (!empty(isset($motDePasse))) {
 
-										
 										$baseDeDonnees = connecter();
 										$req = $baseDeDonnees->prepare('INSERT INTO employe(nom, prenom, tel, adresse, etat, login, motDePasse) VALUES(?, ?, ?, ?, ?, ?, ?)');
 										$req->execute(array($nom, $prenom, $tel, $adresse, $etat, $login, $motDePasse));
@@ -39,7 +39,6 @@
 											?>
 											<script type="text/javascript">alert("Employé ajouté avec succès!");</script>
 											<?php
-
 										}
 										else{
 											?>
@@ -120,6 +119,7 @@
 		public function rechercherEmploye($nom){
 			
 		}
+
 
 		public function authentifier($login, $motDePasse)
 		{
