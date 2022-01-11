@@ -9,9 +9,8 @@
         $login    = $_POST['login'];
         $password = $_POST['password'];
 
-        $directeur = new Directeur('Nsangou', 'Andamou', 690264775,'yaounde','Adams','Alim');
-        $e = $directeur->authentification($login,$password);
-       // $e = Directeur::authentification($login,$password);
+        $directeur = new Directeur();
+        $e = $directeur->authentifier($login,$password);
         
         if($e) {
             $_SESSION['directeur'] = $login;

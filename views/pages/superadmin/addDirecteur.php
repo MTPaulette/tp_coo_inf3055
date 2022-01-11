@@ -22,9 +22,9 @@
 </head>
 <body>
 		<div class="main">
-			<?php include("../../components/directeur/header.php"); ?> 
+			<?php include("../../components/superadmin/header.php"); ?> 
 
-			<?php include("../../components/directeur/addEmployee.php"); ?> 
+			<?php include("../../components/superadmin/addDirecteur.php"); ?> 
 
 
 

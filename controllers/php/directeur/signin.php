@@ -14,7 +14,8 @@
             $login        = $_POST['login'];
             $motDePasse     = $_POST['password'];
 
-            $directeur = new Directeur($nom, $prenom, $telephone,$adresse, $login, $motDePasse);
+            //$directeur = new Directeur($nom, $prenom, $telephone,$adresse, $login, $motDePasse);
+            $directeur = new Directeur();
             $e = $directeur->enregistrer($nom, $prenom, $telephone,$adresse, $login, $motDePasse);
 
             if($e) {

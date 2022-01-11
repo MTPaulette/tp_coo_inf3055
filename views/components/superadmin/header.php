@@ -14,11 +14,11 @@
 								</li>
 								<li>
 									<a class="gn-icon gn-icon-download">Gestion Employe</a>
-									<ul class="gn-submenu">
-										<li><a class="gn-icon gn-icon-addE" href="../../pages/directeur/addEmployee.php">Ajouter E</a></li>
-										<li><a class="gn-icon gn-icon-deleteE">Supprimer E</a></li>
-										<li><a class="gn-icon gn-icon-suspendE">Suspendre E</a></li>
-										<li><a class="gn-icon gn-icon-restoreE">Restaurer E</a></li>
+									<ul class="gn-submenu">										
+										<li><a class="gn-icon gn-icon-addE" href="../../pages/superadmin/addDirecteur.php">Ajouter D</a></li>
+										<li><a class="gn-icon gn-icon-deleteE">Supprimer D</a></li>
+										<li><a class="gn-icon gn-icon-suspendE">Suspendre D</a></li>
+										<li><a class="gn-icon gn-icon-restoreE">Restaurer D</a></li>
 									</ul>
 								</li>
 								<li>
@@ -32,7 +32,7 @@
 									<a class="gn-icon gn-icon-parameter">Parametre</a>
 									<ul class="gn-submenu">
 										<li><a class="gn-icon gn-icon-article">Modifier infos</a></li>
-										<li><a class="gn-icon gn-icon-logout" href="../../pages/directeur/logout.php">Deconnexion</a></li>
+										<li><a class="gn-icon gn-icon-logout" href="../../pages/superadmin/logout.php">Deconnexion</a></li>
 									</ul>
 								</li>
 								<li><a class="gn-icon gn-icon-help">Aide</a></li>
@@ -40,7 +40,7 @@
 						</div><!-- /gn-scroller -->
 					</nav>
 				</li>
-				<span class="welcome" style="margin-left: 37%"> <?php echo '<span> welcome '.$_SESSION['directeur'].'</span>';?>  </span>
+				<span class="welcome" style="margin-left: 37%"> <?php echo '<span> welcome '.$_SESSION['superadmin'].'</span>';?>  </span>
 				
 				<li><a href="">Pharmacie</a></li>
 				

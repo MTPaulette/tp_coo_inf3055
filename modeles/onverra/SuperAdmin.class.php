@@ -34,12 +34,14 @@
 			if(empty($nom)){
 				$dateJour = new \DateTime('now');
 				$date = $dateJour->format('y-m-d H:i:s');
+				/*
 				$reponse = $bd->prepare('INSERT INTO superadmin(nom, prenom, telephone, adresse, dateConnexion, login, motDePasse) VALUES(?,?,?,?,?,?,PASSWORD(?))');
-				$reponse->execute(array($nom, $prenom, $tel, $adresse,$date, $login, $password));
+				$reponse->execute(array($nom, $prenom, $tel, $adresse,$date, $login, $password));*/
+
+				$reponse = $bd->prepare('INSERT INTO superadmin(nom, prenom, telephone, adresse, login, motDePasse) VALUES(?,?,?,?,?,PASSWORD(?))');
+				$reponse->execute(array($nom, $prenom, $tel, $adresse, $login, $password));
 				//echo "<h1>enregistre</h1>";
 
-				//redirection vers la page de connexion pour un superadmin
-				header("Location:http://localhost/tp_cms/html/dashboard/index.php");
 				return true;
 			}
 			else{
@@ -49,20 +51,17 @@
 		}
 
 		public function authentification($login, $motDePasse){
-			$bdd = connecter();
+			$bdd = $this->connecter();
 			$req = $bdd->prepare('SELECT * FROM superadmin WHERE login = ? AND motDePasse = PASSWORD(?)');
-			$p = $req->execute(array($login,$password));
+			$p = $req->execute(array($login,$motDePasse));
 			$param = $req->fetch();
 			if(!$param)
 			{
-				header("Location:http://localhost/tp_cms/html/dashboard/index.php");
+				return false;
 			}
 			else
 			{
-				header("Location:http://localhost/tp_cms/html/dashboard/presentation.php");
-				$_SESSION['enseignant'] = $login;
-				$_SESSION['theme'] = 1;
-				echo '<p>la variable de session est'.$_SESSION['enseignant'].'</p>';
+				return true;
 			}
 		}
 

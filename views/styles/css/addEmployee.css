@@ -46,8 +46,15 @@ body{
     }
     
     /* les styles pour les boutons submit */
-    input[type=submit] {    
-    background-color: #34495e;
+    input[type=submit] {
+        background-color: #34495e;
+    }
+
+    input[type=reset] {
+        background-color: #ccc;
+    }
+
+    input[type=submit] , input[type=reset] {
     color: white;    
     padding: 14px 20px;    
     margin: 5px 0;    
@@ -57,7 +64,14 @@ body{
     }
     
     input[type=submit]:hover {    
-    background-color: white;    
+    background-color: green;    
+    color: #34495e;    
+    border: 1px solid #34495e;
+    }
+
+    
+    input[type=reset]:hover {    
+    background-color: red;    
     color: #34495e;    
     border: 1px solid #34495e;
     }

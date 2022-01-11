@@ -1,21 +1,21 @@
   
     <div id="container">
     <!-- zone de connexion -->
-        <form action="../../../controllers/php/directeur/signin.php" method="post" name="enregistrement">
+        <form action="../../../controllers/php/superadmin/signin.php" method="post" name="enregistrement">
             <!--p class="icon"><img src="../../plugins/icons/person-circle.svg"></p>
             <h1><img src="../plugins/icons/person-circle.svg">S'enregistrer</h1-->
             <p id="error"></p>
-            <!--fieldset>
+            <fieldset>
                 <legend>Nouvelle pharmacie</legend>
                 <label for="nom"><b>nom</b></label>                
                 <input type="text" placeholder="Entrer votre nom" id="nom" name="nom" required>
                 <label for="prenom"><b>localisation</b></label>                
                 <input type="text" placeholder="Entrer votre prenom" id="prenom" name="prenom" required>
-            </fieldset-->
+            </fieldset>
 
 
             <fieldset>
-                <legend>Nouvel employé</legend>
+                <legend>Directeur de la pharmacie</legend>
             <label for="nom"><b>nom</b></label>                
             <input type="text" placeholder="Entrer votre nom" id="nom" name="nom" required>
             <label for="prenom"><b>prenom</b></label>                
