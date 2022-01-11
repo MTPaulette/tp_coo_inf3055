@@ -1,5 +1,5 @@
 <?php session_start() ;
-	if(!$_SESSION['directeur']) {
+	if(!$_SESSION['superadmin']) {
     	header("Location:login.php");
 	}
 ?>
@@ -24,7 +24,7 @@
 		<div class="main">
 			<?php include("../../components/superadmin/header.php"); ?> 
 
-			<?php include("../../components/superadmin/addDirecteur.php"); ?> 
+			<?php include("../../components/superadmin/ajouterDirecteur.php"); ?> 
 
 
 

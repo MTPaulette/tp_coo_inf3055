@@ -3,7 +3,7 @@
         ini_set('display_errors', 1);
         error_reporting(E_ALL|E_STRICT);
 
-        require('../../../modeles/Directeur.class.php');
+        require('../../../modeles/classes/Directeur.class.php');
 
         if(isset($_POST['nom'])and isset($_POST['prenom'])and isset($_POST['telephone'])
             and isset($_POST['adresse'])and isset($_POST['login'])and isset($_POST['password'])){
@@ -16,12 +16,13 @@
 
             //$directeur = new Directeur($nom, $prenom, $telephone,$adresse, $login, $motDePasse);
             $directeur = new Directeur();
-            $e = $directeur->enregistrer($nom, $prenom, $telephone,$adresse, $login, $motDePasse);
+            $e = $directeur->creerCompte($nom, $prenom, $telephone,$adresse, $login, $motDePasse);
 
+            var_dump($e) ;
             if($e) {
 				//redirection vers la page de connexion pour un directeur
-                header("Location:../../../views/pages/directeur/login.php");
-				//header("Location:http://localhost/tp_inf3055_coo_dr_monthe/tp_coo_pharmacie/views/pages/directeur/login.php");
+                //header("Location:../../../views/pages/directeur/login.php");
+				header("Location:http://localhost/tp_inf3055_coo_dr_monthe/tp_coo_pharmacie/views/pages/directeur/login.php");
             }else {
 
 				//on reste sur la page d'enregistrement				

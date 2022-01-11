@@ -2,16 +2,11 @@
 	/**
 	 * 
 	 */
-	/*
-	
-    require ('../interface/Connexion.Interface.php');
+    require ('../../interface/Connexion.Interface.php');
 	require ('../../interface/Consultation.Interface.php');
 	require ('../../interface/Inscription.Interface.php');
-	*/
 	include_once('Personne.class.php');
-	
-	//class Directeur extends Personne implements Connexion,Consultation,Inscription
-	class Directeur extends Personne //implements Connexion,Consultation,Inscription
+	class Directeur extends Personne implements Connexion,Consultation,Inscription
 	{
 		
 		private function creerDirecteur($nom, $prenom, $tel, $adresse, $login, $password)
@@ -36,7 +31,7 @@
 		}
 
 		public function creerCompte($nom,$prenom,$telephone,$adresse,$login,$motDePasse){
-
+			
 			//recherche si le login et mot de passe existe
 			$resulat = $this->check($login,'employe');
 			$loginDirecteur = $this->check($this->getLogin(),'directeur');
@@ -46,11 +41,11 @@
 				$date = $dateJour->format('y-m-d H:i:s');
 				$reponse2 = $bd->prepare('INSERT INTO employe(nom,prenom, telephone, adresse, etat, createAt, login, motDePasse, loginDirecteur) VALUES(?,?,?,?,?,?,?,PASSWORD(?),?)');
 				$reponse2->execute(array($nom, $prenom,$telephone,$adresse,'poste',$date,$login,$motDePasse,$loginDirecteur['login']));
-				//echo "ajout reussi";
+				echo "ajout reussi";
 				return true;
 			}
 			else{
-				//echo "echer";
+				echo "echer";
 				return false;
 			}
 		}

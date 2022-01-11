@@ -2,17 +2,27 @@
 	/**
 	 * 
 	 */
-	require('../interface/Connexion.interface.php');
 	include_once('Personne.class.php');
+	require(__DIR__.'/../interface/Connexion.Interface.php');
 	class SuperAdmin extends Personne implements Connexion
 	{
 		
+		private function creerSuperAdmin($nom, $prenom, $tel, $adresse, $login)
+		{
+			$SuperAdmin = new SuperAdmin();
+			$SuperAdmin->setNom($nom);
+			$SuperAdmin->setPrenom($prenom);
+			$SuperAdmin->setTelephone($tel);
+			$SuperAdmin->setAdresse($adresse);
+			$SuperAdmin->setLogin($login);
+			return $SuperAdmin;
+		}
 
 		//rechrche
-		private function check($login, $password, $table){
+		private function check($login, $table){
 			$bd = $this->connecter();
-			$reponse = $bd->prepare("SELECT * FROM {$table} WHERE login = ? AND motDePasse = ?");
-			$reponse->execute(array($login,$password));
+			$reponse = $bd->prepare("SELECT * FROM {$table} WHERE login = ?");
+			$reponse->execute(array($login));
 			$resultat = $reponse->fetch(); 
 			return $resultat;
 		}
@@ -20,8 +30,9 @@
 
 		//authentification du superAdmin
 		public function authentifier($login, $password){
+
 			$bdd = $this->connecter();
-			$req = $bdd->prepare('SELECT login FROM superadmin WHERE login = ? AND motDePasse = ?');
+			$req = $bdd->prepare('SELECT * FROM superadmin WHERE login = ? AND motDePasse = ?');
 			$req->execute(array($login,$password));
 			$param = $req->fetch();
 			if(empty($param))
@@ -30,7 +41,9 @@
 			}
 			else
 			{
-           		return true;
+		        //return $this->creerSuperAdmin($param['nom'],$param['prenom'],$param['telephone'],$param['adresse'],$param['login']);
+            	return true;
+
 			}
 
 		}
@@ -67,7 +80,7 @@
 				
 				//vérifier si le mot de passe et le login entrés par le directeur n'existent pas déjà
 				
-				$resultat = $this->check($login,$password, 'directeur');
+				$resultat = $this->check($login, 'directeur');
 				if(empty($resultat)){
 					$bd = $this->connecter();
 					//recupérer la date et l'heure du jour
@@ -88,11 +101,11 @@
 
 
 		//enregistrer une nouvelle pharmacie
-		public function creerPharmacie($nom, $localisation,$ouvert, $loginS, $passwordS,$nomD, $prenomD, $telD, $adresseD, $loginD, $passwordD){
+		public function creerPharmacie($nom, $localisation, $loginS,$nomD, $prenomD, $telD, $adresseD, $loginD, $passwordD){
 			
 			//recupérer l'identifant du superAdmin
 			
-			$SuperAdmin = $this->check($loginS,$passwordS, 'superadmin');
+			$SuperAdmin = $this->check($loginS, 'superadmin');
 			if(!empty($SuperAdmin)){
 				//ajouter le directeur de la pharmacie
 				$valeur = $this->addDirecteur($nomD, $prenomD, $telD, $adresseD, $loginD, $passwordD);
@@ -110,7 +123,7 @@
 						$date = $dateJour->format('y-m-d H:i:s');
 						//création de la pharmacie
 						$reponse3 = $bd->prepare('INSERT INTO pharmacie(nom, localisation, createdAt, ouvert, etat, loginDirecteur, loginSuperAdmin) VALUES (?,?,?,?,?,?,?)');
-						$reponse3->execute(array($nom, $localisation, $date, $ouvert,'disponible',$Directeur['login'],$SuperAdmin['login']));
+						$reponse3->execute(array($nom, $localisation, $date, 1,'disponible',$Directeur['login'],$SuperAdmin['login']));
 						echo 'creation de la pharmacie et du directeur reussi';
 						return 1;
 					}

@@ -1,4 +1,3 @@
-
 			<ul id="gn-menu" class="gn-menu-main">
 				<li class="gn-trigger">
 					<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
@@ -37,7 +36,7 @@
 								</li>
 								<li><a class="gn-icon gn-icon-help">Aide</a></li>
 							</ul>
-						</div><!-- /gn-scroller -->
+						</div><!-- /gn-scroller $_SESSION['superadmin']->getLogin()-->
 					</nav>
 				</li>
 				<span class="welcome" style="margin-left: 37%"> <?php echo '<span> welcome '.$_SESSION['superadmin'].'</span>';?>  </span>

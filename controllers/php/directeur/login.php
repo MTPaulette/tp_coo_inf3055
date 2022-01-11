@@ -2,7 +2,7 @@
 <?php
     ini_set('display_errors', 1);
     error_reporting(E_ALL|E_STRICT);
-    require('../../../modeles/Directeur.class.php');
+    require('../../../modeles/classes/Directeur.class.php');
 
     if(isset($_POST['login'])and isset($_POST['password'])){
 

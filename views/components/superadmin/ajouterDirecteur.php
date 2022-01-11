@@ -1,23 +1,23 @@
   
     <div id="container">
     <!-- zone de connexion -->
-        <form action="../../../controllers/php/superadmin/signin.php" method="post" name="enregistrement">
+        <form action="../../../controllers/php/superadmin/ajouterDirecteur.php" method="post" name="enregistrement">
             <!--p class="icon"><img src="../../plugins/icons/person-circle.svg"></p>
             <h1><img src="../plugins/icons/person-circle.svg">S'enregistrer</h1-->
             <p id="error"></p>
             <fieldset>
                 <legend>Nouvelle pharmacie</legend>
-                <label for="nom"><b>nom</b></label>                
-                <input type="text" placeholder="Entrer votre nom" id="nom" name="nom" required>
-                <label for="prenom"><b>localisation</b></label>                
-                <input type="text" placeholder="Entrer votre prenom" id="prenom" name="prenom" required>
+                <label for="nomp"><b>nom</b></label>                
+                <input type="text" placeholder="Entrer le nom de la pharmacie" id="nomp" name="nomp" required>
+                <label for="localisation"><b>localisation</b></label>                
+                <input type="text" placeholder="Entrer votre prenom" id="localisation" name="localisation" required>
             </fieldset>
 
 
             <fieldset>
                 <legend>Directeur de la pharmacie</legend>
-            <label for="nom"><b>nom</b></label>                
-            <input type="text" placeholder="Entrer votre nom" id="nom" name="nom" required>
+            <label for="nomD"><b>nom</b></label>                
+            <input type="text" placeholder="Entrer le nom du directeur" id="nomD" name="nomD" required>
             <label for="prenom"><b>prenom</b></label>                
             <input type="text" placeholder="Entrer votre prenom" id="prenom" name="prenom" required>
 
