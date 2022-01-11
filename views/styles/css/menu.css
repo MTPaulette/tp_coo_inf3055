@@ -346,3 +346,8 @@ input.gn-search:focus {
 			width: 130%
 	}
 }
+
+.research{
+	margin-top: 30px;
+	float:right
+}

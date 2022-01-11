@@ -6,6 +6,8 @@
 							<ul class="gn-menu">
 								<li class="gn-search-item">
 									<input placeholder="Recherche" type="search" class="gn-search">
+
+									<!--form action="login.php?"  method="post" name="connexion"></form-->
 									<a class="gn-icon gn-icon-search">
 										<!--img src="../../plugins/icons/search.svg"-->
 										<span>Recherche</span>
@@ -14,7 +16,7 @@
 								<li>
 									<a class="gn-icon gn-icon-download">Gestion Employe</a>
 									<ul class="gn-submenu">										
-										<li><a class="gn-icon gn-icon-addE" href="../../pages/superadmin/addDirecteur.php">Ajouter D</a></li>
+										<li><a class="gn-icon gn-icon-addE" href="../../pages/superadmin/ajouterDirecteur.php">Ajouter D</a></li>
 										<li><a class="gn-icon gn-icon-deleteE">Supprimer D</a></li>
 										<li><a class="gn-icon gn-icon-suspendE">Suspendre D</a></li>
 										<li><a class="gn-icon gn-icon-restoreE">Restaurer D</a></li>
@@ -44,3 +46,13 @@
 				<li><a href="">Pharmacie</a></li>
 				
 			</ul>
+
+	<div class="research" style="">
+		<form class="form-inline" action="../../../controllers/php/superadmin/rechercherDirecteur.php"  method="post" name="rechercher">
+			<div class="form-group mx-sm-3 mb-2">
+			<label for="search" class="sr-only">recherche</label>
+			<input type="search" class="form-control" id="search" name="search" placeholder="rechercher">
+			</div>
+			<button type="submit" class="btn btn-primary mb-2 gn-icon-search"></button>
+		</form>
+	</div>

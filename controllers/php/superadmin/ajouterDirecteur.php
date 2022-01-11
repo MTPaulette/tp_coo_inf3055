@@ -18,18 +18,14 @@
 
     //$directeur = new Directeur($nom, $prenom, $telephone,$adresse, $login, $motDePasse);
     $superadmin = new SuperAdmin();
-    $e = $directeur->creerPharmacie($nomp, $localisation,$nomD, $prenom, $telephone,$adresse, $login, $motDePasse);
-   // public function creerPharmacie($nom, $localisation, $loginS, $passwordS,$nomD, $prenomD, $telD, $adresseD, $loginD, $passwordD){
+    $superadmin->setLogin($_SESSION['superadmin']);
+    $e = $superadmin->creerPharmacie($nomp, $localisation,$nomD, $prenom, $telephone,$adresse, $login, $motDePasse);
 
-    var_dump($e) ;
-        
         if($e) {
-            $_SESSION['superadmin'] = $login;
             header("Location:../../../views/pages/superadmin/dashboard.php");
         } else {
             header("Location:../../../views/pages/superadmin/login.php");
         }
-        
 
     }
 

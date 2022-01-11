@@ -41,8 +41,8 @@
 			}
 			else
 			{
-		        //return $this->creerSuperAdmin($param['nom'],$param['prenom'],$param['telephone'],$param['adresse'],$param['login']);
-            	return true;
+		        return $this->creerSuperAdmin($param['nom'],$param['prenom'],$param['telephone'],$param['adresse'],$param['login']);
+            	//return true;
 
 			}
 
@@ -101,11 +101,11 @@
 
 
 		//enregistrer une nouvelle pharmacie
-		public function creerPharmacie($nom, $localisation, $loginS,$nomD, $prenomD, $telD, $adresseD, $loginD, $passwordD){
+		public function creerPharmacie($nom, $localisation,$nomD, $prenomD, $telD, $adresseD, $loginD, $passwordD){
 			
 			//recupérer l'identifant du superAdmin
 			
-			$SuperAdmin = $this->check($loginS, 'superadmin');
+			$SuperAdmin = $this->check($this->getLogin(), 'superadmin');
 			if(!empty($SuperAdmin)){
 				//ajouter le directeur de la pharmacie
 				$valeur = $this->addDirecteur($nomD, $prenomD, $telD, $adresseD, $loginD, $passwordD);
@@ -189,9 +189,9 @@
 
 		function recherchePharmacie($nomPharmacie){
 			$bd = $this->connecter();
-			$reponse = $bd->prepare('SELECT * FROM pharmacie WHERE nom = ?');	
+			$reponse = $bd->prepare("SELECT * FROM pharmacie WHERE localisation like ?");	
 			$reponse->execute(array($nomPharmacie));
-			$pharmacie = $reponse->fetch();
+			$pharmacie = $reponse->fetchAll();
 			if(!empty($pharmacie)){
 				return $pharmacie;
 			}

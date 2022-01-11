@@ -12,16 +12,10 @@
 
         $superadmin = new SuperAdmin();
         $e = $superadmin->authentifier($login,$password);
-/*
-        if(!$e) {
-            header("Location:../../../views/pages/superadmin/login.php");
-        } else {
-            $_SESSION['superadmin'] = $e;
-            header("Location:../../../views/pages/superadmin/dashboard.php");
-        }*/
         
-        if($e) {
-            $_SESSION['superadmin'] = $login;
+        if(!empty($e)) {
+            echo "njr";
+            $_SESSION['superadmin'] = $e->getlogin();
             //var_dump($_SESSION['superadmin']->getLogin());
             header("Location:../../../views/pages/superadmin/dashboard.php");
         } else {

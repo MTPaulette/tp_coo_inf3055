@@ -2,6 +2,9 @@
 	if(!$_SESSION['superadmin']) {
     	header("Location:login.php");
 	}
+	if(!$_SESSION['search']) {
+    	header("Location:dashboard.php");
+	}
 ?>
 <!DOCTYPE html>
 <html  lang="fr">
@@ -14,30 +17,18 @@
 	<link rel="stylesheet" type="text/css" href="../../styles/css/menu.css" />
     <link rel="stylesheet" href="../../plugins/bootstrap.min.css">
     <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"-->
+	<link rel="stylesheet" type="text/css" href="../../styles/css/addEmployee.css" />
     <link rel="stylesheet" href="../../styles/css/footer.css">
 	
 	<script src="../../js/modernizr.custom.js"></script>
 	<title>dashbord-adminPharmacie</title>
 </head>
 <body>
-<br /><br />
-
-	<!--div class="research">
-		<form class="form-inline">
-			<div class="form-group mx-sm-3 mb-2">
-			<label for="inputPassword2" class="sr-only">recherche</label>
-			<input type="password" class="form-control" id="inputPassword2" placeholder="Password">
-			</div>
-			<button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
-		</form>
-	</div-->
 		<div class="main">
 			<?php include("../../components/superadmin/header.php"); ?> 
 
-
-			<div class="main-content">
-				<h1>Menu du site du Google Nexus 7<span>Menu barre lat�rale comme sur le site <a href="http://www.google.com/nexus/index.html">Google Nexus 7</a> en haut � gauche :-)</span></h1>
-		</div> 
+			<!--?php include("../../components/superadmin/searchResult.php"); ?--> 
+			<?php include("../../components/superadmin/searchComponent.php"); ?> 
 
 
 
