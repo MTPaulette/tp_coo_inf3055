@@ -10,7 +10,11 @@
                 <label for="nomp"><b>nom</b></label>                
                 <input type="text" placeholder="Entrer le nom de la pharmacie" id="nomp" name="nomp" required>
                 <label for="localisation"><b>localisation</b></label>                
-                <input type="text" placeholder="Entrer votre prenom" id="localisation" name="localisation" required>
+                <input type="text" placeholder="Entrer votre prenom" id="localisation" name="localisation" required>   <div class="photo bloc">
+                <input type="hidden" name="MAX_FILE_SIZE" value="200000000">
+                <label for="fic">fichier</label><br>
+                <input type="file" id="fic" name="fic" required>      
+          </div>
             </fieldset>
 
 

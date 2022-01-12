@@ -100,8 +100,9 @@
 		}
 
 
+
 		//enregistrer une nouvelle pharmacie
-		public function creerPharmacie($nom, $localisation,$nomD, $prenomD, $telD, $adresseD, $loginD, $passwordD){
+		public function creerPharmacie($nom, $localisation,$photo, $nomD, $prenomD, $telD, $adresseD, $loginD, $passwordD){
 			
 			//recupérer l'identifant du superAdmin
 			
@@ -122,8 +123,8 @@
 						$dateJour = new \DateTime('now');
 						$date = $dateJour->format('y-m-d H:i:s');
 						//création de la pharmacie
-						$reponse3 = $bd->prepare('INSERT INTO pharmacie(nom, localisation, createdAt, ouvert, etat, loginDirecteur, loginSuperAdmin) VALUES (?,?,?,?,?,?,?)');
-						$reponse3->execute(array($nom, $localisation, $date, 1,'disponible',$Directeur['login'],$SuperAdmin['login']));
+						$reponse3 = $bd->prepare('INSERT INTO pharmacie(nom, localisation,photo, createdAt, ouvert, etat, loginDirecteur, loginSuperAdmin) VALUES (?,?,?,?,?,?,?,?)');
+						$reponse3->execute(array($nom, $localisation,addslashes($photo), $date, 1,'disponible',$Directeur['login'],$SuperAdmin['login']));
 						echo 'creation de la pharmacie et du directeur reussi';
 						return 1;
 					}
@@ -189,8 +190,8 @@
 
 		function recherchePharmacie($nomPharmacie){
 			$bd = $this->connecter();
-			$reponse = $bd->prepare("SELECT * FROM pharmacie WHERE localisation like ?");	
-			$reponse->execute(array($nomPharmacie));
+			$reponse = $bd->prepare("SELECT * FROM pharmacie WHERE nom like ?");	
+			$reponse->execute(array('%'.$nomPharmacie.'%'));
 			$pharmacie = $reponse->fetchAll();
 			if(!empty($pharmacie)){
 				return $pharmacie;
