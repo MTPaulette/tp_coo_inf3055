@@ -2,21 +2,11 @@
 	/**
 	 * 
 	 */
+	require('../interface/Connexion.interface.php');
 	include_once('Personne.class.php');
-	require(__DIR__.'/../interface/Connexion.Interface.php');
 	class SuperAdmin extends Personne implements Connexion
 	{
 		
-		private function creerSuperAdmin($nom, $prenom, $tel, $adresse, $login)
-		{
-			$SuperAdmin = new SuperAdmin();
-			$SuperAdmin->setNom($nom);
-			$SuperAdmin->setPrenom($prenom);
-			$SuperAdmin->setTelephone($tel);
-			$SuperAdmin->setAdresse($adresse);
-			$SuperAdmin->setLogin($login);
-			return $SuperAdmin;
-		}
 
 		//rechrche
 		private function check($login, $table){
@@ -44,33 +34,11 @@
 				$date = $dateJour->format('y-m-d H:i:s');
 				$reponse = $bdd->prepare('UPDATE superadmin SET date_connexion = ?');
 				$reponse->execute(array($date));
-		        return $this->creerSuperAdmin($param['nom'],$param['prenom'],$param['telephone'],$param['adresse'],$param['login']);
-				//return true;
+           		return true;
 			}
 
 		}
 
-		//authentification du superAdmin
-	/*
-		public function authentifier($login, $password){
-
-			$bdd = $this->connecter();
-			$req = $bdd->prepare('SELECT * FROM superadmin WHERE login = ? AND motDePasse = ?');
-			$req->execute(array($login,$password));
-			$param = $req->fetch();
-			if(empty($param))
-			{
-            	return false;
-			}
-			else
-			{
-		        return $this->creerSuperAdmin($param['nom'],$param['prenom'],$param['telephone'],$param['adresse'],$param['login']);
-            	//return true;
-
-			}
-
-		}
-*/
 		//deconnecion
 		public function deconnecter(){
 			$bd = $this->connecter();
@@ -78,7 +46,6 @@
 			$date = $dateJour->format('y-m-d H:i:s');
 			$reponse = $bd->prepare('UPDATE superadmin SET date_deconnexion = ?');
 			$reponse->execute(array($date));
-
 		}	
 
 		//modification  des données
@@ -123,9 +90,8 @@
 		}
 
 
-
 		//enregistrer une nouvelle pharmacie
-		public function creerPharmacie($nom, $localisation,$photo, $nomD, $prenomD, $telD, $adresseD, $loginD, $passwordD){
+		public function creerPharmacie($nom, $localisation,$nomD, $prenomD, $telD, $adresseD, $loginD, $passwordD){
 			
 			//recupérer l'identifant du superAdmin
 			
@@ -136,7 +102,7 @@
 				if($valeur){
 					$bd = $this->connecter();
 					//recupérer l'identifiant du directeur ajouter
-					$reponse2 = $bd->prepare('SELECT * FROM directeur WHERE login = ? ');
+					$reponse2 = $bd->prepare('SELECT * FROM directeur WHERE login = ?');
 					$reponse2->execute(array($loginD));
 					$Directeur = $reponse2->fetch();
 					//$this->check($loginD,$passwordD, 'directeur');
@@ -146,8 +112,8 @@
 						$dateJour = new \DateTime('now');
 						$date = $dateJour->format('y-m-d H:i:s');
 						//création de la pharmacie
-						$reponse3 = $bd->prepare('INSERT INTO pharmacie(nom, localisation,photo, createdAt, ouvert, etat, loginDirecteur, loginSuperAdmin) VALUES (?,?,?,?,?,?,?,?)');
-						$reponse3->execute(array($nom, $localisation,addslashes($photo), $date, 1,'disponible',$Directeur['login'],$SuperAdmin['login']));
+						$reponse3 = $bd->prepare('INSERT INTO pharmacie(nom, localisation, createdAt, ouvert, etat, loginDirecteur, loginSuperAdmin) VALUES (?,?,?,?,?,?,?)');
+						$reponse3->execute(array($nom, $localisation, $date, 1,'disponible',$Directeur['login'],$SuperAdmin['login']));
 						echo 'creation de la pharmacie et du directeur reussi';
 						return 1;
 					}
@@ -179,17 +145,18 @@
 				$date = $dateJour->format('y-m-d H:i:s');
 				$reponse = $bd->prepare('UPDATE pharmacie SET etat = ?, modifiedAt = ? WHERE nom = ?');
 				$reponse->execute(array('suspendue',$date,$nom));
+				echo 'reussi';
 				return true;
 			} catch (PDOException $e) {
 				$e->getmessage();
+				echo 'echec';
 				return false;
 				
 			}
 			
 
 		}
-
-		Function activerPharmacie($nom){
+		function activerPharmacie($nom){
 			$bd = $this->connecter();
 			try {
 				$dateJour = new \DateTime('now');
@@ -203,7 +170,6 @@
 				
 			}
 		}
-
 		function supprimerPharmacie($nomPharmacie){
 			$bd = $this->connecter();
 			try {
@@ -227,12 +193,11 @@
 			}
 		}
 
-
 		function recherchePharmacie($nomPharmacie){
 			$bd = $this->connecter();
-			$reponse = $bd->prepare("SELECT * FROM pharmacie WHERE nom like ?");	
+			$reponse = $bd->prepare('SELECT * FROM pharmacie WHERE nom LIKE ?');	
 			$reponse->execute(array('%'.$nomPharmacie.'%'));
-			$pharmacie = $reponse->fetchAll();
+			$pharmacie = $reponse->fetch();
 			if(!empty($pharmacie)){
 				return $pharmacie;
 			}

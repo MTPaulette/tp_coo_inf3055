@@ -15,28 +15,85 @@
                 echo '<h5> Nom: '.$search['nom'].'</h5>';
                 echo "<h5 class='mycard-title'>Localisation: ".$search['localisation']."</h5>";
                 echo "<h5 class='mycard-title'>Directeur: ".$search['loginDirecteur']."</h5>";
+                echo "<h5 class='mycard-title'>Etat: ".$search['etat']."</h5>";
                 echo "<h5 class='mycard-title'><span> creé le: ".$search['createdAt']."</span></h5>";
 
-
-                /*modal pour la confirmation de la confirmation */
-                echo "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>open modal</button>
-                <div class='modal' id='myModal'>
+                /*modal pour la confirmation de l'activation */
+                echo "<button type='button' class='btn btn-success' data-toggle='modal' data-target='#activer'>activer</button>
+                <div class='modal' id='activer'>
                     <div class='modal-dialog'>
                         <div class='modal-content'>
             
                             <div class='modal-header'>
-                                <h4 class='modal-title'>modal heading</h4>
+                                <h5 class='modal-title attention'>ATTENTION!!!!</h5>
                                 <button type='button' class='close' data-dismiss='modal'>&times;</button>
                             </div>
             
-                            <div class='modal-body'>modal body</div>
-            
-                            <div class='modal-footer'>
-                                <button type='button' class='btn-danger' data-dismiss='modal'>close</button>
+                            <div class='modal-body'>
+                                <span class='msg'>Vous vous apprettez à effectuer une operation sensible. Veuillez entrer votre mot de passe pour confirmer</span>
+                                <form class='form-inline' action='../../../controllers/php/superadmin/activerDirecteur.php'  method='post' name='rechercher'>
+                                    <div class='form-group mx-sm-3 mb-2'>
+                                        <input type='password' class='form-control' id='confirm' name='confirm' placeholder=''>
+                                        <button type='submit' class='btn btn-success'>supprimer</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>";
+
+                /*modal pour la confirmation de la suspendre */
+                echo "<button type='button' class='btn btn-secondary' data-toggle='modal' data-target='#suspendre'>suspendre</button>
+                <div class='modal' id='suspendre'>
+                    <div class='modal-dialog'>
+                        <div class='modal-content'>
+            
+                            <div class='modal-header'>
+                                <h5 class='modal-title attention'>ATTENTION!!!!</h5>
+                                <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                            </div>
+            
+                            <div class='modal-body'>
+                                <span class='msg'>Vous vous apprettez à effectuer une operation sensible. Veuillez entrer votre mot de passe pour confirmer</span>
+                                <form class='form-inline' action='../../../controllers/php/superadmin/suspendreDirecteur.php'  method='post' name='rechercher'>
+                                    <div class='form-group mx-sm-3 mb-2'>
+                                        <input type='password' class='form-control' id='confirm' name='confirm' placeholder=''>
+                                        <button type='submit' class='btn btn-secondary'>suspendre</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>";
+
+
+                /*modal pour la confirmation de la suppression */
+                echo "<button type='button' class='btn btn-danger' data-toggle='modal' data-target='#supprimer'>supprimer</button>
+                <div class='modal' id='supprimer'>
+                    <div class='modal-dialog'>
+                        <div class='modal-content'>
+            
+                            <div class='modal-header'>
+                                <h5 class='modal-title attention'>ATTENTION!!!!</h5>
+                                <button type='button' class='close' data-dismiss='modal'>&times;</button>
+                            </div>
+            
+                            <div class='modal-body'>
+                                <span class='msg'>Vous vous apprettez à effectuer une operation sensible. Veuillez entrer votre mot de passe pour confirmer</span>
+                                <form class='form-inline' action='../../../controllers/php/superadmin/supprimerDirecteur.php'  method='post' name='rechercher'>
+                                    <div class='form-group mx-sm-3 mb-2'>
+                                        <input type='password' class='form-control' id='confirm' name='confirm' placeholder=''>
+                                        <button type='submit' class='btn btn-danger'>supprimer</button>
+                                    </div>
+            
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>";
+
+            echo "</div>";
+            echo "</div>";
 
     }
 ?>
