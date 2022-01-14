@@ -31,7 +31,7 @@
 			<?php include("../../components/footer.html"); ?> 			
 		</div><!-- /container -->
 
-		<script src="../../plugins/jquery.min.js"></script>
+		<script src="../../plugins/jquery-3.3.1.slim.min.js"></script>
     	<script src="../../plugins/bootstrap.bundle.min.js"></script>
 
 		<script src="../../js/classie.js"></script>

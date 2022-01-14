@@ -1,3 +1,4 @@
+<div class="main">
 			<ul id="gn-menu" class="gn-menu-main">
 				<li class="gn-trigger">
 					<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
@@ -46,6 +47,7 @@
 				<li><a href="">Pharmacie</a></li>
 				
 			</ul>
+	</div>
 
 	<div class="research" style="">
 		<form class="form-inline" action="../../../controllers/php/superadmin/rechercherDirecteur.php"  method="post" name="rechercher">

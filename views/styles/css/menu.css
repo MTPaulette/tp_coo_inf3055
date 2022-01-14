@@ -348,6 +348,16 @@ input.gn-search:focus {
 }
 
 .research{
-	margin-top: 30px;
-	float:right
+	float:right;
+	padding-top: 6px;
+	/*
+	background-color: rgb(209, 17, 17);
+	*/
 }
+
+.main{
+	margin-top: 60px;
+	/*
+	background-color: rgb(17, 209, 33);*/
+}
+

@@ -2,7 +2,7 @@
 	if(!$_SESSION['superadmin']) {
     	header("Location:login.php");
 	}
-	if(!$_SESSION['search']) {
+	if(!$_SESSION['searchSuperAdmin']) {
     	header("Location:dashboard.php");
 	}
 ?>
@@ -16,18 +16,16 @@
 	<link rel="stylesheet" type="text/css" href="../../styles/css/global.css" />
 	<link rel="stylesheet" type="text/css" href="../../styles/css/menu.css" />
     <link rel="stylesheet" href="../../plugins/bootstrap.min.css">
-    <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"-->
-	<link rel="stylesheet" type="text/css" href="../../styles/css/addEmployee.css" />
+	<link rel="stylesheet" type="text/css" href="../../styles/css/searchComponent.css" />
     <link rel="stylesheet" href="../../styles/css/footer.css">
 	
 	<script src="../../js/modernizr.custom.js"></script>
 	<title>dashbord-adminPharmacie</title>
 </head>
 <body>
-		<div class="main">
+		<div class="">
 			<?php include("../../components/superadmin/header.php"); ?> 
 
-			<!--?php include("../../components/superadmin/searchResult.php"); ?--> 
 			<?php include("../../components/superadmin/searchComponent.php"); ?> 
 
 
@@ -35,7 +33,12 @@
 			<?php include("../../components/footer.html"); ?> 			
 		</div><!-- /container -->
 
-		<script src="../../plugins/jquery.min.js"></script>
+		<script>
+			$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+		</script>
+		<script src="../../plugins/jquery-3.3.1.slim.min.js"></script>
     	<script src="../../plugins/bootstrap.bundle.min.js"></script>
 
 		<script src="../../js/classie.js"></script>

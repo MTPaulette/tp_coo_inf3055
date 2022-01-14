@@ -18,7 +18,7 @@
             </fieldset>
 
 
-            <!--fieldset>
+            <fieldset>
                 <legend>Directeur de la pharmacie</legend>
             <label for="nomD"><b>nom</b></label>                
             <input type="text" placeholder="Entrer le nom du directeur" id="nomD" name="nomD" required>
@@ -34,7 +34,7 @@
             <input type="text" placeholder="Entrer votre login" id="login" name="login" required>
 
             <label><b>Mot de passe</b></label>                
-            <input type="password" placeholder="Entrer le mot de passe" id="password" name="password" required--> 
+            <input type="password" placeholder="Entrer le mot de passe" id="password" name="password" required> 
             
             
             <!--input type="submit" id='submit' name="auth" id="auth" value="creer compte" class="submit" onclick="return validateEnregistrement()"--> 
