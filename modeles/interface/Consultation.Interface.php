@@ -1,7 +1,7 @@
 <?php
 	interface Consultation
 	{
-		public function releveVente($date);
-		public function releveAjout($date);
+		public function releveVente();
+		public function releveAjout();
 	}
 ?>

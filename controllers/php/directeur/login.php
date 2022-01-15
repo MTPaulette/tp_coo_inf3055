@@ -14,9 +14,7 @@
         $e = $directeur->authentifier($login,$password);
         
         if(!empty($e)) {
-            echo "njr";
             $_SESSION['directeur'] = $e->getlogin();
-            //var_dump($_SESSION['directeur']->getLogin());
             header("Location:../../../views/pages/directeur/dashboard.php");
         } else {
             header("Location:../../../views/pages/directeur/login.php");

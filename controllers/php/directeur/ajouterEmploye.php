@@ -51,12 +51,7 @@
                   echo 'Upload effectué avec succès !';
                   echo $fileNewName;
                   //header("Location:http://localhost/tp_cms/html/dashboard/upload/".$fichier);
-                  $src = './../../../views/public/directeur/upload/'.$fileNewName;
-                  /*$src = './upload/'.$fileNewName;*/
-
-                  echo $src;
-                  echo "'<img src='$src' >'";
-                // modifierCours($titre,$contenu, $fileNewName);
+                  //$src = './../../../views/public/directeur/upload/'.$fileNewName;
                 $successUpload = true;
             }
             else //Sinon (la fonction renvoie FALSE).
@@ -65,6 +60,23 @@
                   $successUpload = false;
             }
           }
+
+        //ajout du employe dans la base de données
+      
+        if($successUpload) {
+          $directeur = new Directeur();
+          $directeur->setLogin($_SESSION['directeur']);
+          $e = $directeur->creerCompte($nom,$prenom,$telephone,$adresse,$fileNewName,$login,$motDePasse);
+          //var_dump($e);
+      }
+      
+      if($e) {
+          header("Location:../../../views/pages/directeur/dashboard.php");
+      } 
+      else {
+          header("Location:../../../views/pages/directeur/login.php");
+      }
+      
     }
 ?>
 

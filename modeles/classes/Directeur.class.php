@@ -44,7 +44,7 @@
 				$bd = $this->connecter();
 				$dateJour = new \DateTime('now');
 				$date = $dateJour->format('y-m-d H:i:s');
-				$reponse2 = $bd->prepare('INSERT INTO employe(nom,prenom, telephone, adresse, photo,etat, createAt, login, motDePasse, loginDirecteur) VALUES(?,?,?,?,?,?,?,?,PASSWORD(?),?)');
+				$reponse2 = $bd->prepare('INSERT INTO employe(nom,prenom, telephone, adresse, photo,etat, createdAt, login, motDePasse, loginDirecteur) VALUES(?,?,?,?,?,?,?,?,PASSWORD(?),?)');
 				$reponse2->execute(array($nom, $prenom,$telephone,$adresse,addslashes($photo),'en poste',$date,$login,$motDePasse,$loginDirecteur['login']));
 				echo "ajout reussi";
 				return true;
@@ -55,51 +55,105 @@
 			}
 		}
 
-		public function deleteEmploye($login){
-			$baseDeDonnees =$this->connecter();
-			//$req = $baseDeDonnees->prepare("DELETE FROM `employe` WHERE `employe`.`nom` =? ");
-			$req = $baseDeDonnees->prepare('UPDATE employe SET etat = ? WHERE login =?');
-			$req->execute(array('supprime',$login));
-			if ($req == true) {
-				return true;
-			}
-			else{
-				return false;
-			}
-		}
-
-		public function suspendreEmploye($login){
-			$baseDeDonnees = $this->connecter();
-			$req = $baseDeDonnees->prepare('UPDATE employe SET etat = ? WHERE login =?');
-			$req->execute(array('suspendu',$login));
-			if($req == true){
-				return true;
-			}
-			else{
-				return false;
-			}
-		}
-
-		function activerPharmacie($login){
+		//confirmer lemot de passe
+		private function confirmerMotDePasse($motDePasse, $table){
 			$bd = $this->connecter();
-			try {
-				$dateJour = new \DateTime('now');
-				$date = $dateJour->format('y-m-d H:i:s');
-				$reponse = $bd->prepare('UPDATE employe SET etat = ?, modifiedAt = ? WHERE login = ?');
-				$reponse->execute(array('poste',$date,$login));
+			$reponse = $bd->prepare("SELECT * FROM {$table} WHERE motDePasse = PASSWORD(?)");
+			$reponse->execute(array($motDePasse));
+			$resultat = $reponse->fetch(); 
+			if ($resultat) {
 				return true;
-			} catch (PDOException $e) {
-				$e->getmessage();
+			}else {
 				return false;
-				
 			}
 		}
 
+
+		function supprimerEmploye($motDePasse, $login){
+			$bd = $this->connecter();
+			$table = 'directeur';
+			if ($this->confirmerMotDePasse($motDePasse, $table)) {
+				try {
+					$req = $bd->prepare('UPDATE employe SET etat = ? WHERE login =?');
+					$req->execute(array('supprime',$login));
+					if($req){
+						return true;
+					}
+					else{
+						return false;
+					}
+				} catch (PDOException $e) {
+					$e->getmessage();
+					return false;
+					
+				}
+			}else {
+				return false;
+			}
+			
+
+		}
+
+		function suspendreEmploye($motDePasse, $login){
+			$bd = $this->connecter();
+			$table = 'directeur';
+			if ($this->confirmerMotDePasse($motDePasse, $table)) {
+				try {
+					$req = $bd->prepare('UPDATE employe SET etat = ? WHERE login =?');
+					$req->execute(array('suspendu',$login));
+					if($req){
+						return true;
+					}
+					else{
+						return false;
+					}
+				} catch (PDOException $e) {
+					$e->getmessage();
+					return false;
+					
+				}
+			}else {
+				return false;
+			}
+			
+
+		}
+
+
+
+		function activerEmploye($motDePasse, $login){
+			$bd = $this->connecter();
+			$table = 'directeur';
+			if ($this->confirmerMotDePasse($motDePasse, $table)) {
+				try {
+					$dateJour = new \DateTime('now');
+					$date = $dateJour->format('y-m-d H:i:s');
+					$reponse = $bd->prepare('UPDATE employe SET etat = ?, modifiedAt = ? WHERE login = ?');
+					$reponse->execute(array('poste',$date,$login));
+					if($req){
+						return true;
+					}
+					else{
+						return false;
+					}
+				} catch (PDOException $e) {
+					$e->getmessage();
+					return false;
+					
+				}
+			}else {
+				return false;
+			}
+			
+
+		}
+
+		
 		public function rechercherEmploye($login){
 			$bd = $this->connecter();
 			$reponse = $bd->prepare('SELECT * FROM employe WHERE login LIKE ? and loginDirecteur = ?');	
 			$reponse->execute(array('%'.$login.'%',$this->getLogin()));
-			$employe = $reponse->fetch();
+			$employe = $reponse->fetchAll();
 			if(!empty($employe)){
 				return $employe;
 			}
@@ -152,7 +206,7 @@
 			}
 
 		}
-		public function releveVente($date)
+		public function releveVente()
 		{
 			$releve = array();
 			$baseDeDonnees = $this->connecter();
@@ -161,7 +215,7 @@
 			$reponse->execute(array($this->getLogin()));
 			$nomPharmacie = $reponse->fetch();
 			//recupérer le vente effectuer dans la pharmacie qui n'ont pas encore été vue
-			$reponse2 = $baseDeDonnees->prepare('SELECT * FROM nouvelleVente WHERE nomPharmacie = ?');
+			$reponse2 = $baseDeDonnees->prepare('SELECT * FROM vendre WHERE nomPharmacie = ?');
 			$reponse2->execute(array($nomPharmacie['nom']));
 			while($vente = $reponse2->fetch()){
 				$nomProduit = $vente['nomProduit'];
@@ -176,18 +230,13 @@
 				$tab = array($nomEmploye['nom'],$nomEmploye['prenom'],$nomProduit,$dateVente,$heureVente,$prix);
 				$releve[] = $tab;
 			}
-			if(!empty($releve)){
-				$reponse = $baseDeDonnees->prepare('DELETE  FROM nouvelleVente');
-				$reponse->execute();
-			}
+			
 
-				
-			
-			
-			
 			return $releve;
 		}
-		public function releveAjout($date){
+
+
+		public function releveAjout(){
 			$releve = array();
 			$baseDeDonnees = $this->connecter();
 			//rcupérer le nom de la pharmacie
@@ -215,5 +264,7 @@
 			}
 			return $releve;
 		}
+
+
 	}
 ?>

@@ -4,24 +4,21 @@
     error_reporting(E_ALL|E_STRICT);
     require('../../../modeles/classes/Directeur.class.php');
 
-    
-    if(isset($_POST['search'])) {
-        
-        $search = $_POST['search'];
+    if(isset($_POST['password'])) {
+        $motDePasse = $_POST['password'];
+        $selectionne = $_POST['employeSelectionne'];
 
         //$directeur = new Directeur($nom, $prenom, $telephone,$adresse, $login, $motDePasse);
         $directeur = new Directeur();
         $directeur->setLogin($_SESSION['directeur']);
-        $e = $directeur->rechercherEmploye($search);
-        var_dump($e);
-
+        $e = $directeur->suspendreEmploye($motDePasse, $selectionne);
+        
         if($e) {
-            $_SESSION['searchDirecteur'] = $e;
             header("Location:../../../views/pages/directeur/rechercherEmploye.php");
         } else {
             header("Location:../../../views/pages/directeur/404.php");
         }
-
     }
+    
 
 ?>

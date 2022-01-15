@@ -15,7 +15,9 @@
             echo "</div>";
             echo "<div class='mycard-body'>";
                 echo '<h5> Nom: '.$search['nom'].'</h5>';
-                echo "<h5 class='mycard-title'>Localisation: ".$search['localisation']."</h5>";
+                echo '<h5> Prenom: '.$search['prenom'].'</h5>';
+                echo '<h5> telephone: '.$search['telephone'].'</h5>';
+                echo "<h5 class='mycard-title'>Adresse: ".$search['adresse']."</h5>";
                 echo "<h5 class='mycard-title'>Directeur: ".$search['loginDirecteur']."</h5>";
                 echo "<h5 class='mycard-title'>Etat: ".$search['etat']."</h5>";
                 echo "<h5 class='mycard-title'><span> creé le: ".$search['createdAt']."</span></h5>";
@@ -34,7 +36,7 @@
                             <div class='modal-body'>
                                 <span class='msg'>Vous vous apprettez à effectuer une operation sensible. Veuillez entrer votre mot de passe pour confirmer</span>
                                 <form class='form-inline' action='../../../controllers/php/directeur/activerEmploye.php'  method='post' name='rechercher'>";
-                                echo "<input type='hidden' name='directeurSelectionne' value=".$search['nom'].">";
+                                echo "<input type='hidden' name='employeSelectionne' value=".$search['login'].">";
                                 echo "<div class='form-group mx-sm-3 mb-2'>
                                         <input type='password' class='form-control' id='password' name='password' placeholder=''>
                                         <button type='submit' class='btn btn-success'>activer</button>
@@ -59,7 +61,7 @@
                             <div class='modal-body'>
                                 <span class='msg'>Vous vous apprettez à effectuer une operation sensible. Veuillez entrer votre mot de passe pour confirmer</span>
                                 <form class='form-inline' action='../../../controllers/php/directeur/suspendreEmploye.php'  method='post'>";
-                                echo "<input type='hidden' name='directeurSelectionne' value=".$search['nom'].">";
+                                echo "<input type='hidden' name='employeSelectionne' value=".$search['login'].">";
                                 echo "<div class='form-group mx-sm-3 mb-2'>
                                         <input type='password' class='form-control' id='password' name='password' placeholder=''>
                                         <button type='submit' class='btn btn-secondary'>suspendre</button>
@@ -85,7 +87,7 @@
                             <div class='modal-body'>
                                 <span class='msg'>Vous vous apprettez à effectuer une operation sensible. Veuillez entrer votre mot de passe pour confirmer</span>
                                 <form class='form-inline' action='../../../controllers/php/directeur/supprimerEmploye.php'  method='post'>";
-                                echo "<input type='hidden' name='directeurSelectionne' value=".$search['nom'].">";
+                                echo "<input type='hidden' name='employeSelectionne' value=".$search['login'].">";
                                 echo "<div class='form-group mx-sm-3 mb-2'>
                                         <input type='password' class='form-control' id='password' name='password' placeholder=''>
                                         <button type='submit' class='btn btn-danger'>supprimer</button>

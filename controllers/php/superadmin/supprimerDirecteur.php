@@ -12,7 +12,7 @@
         $superadmin = new SuperAdmin();
         $e = $superadmin->supprimerPharmacie($motDePasse, $selectionne);
 
-        var_dump($e);
+       /* var_dump($e);
 /*
         $_SESSION['searchSuperAdmin'] = $e;
 

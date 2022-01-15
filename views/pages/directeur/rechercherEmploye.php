@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="../../styles/css/footer.css">
 	
 	<script src="../../js/modernizr.custom.js"></script>
-	<title>dashbord-adminPharmacie</title>
+	<title>Directeur</title>
 </head>
 <body>
 		<div class="">
