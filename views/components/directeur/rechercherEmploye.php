@@ -1,7 +1,7 @@
 
 <?php
-    $src = '../../public/superadmin/upload/';
-    foreach($_SESSION['searchSuperAdmin'] as $search) {
+    $src = '../../public/directeur/upload/';
+    foreach($_SESSION['searchDirecteur'] as $search) {
 
         $_SESSION['bjr'] = $search;
         echo "<div class='mysearch-dark'>";
@@ -33,7 +33,7 @@
             
                             <div class='modal-body'>
                                 <span class='msg'>Vous vous apprettez à effectuer une operation sensible. Veuillez entrer votre mot de passe pour confirmer</span>
-                                <form class='form-inline' action='../../../controllers/php/superadmin/activerDirecteur.php'  method='post' name='rechercher'>";
+                                <form class='form-inline' action='../../../controllers/php/directeur/activerEmploye.php'  method='post' name='rechercher'>";
                                 echo "<input type='hidden' name='directeurSelectionne' value=".$search['nom'].">";
                                 echo "<div class='form-group mx-sm-3 mb-2'>
                                         <input type='password' class='form-control' id='password' name='password' placeholder=''>
@@ -58,7 +58,7 @@
             
                             <div class='modal-body'>
                                 <span class='msg'>Vous vous apprettez à effectuer une operation sensible. Veuillez entrer votre mot de passe pour confirmer</span>
-                                <form class='form-inline' action='../../../controllers/php/superadmin/suspendreDirecteur.php'  method='post'>";
+                                <form class='form-inline' action='../../../controllers/php/directeur/suspendreEmploye.php'  method='post'>";
                                 echo "<input type='hidden' name='directeurSelectionne' value=".$search['nom'].">";
                                 echo "<div class='form-group mx-sm-3 mb-2'>
                                         <input type='password' class='form-control' id='password' name='password' placeholder=''>
@@ -84,7 +84,7 @@
             
                             <div class='modal-body'>
                                 <span class='msg'>Vous vous apprettez à effectuer une operation sensible. Veuillez entrer votre mot de passe pour confirmer</span>
-                                <form class='form-inline' action='../../../controllers/php/superadmin/supprimerDirecteur.php'  method='post'>";
+                                <form class='form-inline' action='../../../controllers/php/directeur/supprimerEmploye.php'  method='post'>";
                                 echo "<input type='hidden' name='directeurSelectionne' value=".$search['nom'].">";
                                 echo "<div class='form-group mx-sm-3 mb-2'>
                                         <input type='password' class='form-control' id='password' name='password' placeholder=''>

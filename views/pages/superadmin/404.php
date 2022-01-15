@@ -1,5 +1,5 @@
 <?php session_start() ;
-	if(!$_SESSION['directeur']) {
+	if(!$_SESSION['superadmin']) {
     	header("Location:login.php");
 	}
 ?>
@@ -23,13 +23,13 @@
 </head>
 <body>
 		<div class="main">
-			<?php include("../../components/directeur/header.php"); ?> 
+			<?php include("../../components/superadmin/header.php"); ?> 
  
 
 			<div class="main-content">
-				<h1>Menu du site du Google Nexus 7<span>Menu barre lat�rale comme sur le site <a href="http://www.google.com/nexus/index.html">Google Nexus 7</a> en haut � gauche :-)</span></h1>
+				<h1>DESOLE..... la recherche faite n'a pas été trouvée</h1>
 			</div>	
-					
+			
 				<?php include("../../components/footer.html"); ?> 			
 		</div><!-- /container -->
 

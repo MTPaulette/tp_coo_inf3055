@@ -14,9 +14,8 @@
 	<link rel="stylesheet" type="text/css" href="../../styles/css/menu.css" />
     <link rel="stylesheet" href="../../plugins/bootstrap.min.css">
     <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"-->
-	<link rel="stylesheet" type="text/css" href="../../styles/css/search.css" />
+	<link rel="stylesheet" type="text/css" href="../../styles/css/addEmployee.css" />
     <link rel="stylesheet" href="../../styles/css/footer.css">
-	
 	
 	<script src="../../js/modernizr.custom.js"></script>
 	<title>dashbord-adminPharmacie</title>
@@ -24,17 +23,17 @@
 <body>
 		<div class="main">
 			<?php include("../../components/directeur/header.php"); ?> 
- 
 
-			<div class="main-content">
-				<h1>Menu du site du Google Nexus 7<span>Menu barre lat�rale comme sur le site <a href="http://www.google.com/nexus/index.html">Google Nexus 7</a> en haut � gauche :-)</span></h1>
-			</div>	
-					
-				<?php include("../../components/footer.html"); ?> 			
+			<?php include("../../components/directeur/ajouterEmploye.php"); ?> 
+
+
+
+			<?php include("../../components/footer.html"); ?> 			
 		</div><!-- /container -->
 
 		<script src="../../plugins/jquery-3.3.1.slim.min.js"></script>
     	<script src="../../plugins/bootstrap.bundle.min.js"></script>
+
 		<script src="../../js/classie.js"></script>
 		<script src="../../js/gnmenu.js"></script>
 		<script>

@@ -28,6 +28,21 @@
 		}
 
 
+		//rechrche
+		private function confirmerMotDePasse($motDePasse, $table){
+			$bd = $this->connecter();
+			$reponse = $bd->prepare("SELECT * FROM {$table} WHERE motDePasse = ?");
+			$reponse->execute(array($motDePasse));
+			$resultat = $reponse->fetch(); 
+			if ($resultat) {
+				return true;
+			}else {
+				return false;
+			}
+		}
+
+
+
 		//authentification du superAdmin
 		public function authentifier($login, $password){
 			$bdd = $this->connecter();
@@ -172,58 +187,71 @@
 		}
 
 
-		function suspendrePharmacie($nom){
+		function suspendrePharmacie($motDePasse, $nom){
 			$bd = $this->connecter();
-			try {
-				$dateJour = new \DateTime('now');
-				$date = $dateJour->format('y-m-d H:i:s');
-				$reponse = $bd->prepare('UPDATE pharmacie SET etat = ?, modifiedAt = ? WHERE nom = ?');
-				$reponse->execute(array('suspendue',$date,$nom));
-				return true;
-			} catch (PDOException $e) {
-				$e->getmessage();
+			$table = 'superadmin';
+			if ($this->confirmerMotDePasse($motDePasse, $table)) {
+				try {
+					$dateJour = new \DateTime('now');
+					$date = $dateJour->format('y-m-d H:i:s');
+					$reponse = $bd->prepare('UPDATE pharmacie SET etat = ?, modifiedAt = ? WHERE nom = ?');
+					$reponse->execute(array('suspendue',$date,$nom));
+					return true;
+				} catch (PDOException $e) {
+					$e->getmessage();
+					return false;
+					
+				}
+			}else {
 				return false;
-				
 			}
 			
 
 		}
 
-		Function activerPharmacie($nom){
+		Function activerPharmacie($motDePasse, $nom){
 			$bd = $this->connecter();
-			try {
-				$dateJour = new \DateTime('now');
-				$date = $dateJour->format('y-m-d H:i:s');
-				$reponse = $bd->prepare('UPDATE pharmacie SET etat = ?, modifiedAt = ? WHERE nom = ?');
-				$reponse->execute(array('disponible',$date,$nom));
-				return true;
-			} catch (PDOException $e) {
-				$e->getmessage();
-				return false;
-				
+			$table = 'superadmin';
+			if ($this->confirmerMotDePasse($motDePasse, $table)) {
+				try {
+					$dateJour = new \DateTime('now');
+					$date = $dateJour->format('y-m-d H:i:s');
+					$reponse = $bd->prepare('UPDATE pharmacie SET etat = ?, modifiedAt = ? WHERE nom = ?');
+					$reponse->execute(array('disponible',$date,$nom));
+					return 'activer';//true;
+				} catch (PDOException $e) {
+					$e->getmessage();
+					return false;
+				}
+			}else {
+				return 'mauvaius';//false;
 			}
 		}
 
-		function supprimerPharmacie($nomPharmacie){
+		function supprimerPharmacie($motDePasse, $nomPharmacie){
 			$bd = $this->connecter();
-			try {
-				//selection le directeur à qui appartien la pharmacie
-				$reponse = $bd->prepare('SELECT loginDirecteur FROM pharmacie WHERE nom = ?');
-				$reponse->execute(array($nomPharmacie));
-				$loginDirecteur = $reponse->fetch();
-				//supprimer la pharmacie
-				$dateJour = new \DateTime('now');
-				$date = $dateJour->format('y-m-d H:i:s');
-				$reponse2 = $bd->prepare('UPDATE pharmacie SET etat = ?,deleteAt = ? WHERE nom = ?');
-				$reponse2->execute(array('supprimer',$date ,$nomPharmacie));
-				//supprimer le directeur à qui appartien la pharmacie
-				$reponse3 = $bd->prepare('UPDATE directeur SET deleteAt = ? WHERE login = ?');
-				$reponse3->execute(array($date,$loginDirecteur['loginDirecteur']));
-				return true;
-			} catch (PDOException $e) {
-				$e->getmessage();
+			$table = 'superadmin';
+			if ($this->confirmerMotDePasse($motDePasse, $table)) {
+				try {
+					//selection le directeur à qui appartien la pharmacie
+					$reponse = $bd->prepare('SELECT loginDirecteur FROM pharmacie WHERE nom = ?');
+					$reponse->execute(array($nomPharmacie));
+					$loginDirecteur = $reponse->fetch();
+					//supprimer la pharmacie
+					$dateJour = new \DateTime('now');
+					$date = $dateJour->format('y-m-d H:i:s');
+					$reponse2 = $bd->prepare('UPDATE pharmacie SET etat = ?,deleteAt = ? WHERE nom = ?');
+					$reponse2->execute(array('supprimer',$date ,$nomPharmacie));
+					//supprimer le directeur à qui appartien la pharmacie
+					$reponse3 = $bd->prepare('UPDATE directeur SET deleteAt = ? WHERE login = ?');
+					$reponse3->execute(array($date,$loginDirecteur['loginDirecteur']));
+					return true;
+				} catch (PDOException $e) {
+					$e->getmessage();
+					return false;
+				}
+			}else {
 				return false;
-				
 			}
 		}
 

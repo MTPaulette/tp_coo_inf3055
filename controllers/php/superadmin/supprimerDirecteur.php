@@ -4,17 +4,17 @@
     error_reporting(E_ALL|E_STRICT);
     require('../../../modeles/classes/SuperAdmin.class.php');
 
-    
-    if(isset($_POST['search'])) {
-        
-        $search = $_POST['search'];
+    if(isset($_POST['password'])) {
+        $motDePasse = $_POST['password'];
+        $selectionne = $_POST['directeurSelectionne'];
 
         //$directeur = new Directeur($nom, $prenom, $telephone,$adresse, $login, $motDePasse);
         $superadmin = new SuperAdmin();
-        $superadmin->setLogin($_SESSION['superadmin']);
-        $e = $superadmin->recherchePharmacie($search);
-        $_SESSION['searchSuperAdmin'] = $e;
+        $e = $superadmin->supprimerPharmacie($motDePasse, $selectionne);
+
         var_dump($e);
+/*
+        $_SESSION['searchSuperAdmin'] = $e;
 
         if($e) {
             header("Location:../../../views/pages/superadmin/searchComponent.php");
@@ -22,9 +22,10 @@
             echo ("aucun result");
             /*
             header("Location:../../../views/pages/superadmin/login.php");
-            */
+            
         }
-
+        */
     }
+    
 
 ?>

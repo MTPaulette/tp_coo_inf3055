@@ -22,17 +22,6 @@
 	<title>dashbord-adminPharmacie</title>
 </head>
 <body>
-<br /><br />
-
-	<!--div class="research">
-		<form class="form-inline">
-			<div class="form-group mx-sm-3 mb-2">
-			<label for="inputPassword2" class="sr-only">recherche</label>
-			<input type="password" class="form-control" id="inputPassword2" placeholder="Password">
-			</div>
-			<button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
-		</form>
-	</div-->
 		<div class="main">
 			<?php include("../../components/superadmin/header.php"); ?> 
  
