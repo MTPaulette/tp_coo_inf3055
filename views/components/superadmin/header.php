@@ -51,10 +51,12 @@
 
 	<div class="research" style="">
 		<form class="form-inline" action="../../../controllers/php/superadmin/rechercherDirecteur.php"  method="post" name="rechercher">
+		<!--form class="form-inline" action=""  method="post" name="rechercher"-->
 			<div class="form-group mx-sm-3 mb-2">
-			<label for="search" class="sr-only">recherche</label>
 			<input type="search" class="form-control" id="search" name="search" placeholder="rechercher">
 			</div>
-			<button type="submit" class="btn btn-primary mb-2 gn-icon-search"></button>
+			<button type="submit" id="submit" class="btn btn-primary mb-2 gn-icon-search"></button>
 		</form>
+
+		<div class="messages"></div>
 	</div>

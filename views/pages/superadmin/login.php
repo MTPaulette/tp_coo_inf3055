@@ -25,5 +25,7 @@
 		</form>        
 	</div>
 	<script src="../../../controllers/js/authentification.js"></script>
+	<script src="../../../controllers/ajax/superadmin/login.js"></script>
+	<script src="../../plugins/jquery-3.3.1.slim.min.js"></script>
 </body>
 </html>

@@ -261,12 +261,23 @@
 			$reponse = $bd->prepare("SELECT * FROM pharmacie WHERE nom like ?");	
 			$reponse->execute(array('%'.$nomPharmacie.'%'));
 			$pharmacie = $reponse->fetchAll();
+			return $pharmacie;
+
+			/*
 			if(!empty($pharmacie)){
-				return $pharmacie;
+
+				while($pharmacie){
+                    // on affiche le message (l'id servira plus tard)
+                    echo "<p id=\"" . $pharmacie[1] . "\">" . $pharmacie[2] . " dit : " . $pharmacie[3] . "</p>";
+                }
+
+                $pharmacie->closeCursor();
+			
 			}
 			else{
 				return null;
 			}
+			*/
 		}
 		
 	}

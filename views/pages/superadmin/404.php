@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="../../styles/css/menu.css" />
     <link rel="stylesheet" href="../../plugins/bootstrap.min.css">
     <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"-->
-	<link rel="stylesheet" type="text/css" href="../../styles/css/search.css" />
+	<link rel="stylesheet" type="text/css" href="../../styles/css/searchComponent.css" />
     <link rel="stylesheet" href="../../styles/css/footer.css">
 	
 	
@@ -27,8 +27,8 @@
  
 
 			<div class="main-content">
-				<h1>DESOLE..... la recherche faite n'a pas été trouvée</h1>
-			</div>	
+				<h1><span>DESOLE..... la recherche faite n'a pas été trouvée</span></h1>
+			</div>
 			
 				<?php include("../../components/footer.html"); ?> 			
 		</div><!-- /container -->

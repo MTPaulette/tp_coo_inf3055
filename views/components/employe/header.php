@@ -15,8 +15,8 @@
 								<li>
 									<a class="gn-icon gn-icon-download">Gestion Employe</a>
 									<ul class="gn-submenu">
-										<li><a class="gn-icon gn-icon-addE" href="../../pages/employe/ajouterEmploye.php">Ajouter E</a></li>
-										<li><a class="gn-icon gn-icon-deleteE">Supprimer E</a></li>
+										<li><a class="gn-icon gn-icon-addE" href="../../pages/employe/ajouterProduit.php">Ajouter P</a></li>
+										<li><a class="gn-icon gn-icon-deleteE">Supprimer p</a></li>
 										<li><a class="gn-icon gn-icon-suspendE">Suspendre E</a></li>
 										<li><a class="gn-icon gn-icon-restoreE">Restaurer E</a></li>
 									</ul>
@@ -32,7 +32,7 @@
 									<a class="gn-icon gn-icon-parameter">Parametre</a>
 									<ul class="gn-submenu">
 										<li><a class="gn-icon gn-icon-article">Modifier infos</a></li>
-										<li><a class="gn-icon gn-icon-logout" href="../../pages/employe/logout.php">Deconnexion</a></li>
+										<li><a class="gn-icon gn-icon-logout" href="../../../controllers/php/employe/logout.php">Deconnexion</a></li>
 									</ul>
 								</li>
 								<li><a class="gn-icon gn-icon-help">Aide</a></li>

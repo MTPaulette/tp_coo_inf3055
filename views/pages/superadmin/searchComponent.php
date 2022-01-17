@@ -19,6 +19,8 @@
 	<link rel="stylesheet" type="text/css" href="../../styles/css/searchComponent.css" />
     <link rel="stylesheet" href="../../styles/css/footer.css">
 	
+	<!--script src="../../plugins/jquery-3.3.1.slim.min.js"></script-->
+	<script src="../../plugins/jquery1.1.min.js"></script>
 	<script src="../../js/modernizr.custom.js"></script>
 	<title>dashbord-adminPharmacie</title>
 </head>
@@ -38,7 +40,8 @@
   $('#myInput').trigger('focus')
 })
 		</script>
-		<script src="../../plugins/jquery-3.3.1.slim.min.js"></script>
+		<script src="../../../controllers/js/authentification.js"></script>
+		<script src="../../../controllers/ajax/superadmin/search.js"></script>
     	<script src="../../plugins/bootstrap.bundle.min.js"></script>
 
 		<script src="../../js/classie.js"></script>

@@ -27,7 +27,8 @@
 			$resultat = $reponse->fetch(); 
 			return $resultat;
 		}
-		public function addProduit($nom, $description, $prix, $quantite, $type){
+
+		public function ajouterProduit($nom, $description, $prix,$photo, $quantite, $type){
 			$bd = $this->connecter();
 			//recupérer l login du directeur d la pharmacie ou travaille l'employe
 			/*$reponse2 = $bd->prepare('SELECT loginDirecteur FROM employe WHERE login = ?');
@@ -49,8 +50,9 @@
 			$resultat = $reponse->fetch();
 			//$resultat = $this->check($nom,'produit');
 			if(empty($resultat)){
-				$reponse1 = $bd->prepare('INSERT INTO produit(nomp,description,prix,quantite,ancienne_quantite,quantite_ajouter,type,createdAt,heure,modifiedAt,loginEmploye,nomPharmacie) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)');
-				$reponse1->execute(array($nom,$description,$prix,$quantite,0,$quantite,$type,$date,$date,$date,$this->getLogin(),$nomPharmacie['nom']));
+				$reponse1 = $bd->prepare('INSERT INTO produit(nomp,description,prix,quantite,ancienne_quantite,quantite_ajouter,type,photo,createdAt,heure,modifiedAt,loginEmploye,nomPharmacie) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)');
+				$reponse1->execute(array($nom,$description,$prix,$quantite,0,$quantite,$type,addslashes($photo),$date,$date,$date,$this->getLogin(),$nomPharmacie['nom']));
+				return true;
 			}
 			else{
 				$reponse4 = $bd->prepare('SELECT * FROM produit WHERE nomp = ? AND nomPharmacie = ?');
@@ -60,6 +62,7 @@
 				$nouvelle_qte = $produit['quantite'] + $quantite;
 				$reponse5 = $bd->prepare('UPDATE produit SET quantite = ?, ancienne_quantite = ?, quantite_ajouter = ?, modifiedAt = ?, loginEmploye = ?, nomPharmacie = ? WHERE nomp = ? AND nomPharmacie = ?');
 				$reponse5->execute(array($nouvelle_qte,$produit['quantite'],$quantite,$date,$this->getLogin(),$nomPharmacie['nom'],$nom, $nomPharmacie['nom']));
+				return true;
 			}
 		}
 
@@ -160,7 +163,7 @@
 			$baseDeDonnees = $this->connecter();
 			$dateJour = new \DateTime('now');
 			$date = $dateJour->format('y-m-d H:i:s');
-			$req1 = $baseDeDonnees->prepare("SELECT * FROM nouvelleVente WHERE loginEmploye = ?");
+			$req1 = $baseDeDonnees->prepare("SELECT * FROM vendre WHERE loginEmploye = ?");
 			$req1->execute(array( $this->getLogin()));
 			//$data = $req1->fetch();
 			$reponse = $baseDeDonnees->prepare('SELECT * FROM employe WHERE login = ?');
@@ -239,6 +242,8 @@
 						$date = $dateJour->format('y-m-d H:i:s');
 						$reponse = $baseDeDonnees->prepare('UPDATE employe SET dateConnexion = ?, heureConnexion = ? WHERE login = ?');
 						$reponse->execute(array($date,$date,$login));
+						$reponse2 = $baseDeDonnees->prepare('UPDATE pharmacie SET ouvert = ? WHERE loginDirecteur = ?');
+						$reponse2->execute(array(1,$data['loginDirecteur']));
 						echo 'mot de passe correct';
 						return 2;
 					}
@@ -253,8 +258,14 @@
 			$bd = $this->connecter();
 			$dateJour = new \DateTime('now');
 			$date = $dateJour->format('y-m-d H:i:s');
+			$req = $bd->prepare('SELECT * FROM employe WHERE login = ?');
+			$req->execute(array($this->getLogin()));
+			$data = $req->fetch();
+			$reponse2 = $bd->prepare('UPDATE pharmacie SET ouvert =? WHERE loginDirecteur = ?');
+			$reponse2->execute(array(0,$data['loginDirecteur']));
 			$reponse = $bd->prepare('UPDATE employe SET dateDeconnexion = ?, heureDeconnexion = ? WHERE login = ?');
 			$reponse->execute(array($date,$date,$this->getLogin()));
+			return true;
 
 		}
 		
