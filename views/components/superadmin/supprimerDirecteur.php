@@ -1,5 +1,6 @@
   
     <div id="container">
+    <div class="searchForm">
     <!-- zone de connexion -->
         <form action="../../../controllers/php/superadmin/ajouterDirecteur.php" method="post" name="enregistrement">
             <!--p class="icon"><img src="../../plugins/icons/person-circle.svg"></p>
@@ -41,5 +42,6 @@
                 <a href="#" class="btn btn-danger">annuler</a-->
             </fieldset>                         
         </form>        
-    </div>
+    
+        </div>
  

@@ -14,9 +14,8 @@
         $superadmin = new SuperAdmin();
         $superadmin->setLogin($_SESSION['superadmin']);
         $e = $superadmin->recherchePharmacie($search);
-        
-
-        if($e) {
+       // var_dump($e);
+       if(!empty($e)) {
             $_SESSION['searchSuperAdmin'] = $e;
             //return $e;
             header("Location:../../../views/pages/superadmin/searchComponent.php");

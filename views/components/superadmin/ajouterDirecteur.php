@@ -1,5 +1,6 @@
   
     <div id="container">
+    <div class="searchForm">
     <!-- zone de connexion -->
         <form action="../../../controllers/php/superadmin/ajouterDirecteur.php" method="post" name="enregistrement" enctype="multipart/form-data">
             <!--p class="icon"><img src="../../plugins/icons/person-circle.svg"></p>
@@ -49,5 +50,6 @@
                 <input type="reset" name="auth" id="auth" value="annuler" class="reset"-->
             </fieldset>                         
         </form>        
+    </div>
     </div>
  

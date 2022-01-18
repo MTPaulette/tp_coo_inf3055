@@ -87,28 +87,25 @@
 
 		public function rechercher($nom){
 			$bd = $this->connecter();
-			echo "$nom<br>";
 			$var = $this->getLogin();
-			echo "$var<br>";
+			$listeProduit  = array();
 			//recupere le login du directeur
 			$rep = $bd->prepare('SELECT loginDirecteur FROM employe WHERE login = ?');
 			$rep->execute(array($this->getLogin()));
 			$loginDirecteur = $rep->fetch();
-			print_r($loginDirecteur);
 			//recupere le nom de la pharmaci
 			$rep2 = $bd->prepare('SELECT nom FROM pharmacie WHERE loginDirecteur = ?');
 			$rep2->execute(array($loginDirecteur['loginDirecteur']));
 			$nomPharmacie = $rep2->fetch();
-			echo "<br>";
-			print_r($nomPharmacie); 
-			echo "<br>";
 			if(!empty($nomPharmacie)){
-				$reponse = $bd->prepare('SELECT * FROM produit WHERE nomp = ? AND nomPharmacie = ?');
-				$reponse->execute(array($nom,$nomPharmacie['nom']));
-				$produit = $reponse->fetch();
-				if(!empty($produit)){
-					return $produit;
-				}
+				$reponse = $bd->prepare('SELECT * FROM produit WHERE nomp LIKE  ? AND nomPharmacie = ?');
+				$reponse->execute(array('%'.$nom.'%',$nomPharmacie['nom']));
+				$produit = $reponse->fetchAll();
+				/*while($produit = $reponse->fetch()){
+					$liste = array($produit['nomp'],$produit['prix'],$produit['quantite'],$produit['description'],$produit['createdAt'],$produit['nomPharmacie']);
+					$listeProduit[] = $liste;
+				}*/
+				return $produit;
 			}
 			
 			else{
@@ -187,24 +184,6 @@
 		*/
 		public function releveAjout(){
 			$releveAjout = array();
-			/*$baseDeDonnees = connecter();
-			$req1 = $baseDeDonnees->prepare("SELECT * FROM nouveauproduit ");
-			$data = $req1->fetch();
-			while($data = $req1->fetch()){
-				$loginEmploye = $data['loginEmploye'];
-				$req3 = $baseDeDonnees->prepare("SELECT nom FROM employe WHERE login = ?");
-				$req3->execute(array($loginEmploye));
-				while($data3 = $req3->fetch()){
-					$nomProduit = $data['nom'];
-					$nomEmploye = $data3['nom'];
-					$dateVente = $data['dateVente'];
-					$heure = $data['heure'];
-					$quantite = $data['quantite'];
-					$prix = $data['prix'];
-					$tab = array($nomProduit,$nomEmploye,$dateVente,$heure,$quantite,$prix);
-					$releveAjout->append($tab);
-				}
-			}*/
 			$bd = $this->connecter();
 			$reponse = $bd->prepare('SELECT * FROM employe WHERE login = ?');
 			$reponse->execute(array($this->getLogin()));
@@ -223,6 +202,7 @@
 			}
 			return $releveAjout;
 		}
+
 		public function authentifier($login, $motDePasse)
 		{
 				$baseDeDonnees = $this->connecter();
@@ -283,5 +263,39 @@
 			}
 
 		}
+
+
+		public function afficheProduit(){
+			$bd = $this->connecter();
+			$var = $this->getLogin();
+			//recupere le login du directeur
+			$rep = $bd->prepare('SELECT loginDirecteur FROM employe WHERE login = ?');
+			$rep->execute(array($this->getLogin()));
+			$loginDirecteur = $rep->fetch();
+			//recupere le nom de la pharmacie
+			$rep2 = $bd->prepare('SELECT nom FROM pharmacie WHERE loginDirecteur = ?');
+			$rep2->execute(array($loginDirecteur[0]));
+			$nomPharmacie = $rep2->fetch();
+			if(!empty($nomPharmacie)){
+				$reponse = $bd->prepare('SELECT * FROM produit WHERE nomPharmacie = ?');
+				$reponse->execute(array($nomPharmacie['nom']));
+
+				$produits = '';
+				$resultat =  $reponse->fetchAll();
+				
+				foreach( $resultat as $produit){
+					$produits .= "<option value=".$produit['nomp'].">".$produit['nomp']."</option><br>";
+				}
+				
+				echo $produits;
+				
+			}
+			
+			else{
+				return null;
+			}
+		}
+
+
 	}
 ?>

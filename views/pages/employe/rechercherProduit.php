@@ -1,6 +1,9 @@
 <?php session_start() ;
-	if(!$_SESSION['superadmin']) {
+	if(!$_SESSION['employe']) {
     	header("Location:login.php");
+	}
+	if(!$_SESSION['produitRecherche']) {
+    	header("Location:dashboard.php");
 	}
 ?>
 <!DOCTYPE html>
@@ -13,25 +16,31 @@
 	<link rel="stylesheet" type="text/css" href="../../styles/css/global.css" />
 	<link rel="stylesheet" type="text/css" href="../../styles/css/menu.css" />
     <link rel="stylesheet" href="../../plugins/bootstrap.min.css">
-    <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"-->
-	<link rel="stylesheet" type="text/css" href="../../styles/css/ajouterProduit.css" />
+	<link rel="stylesheet" type="text/css" href="../../styles/css/searchComponent.css" />
     <link rel="stylesheet" href="../../styles/css/footer.css">
+
+	<!--script src="../../plugins/jquery-3.3.1.slim.min.js"></script-->
+	<script src="../../plugins/jquery1.1.min.js"></script>
 	
 	<script src="../../js/modernizr.custom.js"></script>
-	<title>dashbord-adminPharmacie</title>
+	<title>employe</title>
 </head>
 <body>
-		<div class="main">
-			<?php include("../../components/superadmin/header.php"); ?> 
+		<div class="">
+			<?php include("../../components/employe/header.php"); ?> 
 
-			<?php include("../../components/superadmin/ajouterDirecteur.php"); ?> 
+			<?php include("../../components/employe/rechercherProduit.php"); ?> 
 
 
 
 			<?php include("../../components/footer.html"); ?> 			
 		</div><!-- /container -->
 
-		<script src="../../plugins/jquery-3.3.1.slim.min.js"></script>
+		<script>
+			$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+		</script>
     	<script src="../../plugins/bootstrap.bundle.min.js"></script>
 
 		<script src="../../js/classie.js"></script>

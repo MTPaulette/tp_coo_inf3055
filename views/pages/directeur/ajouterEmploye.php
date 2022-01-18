@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="../../styles/css/menu.css" />
     <link rel="stylesheet" href="../../plugins/bootstrap.min.css">
     <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"-->
-	<link rel="stylesheet" type="text/css" href="../../styles/css/addEmployee.css" />
+	<link rel="stylesheet" type="text/css" href="../../styles/css/ajouterProduit.css" />
     <link rel="stylesheet" href="../../styles/css/footer.css">
 	
 	<script src="../../js/modernizr.custom.js"></script>

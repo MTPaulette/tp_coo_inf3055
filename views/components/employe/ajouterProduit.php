@@ -1,5 +1,6 @@
   
     <div id="container">
+        <div class="searchForm">
         <form action="../../../controllers/php/employe/ajouterProduit.php" method="post" name="enregistrement" enctype="multipart/form-data">
 
             <fieldset>
@@ -27,9 +28,10 @@
             <input type="submit" id='submit' name="auth" id="auth" value="creer compte" class="submit" onclick="return validateEnregistrement()"--> 
             </fieldset>
             <fieldset>
-                <input type="submit" name="auth" id="auth" value="creer" class="submit" onclick="return validateEnregistrement()"> 
+                <input type="submit" name="auth" id="auth" value="ajouter" class="submit" onclick="return validateEnregistrement()"> 
                 <input type="reset" name="auth" id="auth" value="annuler" class="reset" onclick="return validateEnregistrement()"> 
             </fieldset>                         
         </form>        
+    </div>
     </div>
  

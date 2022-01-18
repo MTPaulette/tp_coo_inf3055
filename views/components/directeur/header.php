@@ -42,11 +42,12 @@
 				</li>
 				<span class="welcome" style="margin-left: 37%"> <?php echo '<span> welcome '.$_SESSION['directeur'].'</span>';?>  </span>
 				
-				<li><a href="">Pharmacie</a></li>
+				<li><a href="../../pages/internaute/Accueil.html">Pharmacie</a></li>
 			</ul>
 		</div>
 
-	<div class="research" style="">
+		<div class="research" style="">
+	<div class="searchBlock">
 		<form class="form-inline" action="../../../controllers/php/directeur/rechercherEmploye.php"  method="post" name="rechercher">
 			<div class="form-group mx-sm-3 mb-2">
 			<label for="search" class="sr-only">recherche</label>
@@ -55,3 +56,4 @@
 			<button type="submit" class="btn btn-primary mb-2 gn-icon-search"></button>
 		</form>
 	</div>
+</div>

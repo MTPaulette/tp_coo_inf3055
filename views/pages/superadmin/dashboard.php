@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="../../styles/css/global.css" />
 	<link rel="stylesheet" type="text/css" href="../../styles/css/menu.css" />
     <link rel="stylesheet" href="../../plugins/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../../styles/css/searchComponent.css" />
+	<link rel="stylesheet" type="text/css" href="../../styles/css/ajouterProduit.css" />
 	
 	<script src="../../plugins/jquery1.1.min.js"></script>
 	<!--script src="../../../controllers/ajax/superadmin/search.js"></script-->

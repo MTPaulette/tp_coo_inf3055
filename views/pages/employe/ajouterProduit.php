@@ -16,6 +16,10 @@
     <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"-->
 	<link rel="stylesheet" type="text/css" href="../../styles/css/ajouterProduit.css" />
     <link rel="stylesheet" href="../../styles/css/footer.css">
+
+
+	<!--script src="../../plugins/jquery-3.3.1.slim.min.js"></script-->
+	<script src="../../plugins/jquery1.1.min.js"></script>
 	
 	<script src="../../js/modernizr.custom.js"></script>
 	<title>employe</title>
@@ -31,7 +35,6 @@
 			<?php include("../../components/footer.html"); ?> 			
 		</div><!-- /container -->
 
-		<script src="../../plugins/jquery-3.3.1.slim.min.js"></script>
     	<script src="../../plugins/bootstrap.bundle.min.js"></script>
 
 		<script src="../../js/classie.js"></script>
