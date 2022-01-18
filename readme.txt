@@ -31,25 +31,16 @@
 	Et plusieurs autres fonctionnalités, ennoncés dans le **DIAGRAMME DE CAS D'UTILISATION**
 	
 	l'application est developpé suivant l'architecture MVC(Modèle Vue Controlleur) et structuré comme suit:
-	- le dossier ***diagrammes*** qui contient tout les diagrammes de COO que nous avons réalisé
-	﻿- le dossier ***modèle*** contenant l'implementation du **DIAGRAMME DE CLASSES** (en php) et la base de donnees
+	- le dossier ***COO_Diagrammes*** qui contient tout les diagrammes de COO que nous avons réalisé
+	- le dossier ***modèle*** contenant l'implementation du **DIAGRAMME DE CLASSES** (en php) et la base de donnees
 	- le dossier ***controleur*** contenant les fichiers qui permettent l'interaction entre la **vue** et les fonctionnalites du **modèle**
 	- le package ***vue*** contenant les fichiers qui constituent l'interface graphique (le front-end)
 
 +------------------------+
 | 	IMPORTANT 	 |
 +------------------------+
-	-> POUR LANCER LE JEU CORRECTEMENT;
-	-> Importez le projet "BloomingGameUserInterface" dans une IDE, ECLIPSE IDE de preference.
-	-> Creer prealablement la base de données "bloomingGame" avant d'importer la base de données, "bloomingGame.sql". Veuillez à respecter la casse car 
-	   certains systemes d'exploitation tel que ubuntu sont sensibles à la casse.
-	-> Effacez tout les modules importées avant d'importer a nouveau les modules present dans le dossier "Libraries". Assurez d'importer dans la section
-	   "Module Path" plutot que Class Path"
-	-> Lancez XAMPP serveur (Obligatoire pour le BACK-END et le FRONT-END)
-	->  OUVREZ info.tp.view.fentre (La classe Java qui lance l'Interface Graphique) et suivez les directives !!!!
-	-> Pour lancer le jeu en Back-end: il faut executer la classe "MainMultiPlayer" du package info.tp.model
-	
-	le code de jeu conteint des commentaires pour vous orienter.
+
+Le code source de l'application conteint des commentaires pour vous orienter.
 +------------------------+
 | 	CONCLUSION 	 |
 +------------------------+
