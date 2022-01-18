@@ -8,9 +8,9 @@
 	|*NOM                 		 | MATRICULE	 | Secteur           |
 	+--------------------------------+---------------+-------------------+
 	|-MAYOGUE TADJUIDJE PAULETTE 	 | 18T2647	 | Front-end 	     |
-	|-			 	 | 		 | 		     |
-	|-NSANGOU ADAMOU 		 | 		 | Back-end 	     |
-	|-				 | 		 | 		     |
+	|-TCHINDE  WAFFO Cyrille-Junior  | 19M2392	 | Front-end 	     |
+	|-NSANGOU ADAMOU 		 | 18T2890	 | Back-end 	     |
+	|-OUABO Samuel Jordan		 | 19M2143	 | Back-end	     |
 	|-NDANG ESSI PIERRE JUNIOR 	 | 18T2419	 | Back-end 	     |
 	+--------------------------------+---------------+-------------------+
 	
