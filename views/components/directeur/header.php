@@ -22,20 +22,17 @@
 									</ul>
 								</li>
 								<li>
-									<a class="gn-icon gn-icon-stat">Statistique</a>
 									<ul class="gn-submenu">
-										<li><a class="gn-icon gn-icon-article" href="../../../controllers/php/directeur/releveVente.php">Relevé des ventes</a></li>
-										<li><a class="gn-icon gn-icon-pictures"  href="../../../controllers/php/directeur/releveAjout.php">Relevé des ajouts</a></li>
+										<li><a class="gn-icon gn-icon-listol" href="../../../controllers/php/directeur/releveVente.php">Relevé des ventes</a></li>
+										<li><a class="gn-icon gn-icon-liststars"  href="../../../controllers/php/directeur/releveAjout.php">Relevé des ajouts</a></li>
 									</ul>
 								</li>
 								<li>
 									<a class="gn-icon gn-icon-parameter">Parametre</a>
 									<ul class="gn-submenu">
-										<li><a class="gn-icon gn-icon-article">Modifier infos</a></li>
 										<li><a class="gn-icon gn-icon-logout" href="../../pages/directeur/logout.php">Deconnexion</a></li>
 									</ul>
 								</li>
-								<li><a class="gn-icon gn-icon-help">Aide</a></li>
 							</ul>
 						</div><!-- /gn-scroller -->
 					</nav>

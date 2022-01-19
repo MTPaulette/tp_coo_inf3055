@@ -1,31 +1,33 @@
+
+
 <?php
 
     $src = '../../public/employe/upload/';
     foreach($_SESSION['produitRecherche'] as $search) {
 
         $_SESSION['bjr'] = $search;
-        echo "<div class='mysearch-dark row no-gutters'>";
-            echo "<div class='img'>";
+        echo "<div>
+        <div class='card' style='max-width: 90vw; margin-left:500px'>";
+            echo "<div class='row no-gutters'> 
+            <div class='col'>";
                 if(!$search['photo']) {
                     echo "<p class='pasDePhoto'><img src=''></p>";
                 }else {
-                    echo "<img src=".$src.$search['photo']." alt=''>";
+                    echo "<img src=".$src.$search['photo']." width='10px' heigth='10px' alt='mixing' class='card-img'>";
                 }
             echo "</div>";
-            echo "<div class='card-body'>";
-
-
-            echo "<h5 class='card-title'> Nom: ".$search['nomp']."</h5>";
-            echo "<p class='card-text'>Description: ".$search['description']."</p>";
-            echo "<p class='card-text'>Prix: ".$search['prix']."Francs CFA</p>";
-            echo "<p class='card-text'> <small class='text-muted'>Quantite en stock: ".$search['quantite']."</small></p>";
-            echo "<p class='card-text'> <small class='text-muted'>Type du produit: ".$search['type']."</small></p>";
-            echo "<p class='card-text'> <small class='text-muted'>Pharmacie: ".$search['nomPharmacie']."</small></p>";
-            echo "<p class='card-text'> <small class='text-muted'> ajouté le: ".$search['createdAt']."</small></p>";
-            echo "<p class='card-text'> <small class='text-muted'> modifié le: ".$search['modifiedAt']."</small></p>";
-            echo "<p class='card-text'> <small class='text-muted'> par: ".$search['loginEmploye']."</small></p>";
-
-
+            echo "<div class='col'>
+            <div class='card-body'>";
+                echo "<h5 class='card-title'> Nom: ".$search['nomp']."</h5>";
+                echo "<p class='card-text'>Description: ".$search['description']."</p>";
+                echo "<p class='card-text'>Prix: ".$search['prix']."Francs CFA</p>";
+                echo "<p class='card-text'> <small class='text-muted'>Quantite en stock: ".$search['quantite']."</small></p>";
+                echo "<p class='card-text'> <small class='text-muted'>Type du produit: ".$search['type']."</small></p>";
+                echo "<p class='card-text'> <small class='text-muted'>Pharmacie: ".$search['nomPharmacie']."</small></p>";
+                echo "<p class='card-text'> <small class='text-muted'> ajouté le: ".$search['createdAt']."</small></p>";
+                echo "<p class='card-text'> <small class='text-muted'> modifié le: ".$search['modifiedAt']."</small></p>";
+                echo "<p class='card-text'> <small class='text-muted'> par: ".$search['loginEmploye']."</small></p>";
+            echo "</div>";
                 /*modal pour la confirmation de l'activation */
                 
                 echo "<button type='button' class='btn btn-success' data-toggle='modal' data-target='#activer'>activer</button>
@@ -108,6 +110,27 @@
 
             echo "</div>";
             echo "</div>";
+            echo "</div>";
 
     }
 ?>
+<!--div>
+
+<div class='card mb-3' style="max-width: 90%; margin-left:500px">
+        <div class="row no-gutters"> 
+            <div class="col-md-4">
+                <img src="../../../views/public/Folder.jpg" width='10px' heigth='10px' alt="mixing" class="card-img">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="h3 card-title">Lorem, ipsum dolor.</h5>
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. error, ipsum iure aliquid odio debitis. Veritatis, aperiam harum et officiis impedit temporibus explicabo!
+                    </p>
+                    <p class="card-text"> <small class="text-muted">
+                            Lorem ipsum explicabo!
+                        </small></p>
+            </div>
+        </div>
+</div>
+</div-->

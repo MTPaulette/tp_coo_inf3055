@@ -19,26 +19,23 @@
 									<a class="gn-icon gn-icon-download">Gestion Employe</a>
 									<ul class="gn-submenu">										
 										<li><a class="gn-icon gn-icon-addE" href="../../pages/superadmin/ajouterDirecteur.php">Ajouter D</a></li>
-										<li><a class="gn-icon gn-icon-deleteE">Supprimer D</a></li>
-										<li><a class="gn-icon gn-icon-suspendE">Suspendre D</a></li>
-										<li><a class="gn-icon gn-icon-restoreE">Restaurer D</a></li>
+										<li><a class="gn-icon gn-icon-deleteE" href="../../../controllers/php/superadmin/tousSupprimes.php">Supprimer D</a></li>
+										<li><a class="gn-icon gn-icon-suspendE" href="../../../controllers/php/superadmin/tousSuspendus.php">Suspendre D</a></li>
+										<li><a class="gn-icon gn-icon-restoreE" href="../../../controllers/php/superadmin/tousActifs.php">Restaurer D</a></li>
 									</ul>
 								</li>
 								<li>
-									<a class="gn-icon gn-icon-stat">Statistique</a>
 									<ul class="gn-submenu">
-										<li><a class="gn-icon gn-icon-article" href="../../../controllers/php/employe/releveVente.php">Relevé des ventes</a></li>
-										<li><a class="gn-icon gn-icon-pictures"  href="../../../controllers/php/employe/releveAjout.php">Relevé des ajouts</a></li>
+										<li><a class="gn-icon gn-icon-listol" href="../../../controllers/php/employe/releveVente.php">Relevé des ventes</a></li>
+										<li><a class="gn-icon gn-icon-liststars"  href="../../../controllers/php/employe/releveAjout.php">Relevé des ajouts</a></li>
 									</ul>
 								</li>
 								<li>
 									<a class="gn-icon gn-icon-parameter">Parametre</a>
 									<ul class="gn-submenu">
-										<li><a class="gn-icon gn-icon-article">Modifier infos</a></li>
 										<li><a class="gn-icon gn-icon-logout" href="../../../controllers/php/employe/logout.php">Deconnexion</a></li>
 									</ul>
 								</li>
-								<li><a class="gn-icon gn-icon-help">Aide</a></li>
 							</ul>
 						</div><!-- /gn-scroller -->
 					</nav>

@@ -21,8 +21,10 @@
 .gn-menu-main ul {
 		margin: 0;
 		padding: 0;
+		
 		background: white;
 		color: #5f6f81;
+		
 		list-style: none;
 		text-transform: none;
 		font-weight: 300;
@@ -50,6 +52,7 @@
 .no-touch .gn-menu-main a:hover,
 .no-touch .gn-menu li.gn-search-item:hover,
 .no-touch .gn-menu li.gn-search-item:hover a {
+	/************************************************/
 		background: #5f6f81;
 		color: white;
 }
@@ -269,18 +272,12 @@ input.gn-search:focus {
 	content: url(../../plugins/icons/restoreE.svg);
 }
 
-
-.gn-icon-archive::before {
-		content: "\e00d"
+.gn-icon-listol::before {		
+	content: url(../../plugins/icons/list-ol.svg);
 }
 
-.gn-icon-article::before {
-		content: "\e003"
-}
-
-
-.gn-icon-videos::before {
-		content: "\e009"
+.gn-icon-liststars::before {		
+	content: url(../../plugins/icons/list-stars.svg);
 }
 
 /* if an icon anchor has a span, hide the span */

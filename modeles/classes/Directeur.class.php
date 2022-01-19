@@ -148,6 +148,21 @@
 
 		}
 
+		public function employerSupprime(){
+			$bd = $this->connecter();
+			$reponse = $bd->prepare('SELECT * FROM employe WHERE etat = ?  AND loginDirecteur = ?');	
+			$reponse->execute(array('supprime', $this->getLogin()));
+			$employe = $reponse->fetchAll();
+			return $employe;
+		}
+
+		public function employerSuspendue(){
+			$bd = $this->connecter();
+			$reponse = $bd->prepare('SELECT * FROM employe WHERE etat = ? AND loginDirecteur = ?');	
+			$reponse->execute(array('suspendu', $this->getLogin()));
+			$employe = $reponse->fetchAll();
+			return $employe;
+		}
 		
 		public function rechercherEmploye($login){
 			$bd = $this->connecter();

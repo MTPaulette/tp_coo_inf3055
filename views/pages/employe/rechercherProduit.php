@@ -1,10 +1,12 @@
 <?php session_start() ;
+/*/
 	if(!$_SESSION['employe']) {
     	header("Location:login.php");
 	}
 	if(!$_SESSION['produitRecherche']) {
     	header("Location:dashboard.php");
 	}
+	*/
 ?>
 <!DOCTYPE html>
 <html  lang="fr">

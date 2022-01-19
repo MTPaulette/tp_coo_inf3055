@@ -254,7 +254,27 @@
 				return false;
 			}
 		}
-
+		public function employerActif(){
+			$bd = $this->connecter();
+			$reponse = $bd->prepare('SELECT * FROM employe WHERE etat = ?');	
+			$reponse->execute(array('poste');
+			$employe = $reponse->fetchAll();
+			return $employe;
+		}
+		public function tousSupprimes(){
+			$bd = $this->connecter();
+			$reponse = $bd->prepare('SELECT * FROM pharmacie WHERE etat = ? ');	
+			$reponse->execute(array('supprimer'));
+			$pharmacie = $reponse->fetchAll();
+			return $pharmacie;
+		}
+		public function tousSuspendus(){
+			$bd = $this->connecter();
+			$reponse = $bd->prepare('SELECT * FROM pharmacie WHERE etat = ? ');	
+			$reponse->execute(array('suspendue'));
+			$pharmacie = $reponse->fetchAll();
+			return $pharmacie;
+		}
 
 		function recherchePharmacie($nomPharmacie){
 			$bd = $this->connecter();

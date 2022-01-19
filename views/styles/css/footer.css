@@ -1,4 +1,5 @@
 .footer-dark {
+  width: 100vw;
     padding:50px 0;
     color:#f0f9ff;
     background-color:#282d32;
@@ -88,3 +89,25 @@
     font-size:13px;
     margin-bottom:0;
   }
+
+
+.facebook::before {		
+	content: url(../../plugins/icons/facebook.svg);
+  fill: aqua;
+}
+
+.linkedln::before {		
+	content: url(../../plugins/icons/linkedin.svg);
+}
+
+.github::before {		
+	content: url(../../plugins/icons/github.svg);
+}
+
+.google::before {		
+	content: url(../../plugins/icons/google.svg);
+}
+
+.SN {
+  background-color: #fff;
+}
