@@ -3,7 +3,6 @@
     $src = '../../public/employe/upload/';
     foreach($_SESSION['produitRecherche'] as $search) {
 
-        $_SESSION['bjr'] = $search;
         echo "<div class='mysearch-dark row no-gutters'>";
             echo "<div class='img'>";
                 if(!$search['photo']) {

@@ -11,7 +11,7 @@
         //$directeur = new Directeur($nom, $prenom, $telephone,$adresse, $login, $motDePasse);
         $superadmin = new SuperAdmin();
         $e = $superadmin->supprimerPharmacie($motDePasse, $selectionne);
-
+        echo $e;
        /* var_dump($e);
 /*
         $_SESSION['searchSuperAdmin'] = $e;

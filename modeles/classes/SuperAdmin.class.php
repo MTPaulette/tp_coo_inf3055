@@ -286,6 +286,7 @@
 			$pharmacie = $reponse->fetchAll();
 			return $pharmacie;
 
+//return json_encode($pharmacie);
 			/*
 			if(!empty($pharmacie)){
 

@@ -1,14 +1,23 @@
 
 $(function () {
-    
-   // $('#nom').click(function(e){
+   $('#supprimer').on('show.bs.modal',function(e){
+    $e =  e.stopPropagation();
+    console.log(e)
+    $('#password').keyup(function(e){
+        console.log('bjrrrr');
+        console.log($('#password').attr('value'));
+        alert('+++++++++++++++++++'+$('#password').val());
         $.ajax({
-            url: "../../../controllers/php/employe/chargerProduit.php",
+            url: "../../../controllers/php/superadmin/supprimerDirecteur.php",
             type: "GET",          
             contentType: "application/json",
             dataType: "JSON",
             
-            success: function(produits) {
+            success: function(response) {
+                if(response) {
+                    alert("bjr");
+                }
+                /*
                 //$(produits) = produits;
                 var html = '';
                 console.log(produits);
@@ -20,8 +29,10 @@ $(function () {
 				
                 console.log(html);
                 $('#nom').prepend(html)	
+                */
             },
             
         })
-    //})
+    })
+})
 })

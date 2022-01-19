@@ -30,12 +30,17 @@
 
 			<div class="main-content">
 				<h1>Menu du site du Google Nexus 7<span>Menu barre lat�rale comme sur le site <a href="http://www.google.com/nexus/index.html">Google Nexus 7</a> en haut � gauche :-)</span></h1>
-			</div>	
+			</div>
+
+			<div id="ajaxSearch">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione nesciunt molestiae ex similique. Facere magnam autem dolore perspiciatis perferendis pariatur neque numquam ex maxime, modi, sint sapiente? Eveniet, culpa similique.
+			</div>
 					
 				<?php include("../../components/footer.html"); ?> 			
 		</div>
 
     	<script src="../../plugins/bootstrap.bundle.min.js"></script>
+		<script src="../../../controllers/ajax/superadmin/searchComponent.js"></script>
+		
 		<script src="../../js/classie.js"></script>
 		<script src="../../js/gnmenu.js"></script>
 		<script>

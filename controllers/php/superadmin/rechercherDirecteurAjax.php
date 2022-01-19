@@ -13,9 +13,10 @@
         $superadmin = new SuperAdmin();
         $superadmin->setLogin($_SESSION['superadmin']);
         $e = $superadmin->recherchePharmacie($search);
-
-       //var_dump($e);
-      
+        $e = json_encode($e);
+       echo $e;
+      // $e = json_decode($e);
+      /*
        if(!empty($e)) {
             $_SESSION['searchSuperAdmin'] = $e;
             
@@ -23,7 +24,7 @@
         } else {
            header("Location:../../../views/pages/superadmin/404.php");
         }
-        
+        */
     }
 
 ?>

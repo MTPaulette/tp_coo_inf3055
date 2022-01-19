@@ -22,18 +22,19 @@
 	<!--script src="../../plugins/jquery-3.3.1.slim.min.js"></script-->
 	<script src="../../plugins/jquery1.1.min.js"></script>
 	<script src="../../js/modernizr.custom.js"></script>
-	<title>dashbord-adminPharmacie</title>
+	<title>dashbord-adminDirecteur</title>
 </head>
 <body>
 		<div class="">
 			<?php include("../../components/superadmin/header.php"); ?> 
 
+			<div id="ajaxSearch">
 			<?php include("../../components/superadmin/searchComponent.php"); ?> 
-
+			</div>
 
 
 			<?php include("../../components/footer.html"); ?> 			
-		</div><!-- /container -->
+		<!-- /container -->
 
 		<script>
 			$('#myModal').on('shown.bs.modal', function () {
@@ -43,6 +44,10 @@
 		<script src="../../../controllers/js/authentification.js"></script>
 		<script src="../../../controllers/ajax/superadmin/search.js"></script>
     	<script src="../../plugins/bootstrap.bundle.min.js"></script>
+		<script src="../../../controllers/ajax/superadmin/searchComponent.js"></script>
+		<script src="../../../controllers/ajax/superadmin/supprimerDirecteur.js"></script>
+		<!--script src="../../../controllers/ajax/superadmin/suspendreDirecteur.js"></script>
+		<script src="../../../controllers/ajax/superadmin/activerDirecteur.js"></script-->
 
 		<script src="../../js/classie.js"></script>
 		<script src="../../js/gnmenu.js"></script>
@@ -50,4 +55,4 @@
 			new gnMenu( document.getElementById( 'gn-menu' ) );
 		</script>
 </body>
-</html
+</html>

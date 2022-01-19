@@ -1,27 +1,29 @@
 
 <?php
     $src = '../../public/superadmin/upload/';
-    foreach($_SESSION['searchSuperAdmin'] as $search) {
+  // var_dump( ($_SESSION['searchSuperAdmin']));
 
-        $_SESSION['bjr'] = $search;
-        echo "<div class='mysearch-dark'>";
+    foreach($_SESSION['searchSuperAdmin'] as $search) {
+       
+        echo "<div class='mysearch-dark row no-gutters'>";
             echo "<div class='img'>";
-                /*echo "<p class='icon'><img src='./../../plugins/icons/person-circle.svg'></p>";*/
                 if(!$search['photo']) {
                     echo "<p class='pasDePhoto'><img src=''></p>";
                 }else {
                     echo "<img src=".$src.$search['photo']." alt=''>";
                 }
             echo "</div>";
-            echo "<div class='mycard-body'>";
-                echo '<h5> Nom: '.$search['nom'].'</h5>';
-                echo "<h5 class='mycard-title'>Localisation: ".$search['localisation']."</h5>";
-                echo "<h5 class='mycard-title'>Directeur: ".$search['loginDirecteur']."</h5>";
-                echo "<h5 class='mycard-title'>Etat: ".$search['etat']."</h5>";
-                echo "<h5 class='mycard-title'><span> creé le: ".$search['createdAt']."</span></h5>";
+            echo "<div class='card-body'>";
+
+
+            echo "<h5 class='card-title'> Nom: ".$search['nom']."</h5>";
+            echo "<p class='card-text'>Localisation: ".$search['localisation']."</p>";
+            echo "<p class='card-text'>Directeur: ".$search['loginDirecteur']."</p>";
+            echo "<p class='card-text'> <small class='text-muted'>Etat: ".$search['etat']."</small></p>";
+            echo "<p class='card-text'> <small class='text-muted'> créé le: ".$search['createdAt']."</small></p>";
 
                 /*modal pour la confirmation de l'activation */
-                echo "<button type='button' class='btn btn-success' data-toggle='modal' data-target='#activer'>activer</button>
+                echo "<button type='button' class='btn btn-success' id='btn-activer' data-toggle='modal' data-target='#activer'>activer</button>
                 <div class='modal' id='activer'>
                     <div class='modal-dialog'>
                         <div class='modal-content'>
@@ -46,7 +48,7 @@
                 </div>";
 
                 /*modal pour la confirmation de la suspendre */
-                echo "<button type='button' class='btn btn-secondary' data-toggle='modal' data-target='#suspendre'>suspendre</button>";
+                echo "<button type='button' class='btn btn-secondary' id='btn-suspendre' data-toggle='modal' data-target='#suspendre'>suspendre</button>";
                 echo "<div class='modal' id='suspendre'>
                     <div class='modal-dialog'>
                         <div class='modal-content'>
@@ -72,7 +74,7 @@
 
 
                 /*modal pour la confirmation de la suppression */
-                echo "<button type='button' class='btn btn-danger' data-toggle='modal' data-target='#supprimer'>supprimer</button>
+                echo "<button type='button' class='btn btn-danger' id='btn-supprimer' data-toggle='modal' data-target='#supprimer'>supprimer</button>
                 <div class='modal' id='supprimer'>
                     <div class='modal-dialog'>
                         <div class='modal-content'>

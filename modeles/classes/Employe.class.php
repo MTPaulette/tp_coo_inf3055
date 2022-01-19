@@ -267,7 +267,7 @@
 
 		public function afficheProduit(){
 			$bd = $this->connecter();
-			/*
+			
 			$var = $this->getLogin();
 			//recupere le login du directeur
 			$rep = $bd->prepare('SELECT loginDirecteur FROM employe WHERE login = ?');
@@ -281,60 +281,15 @@
 				$reponse = $bd->prepare('SELECT * FROM produit WHERE nomPharmacie = ?');
 				$reponse->execute(array($nomPharmacie['nom']));
 
-*/
-
-$reponse = $bd->prepare('SELECT * FROM produit');
-$reponse->execute(array());
 				$resultat =  $reponse->fetchAll();
 				return json_encode($resultat);
-				/*
-				foreach( $resultat as $produit){
-					$produits .= "<option value=".$produit['nomp'].">".$produit['nomp']."</option><br>";
-				}
-				
-				echo $produits;
-				*/
-				/*
 			}
 			
 			else{
 				return null;
 			}
-			*/
-		}
-
-		/*
-		public function afficheProduit(){
-			$bd = $this->connecter();
-			$var = $this->getLogin();
-			//recupere le login du directeur
-			$rep = $bd->prepare('SELECT loginDirecteur FROM employe WHERE login = ?');
-			$rep->execute(array($this->getLogin()));
-			$loginDirecteur = $rep->fetch();
-			//recupere le nom de la pharmacie
-			$rep2 = $bd->prepare('SELECT nom FROM pharmacie WHERE loginDirecteur = ?');
-			$rep2->execute(array($loginDirecteur[0]));
-			$nomPharmacie = $rep2->fetch();
-			if(!empty($nomPharmacie)){
-				$reponse = $bd->prepare('SELECT * FROM produit WHERE nomPharmacie = ?');
-				$reponse->execute(array($nomPharmacie['nom']));
-
-				$produits = '';
-				$resultat =  $reponse->fetchAll();
-				
-				foreach( $resultat as $produit){
-					$produits .= "<option value=".$produit['nomp'].">".$produit['nomp']."</option><br>";
-				}
-				
-				echo $produits;
-				
-			}
 			
-			else{
-				return null;
-			}
 		}
-*/
 
 	}
 ?>
