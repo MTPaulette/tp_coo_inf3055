@@ -1,26 +1,26 @@
 <?php
     $i = 1;
 
-        echo "<div class='tableau'>
-            <table class='table table-striped'>
-                <thead>
-                    <tr>";
-                    echo "<th scope='col'>Numero</th>";
-                    echo "<th scope='col'>Pharmacie</th>";
-                    echo "<th scope='col'>Localisation</th>";
-                    echo "<th scope='col'>Etat</th>";
-                    echo "<th scope='col'>Directeur</th>";
-                    echo "<th scope='col'></th>";
-                echo "</tr>
-                </thead>";
-    foreach($_SESSION['tousActifs'] as $ajout) {
-            echo "<tbody>
-                    <tr>";
-                echo "<th scope='row'>".$i++."</th>";
-                echo "<td>".$ajout["nom"]."</td>";
-                echo "<td>".$ajout['localisation']."</td>";
-                echo "<td>".$ajout['etat']."</td>";
-                echo "<td>".$ajout['loginDirecteur']."</td>";
+    echo "<div class='tableau'>
+    <table class='table table-striped'>
+        <thead>
+            <tr>";
+            echo "<th scope='col'>Numero</th>";
+            echo "<th scope='col'>Pharmacie</th>";
+            echo "<th scope='col'>Localisation</th>";
+            echo "<th scope='col'>Etat</th>";
+            echo "<th scope='col'>Directeur</th>";
+            echo "<th scope='col'></th>";
+        echo "</tr>
+        </thead>";
+foreach($_SESSION['tousActifs_superadmin'] as $ajout) {
+    echo "<tbody>
+            <tr>";
+        echo "<th scope='row'>".$i++."</th>";
+        echo "<td>".$ajout["nom"]."</td>";
+        echo "<td>".$ajout['localisation']."</td>";
+        echo "<td>".$ajout['etat']."</td>";
+        echo "<td>".$ajout['loginDirecteur']."</td>";
                 echo "<td><button type='button' class='btn btn-success' data-toggle='modal' data-target='#activer'>activer</button>
                 <div class='modal' id='activer'>
                     <div class='modal-dialog'>

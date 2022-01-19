@@ -9,18 +9,14 @@
         $superadmin->setLogin($_SESSION['superadmin']);
         $e = $superadmin->tousActifs();
 
-        //var_dump($e);
+     //   var_dump($e);
 
-       
-
-        if($e) {
-            $_SESSION['tousActifs'] = $e;
+        if(!empty($e)) {
+            $_SESSION['tousActifs_superadmin'] = $e;
             header("Location:../../../views/pages/superadmin/tousActifs.php");
         } else {
             header("Location:../../../views/pages/superadmin/404.php");
             
         }
-        
-    
 
 ?>

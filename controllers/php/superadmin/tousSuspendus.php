@@ -12,8 +12,8 @@
         //var_dump($e);
 
        
-        if($e) {
-            $_SESSION['tousSuspendus'] = $e;
+        if(!empty($e)) {
+            $_SESSION['tousSuspendus_superadmin'] = $e;
             header("Location:../../../views/pages/superadmin/tousSuspendus.php");
         } else {
             header("Location:../../../views/pages/superadmin/404.php");

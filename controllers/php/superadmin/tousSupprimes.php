@@ -13,8 +13,8 @@
 
        
 
-        if($e) {
-            $_SESSION['tousSupprimes'] = $e;
+        if(!empty($e)) {
+            $_SESSION['tousSupprimes_superadmin'] = $e;
             header("Location:../../../views/pages/superadmin/tousSupprimes.php");
         } else {
             header("Location:../../../views/pages/superadmin/404.php");

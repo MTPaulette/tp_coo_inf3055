@@ -1,26 +1,30 @@
 <?php
     $i = 1;
 
-        echo "<div class='tableau'>
-            <table class='table table-striped'>
-                <thead>
-                    <tr>";
-                    echo "<th scope='col'>Numero</th>";
-                    echo "<th scope='col'>Pharmacie</th>";
-                    echo "<th scope='col'>Localisation</th>";
-                    echo "<th scope='col'>Etat</th>";
-                    echo "<th scope='col'>Directeur</th>";
-                    echo "<th scope='col'></th>";
-                echo "</tr>
-                </thead>";
-    foreach($_SESSION['tousSupprimes_superadmin'] as $ajout) {
-            echo "<tbody>
-                    <tr>";
-                echo "<th scope='row'>".$i++."</th>";
-                echo "<td>".$ajout["nom"]."</td>";
-                echo "<td>".$ajout['localisation']."</td>";
-                echo "<td>".$ajout['etat']."</td>";
-                echo "<td>".$ajout['loginDirecteur']."</td>";
+    echo "<div class='tableau'>
+    <table class='table table-striped'>
+        <thead>
+            <tr>";
+            echo "<th scope='col'>Numero</th>";
+            echo "<th scope='col'>Nom et prenom</th>";
+            echo "<th scope='col'>Telephone</th>";
+            echo "<th scope='col'>Adresse</th>";
+            echo "<th scope='col'>Etat</th>";
+            echo "<th scope='col'>Créé le</th>";
+            echo "<th scope='col'>Directeur</th>";
+            echo "<th scope='col'></th>";
+        echo "</tr>
+        </thead>";
+foreach($_SESSION['tousSupprimes_directeur'] as $ajout) {
+    echo "<tbody>
+            <tr>";
+        echo "<th scope='row'>".$i++."</th>";
+        echo "<td>".$ajout["nom"]." ".$ajout["prenom"]."</td>";
+        echo "<td>".$ajout['telephone']."</td>";
+        echo "<td>".$ajout['adresse']."</td>";
+        echo "<td>".$ajout['etat']."</td>";
+        echo "<td>".$ajout['createdAt']."</td>";
+        echo "<td>".$ajout['loginDirecteur']."</td>";
                 echo "<td><button type='button' class='btn btn-success' data-toggle='modal' data-target='#activer'>activer</button>
                 <div class='modal' id='activer'>
                     <div class='modal-dialog'>
@@ -33,7 +37,7 @@
             
                             <div class='modal-body'>
                                 <span class='msg'>Vous vous apprettez à effectuer une operation sensible. Veuillez entrer votre mot de passe pour confirmer</span>
-                                <form class='form-inline' action='../../../controllers/php/superadmin/activerDirecteur.php'  method='post' name='rechercher'>";
+                                <form class='form-inline' action='../../../controllers/php/directeur/activerDirecteur.php'  method='post' name='rechercher'>";
                                 echo "<input type='hidden' name='directeurSelectionne' value=".$ajout['nom'].">";
                                 echo "<div class='form-group mx-sm-3 mb-2'>
                                         <input type='password' class='form-control' id='password' name='password' placeholder=''>
@@ -56,7 +60,7 @@
             
                             <div class='modal-body'>
                                 <span class='msg'>Vous vous apprettez à effectuer une operation sensible. Veuillez entrer votre mot de passe pour confirmer</span>
-                                <form class='form-inline' action='../../../controllers/php/superadmin/supprimer.php'  method='post' name='rechercher'>";
+                                <form class='form-inline' action='../../../controllers/php/directeur/supprimer.php'  method='post' name='rechercher'>";
                                 echo "<input type='hidden' name='directeurSelectionne' value=".$ajout['nom'].">";
                                 echo "<div class='form-group mx-sm-3 mb-2'>
                                         <input type='password' class='form-control' id='password' name='password' placeholder=''>

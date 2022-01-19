@@ -1,5 +1,5 @@
 <?php session_start() ;
-	if(!$_SESSION['superadmin']) {
+	if(!$_SESSION['directeur']) {
     	header("Location:login.php");
 	}
 ?>
@@ -16,7 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="../../styles/css/ajouterProduit.css" />
 	
 	<script src="../../plugins/jquery1.1.min.js"></script>
-	<!--script src="../../../controllers/ajax/superadmin/search.js"></script-->
+	<!--script src="../../../controllers/ajax/directeur/search.js"></script-->
     <link rel="stylesheet" href="../../styles/css/footer.css">
 	
 	
@@ -25,10 +25,10 @@
 </head>
 <body>
 		<div class="main">
-			<?php include("../../components/superadmin/header.php"); ?> 
+			<?php include("../../components/directeur/header.php"); ?> 
  
 
-			<?php include("../../components/superadmin/tousActifs.php"); ?> 
+			<?php include("../../components/directeur/tousSuspendus.php"); ?> 
 					
 				<?php include("../../components/footer.html"); ?> 			
 		</div>

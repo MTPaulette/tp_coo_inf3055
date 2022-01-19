@@ -27,7 +27,7 @@
  
 
 			<div class="main-content">
-				<h1><span>DESOLE..... la recherche faite n'a pas été trouvée</span></h1>
+				<h1><span>DESOLE..... l'élément n'a pas été trouvé</span></h1>
 			</div>
 					
 				<?php include("../../components/footer.html"); ?> 			

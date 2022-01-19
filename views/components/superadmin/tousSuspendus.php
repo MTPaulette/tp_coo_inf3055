@@ -13,7 +13,7 @@
                     echo "<th scope='col'></th>";
                 echo "</tr>
                 </thead>";
-    foreach($_SESSION['tousSuspendus'] as $ajout) {
+    foreach($_SESSION['tousSuspendus_superadmin'] as $ajout) {
             echo "<tbody>
                     <tr>";
                 echo "<th scope='row'>".$i++."</th>";

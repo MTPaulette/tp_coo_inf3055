@@ -254,13 +254,15 @@
 				return false;
 			}
 		}
-		public function employerActif(){
+
+		public function tousActifs(){
 			$bd = $this->connecter();
-			$reponse = $bd->prepare('SELECT * FROM employe WHERE etat = ?');	
-			$reponse->execute(array('poste');
-			$employe = $reponse->fetchAll();
-			return $employe;
+			$reponse = $bd->prepare('SELECT * FROM pharmacie WHERE etat = ?');	
+			$reponse->execute(array('disponible'));
+			$pharmacie = $reponse->fetchAll();
+			return $pharmacie;
 		}
+
 		public function tousSupprimes(){
 			$bd = $this->connecter();
 			$reponse = $bd->prepare('SELECT * FROM pharmacie WHERE etat = ? ');	
@@ -268,6 +270,7 @@
 			$pharmacie = $reponse->fetchAll();
 			return $pharmacie;
 		}
+
 		public function tousSuspendus(){
 			$bd = $this->connecter();
 			$reponse = $bd->prepare('SELECT * FROM pharmacie WHERE etat = ? ');	

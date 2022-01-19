@@ -16,9 +16,9 @@
 									<a class="gn-icon gn-icon-download">Gestion Employe</a>
 									<ul class="gn-submenu">
 										<li><a class="gn-icon gn-icon-addE" href="../../pages/directeur/ajouterEmploye.php">Ajouter E</a></li>
-										<li><a class="gn-icon gn-icon-deleteE">Supprimer E</a></li>
-										<li><a class="gn-icon gn-icon-suspendE">Suspendre E</a></li>
-										<li><a class="gn-icon gn-icon-restoreE">Restaurer E</a></li>
+										<li><a class="gn-icon gn-icon-deleteE" href="../../../controllers/php/directeur/tousSupprimes.php">Supprimer E</a></li>
+										<li><a class="gn-icon gn-icon-suspendE" href="../../../controllers/php/directeur/tousSuspendus.php">Suspendre E</a></li>
+										<li><a class="gn-icon gn-icon-restoreE" href="../../../controllers/php/directeur/tousActifs.php">Restaurer E</a></li>
 									</ul>
 								</li>
 								<li>

@@ -148,7 +148,7 @@
 
 		}
 
-		public function employerSupprime(){
+		public function tousSupprimes(){
 			$bd = $this->connecter();
 			$reponse = $bd->prepare('SELECT * FROM employe WHERE etat = ?  AND loginDirecteur = ?');	
 			$reponse->execute(array('supprime', $this->getLogin()));
@@ -156,7 +156,7 @@
 			return $employe;
 		}
 
-		public function employerSuspendue(){
+		public function tousSuspendus(){
 			$bd = $this->connecter();
 			$reponse = $bd->prepare('SELECT * FROM employe WHERE etat = ? AND loginDirecteur = ?');	
 			$reponse->execute(array('suspendu', $this->getLogin()));
@@ -164,6 +164,15 @@
 			return $employe;
 		}
 		
+
+		public function tousActifs(){
+			$bd = $this->connecter();
+			$reponse = $bd->prepare('SELECT * FROM employe WHERE etat = ? AND loginDirecteur = ?');	
+			$reponse->execute(array('poste', $this->getLogin()));
+			$employe = $reponse->fetchAll();
+			return $employe;
+		}
+
 		public function rechercherEmploye($login){
 			$bd = $this->connecter();
 			$reponse = $bd->prepare('SELECT * FROM employe WHERE login LIKE ? and loginDirecteur = ?');	

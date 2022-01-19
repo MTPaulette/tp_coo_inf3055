@@ -25,15 +25,9 @@
 									</ul>
 								</li>
 								<li>
-									<ul class="gn-submenu">
-										<li><a class="gn-icon gn-icon-listol" href="../../../controllers/php/employe/releveVente.php">Relevé des ventes</a></li>
-										<li><a class="gn-icon gn-icon-liststars"  href="../../../controllers/php/employe/releveAjout.php">Relevé des ajouts</a></li>
-									</ul>
-								</li>
-								<li>
 									<a class="gn-icon gn-icon-parameter">Parametre</a>
 									<ul class="gn-submenu">
-										<li><a class="gn-icon gn-icon-logout" href="../../../controllers/php/employe/logout.php">Deconnexion</a></li>
+										<li><a class="gn-icon gn-icon-logout" href="../../../controllers/php/superadmin/logout.php">Deconnexion</a></li>
 									</ul>
 								</li>
 							</ul>
