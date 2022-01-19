@@ -2,7 +2,7 @@
 <?php
     $src = '../../public/superadmin/upload/';
   // var_dump( ($_SESSION['searchSuperAdmin']));
-
+    echo "<p id='error'></p>";
     foreach($_SESSION['searchSuperAdmin'] as $search) {
        
         echo "<div class='mysearch-dark row no-gutters'>";
@@ -73,8 +73,11 @@
                 </div>";
 
 
-                /*modal pour la confirmation de la suppression */
-                echo "<button type='button' class='btn btn-danger' id='btn-supprimer' data-toggle='modal' data-target='#supprimer'>supprimer</button>
+                /*modal pour la confirmation de la suppression
+
+                action='../../../controllers/php/superadmin/supprimerDirecteur.php'
+                */
+                echo "<button type='button' class='btn btn-danger'  data-toggle='modal' data-target='#supprimer'>supprimer</button>
                 <div class='modal' id='supprimer'>
                     <div class='modal-dialog'>
                         <div class='modal-content'>
@@ -86,11 +89,11 @@
             
                             <div class='modal-body'>
                                 <span class='msg'>Vous vous apprettez à effectuer une operation sensible. Veuillez entrer votre mot de passe pour confirmer</span>
-                                <form class='form-inline' action='../../../controllers/php/superadmin/supprimerDirecteur.php'  method='post'>";
-                                echo "<input type='hidden' name='directeurSelectionne' value=".$search['nom'].">";
+                                <form class='form-inline'   method='post'>";
+                                echo "<input type='hidden' name='directeurSelectionne' id='hidden-delete-password' value=".$search['nom'].">";
                                 echo "<div class='form-group mx-sm-3 mb-2'>
-                                        <input type='password' class='form-control' id='password' name='password' placeholder=''>
-                                        <button type='submit' class='btn btn-danger'>supprimer</button>
+                                        <input type='password' class='form-control' id='input-password-delete' name='password' placeholder=''>
+                                        <button type='submit' id='btn-supprimer' class='btn btn-danger' onclick='supprimer(this)'>supprimer</button>
                                     </div>
             
                                 </form>
