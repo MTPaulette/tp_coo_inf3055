@@ -1,7 +1,7 @@
 # tp_coo_inf3055
 tp de consolidation des notions de coo
 
-| NOM || MATRICULE || login github |
+| NOM || MATRICULE || compte github |
 
 | MAYOGUE TADJUIDJE PAULETTE || 18T2647 || @MTPaulette |
 
