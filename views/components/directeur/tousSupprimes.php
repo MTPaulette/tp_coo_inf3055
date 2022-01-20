@@ -37,8 +37,8 @@ foreach($_SESSION['tousSupprimes_directeur'] as $ajout) {
             
                             <div class='modal-body'>
                                 <span class='msg'>Vous vous apprettez à effectuer une operation sensible. Veuillez entrer votre mot de passe pour confirmer</span>
-                                <form class='form-inline' action='../../../controllers/php/directeur/activerDirecteur.php'  method='post' name='rechercher'>";
-                                echo "<input type='hidden' name='directeurSelectionne' value=".$ajout['nom'].">";
+                                <form class='form-inline' action='../../../controllers/php/directeur/activerEmploye.php'  method='post' name='rechercher'>";
+                                echo "<input type='hidden' name='employeSelectionne' value=".$ajout['login'].">";
                                 echo "<div class='form-group mx-sm-3 mb-2'>
                                         <input type='password' class='form-control' id='password' name='password' placeholder=''>
                                         <button type='submit' class='btn btn-success'>activer</button>
@@ -48,29 +48,6 @@ foreach($_SESSION['tousSupprimes_directeur'] as $ajout) {
                         </div>
                     </div>
                 </div>";
-                echo "<button type='button' class='btn btn-danger' data-toggle='modal' data-target='#supprimer'>supprimer</button>
-                <div class='modal' id='supprimer'>
-                    <div class='modal-dialog'>
-                        <div class='modal-content'>
-            
-                            <div class='modal-header'>
-                                <h5 class='modal-title attention'>ATTENTION!!!!</h5>
-                                <button type='button' class='close' data-dismiss='modal'>&times;</button>
-                            </div>
-            
-                            <div class='modal-body'>
-                                <span class='msg'>Vous vous apprettez à effectuer une operation sensible. Veuillez entrer votre mot de passe pour confirmer</span>
-                                <form class='form-inline' action='../../../controllers/php/directeur/supprimer.php'  method='post' name='rechercher'>";
-                                echo "<input type='hidden' name='directeurSelectionne' value=".$ajout['nom'].">";
-                                echo "<div class='form-group mx-sm-3 mb-2'>
-                                        <input type='password' class='form-control' id='password' name='password' placeholder=''>
-                                        <button type='submit' class='btn btn-danger'>supprimer</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div></td>";
                 echo "</tr>
                 </tbody>";
 

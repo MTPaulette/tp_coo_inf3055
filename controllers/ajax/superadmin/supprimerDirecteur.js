@@ -1,6 +1,7 @@
 
     function supprimer(e){
         console.log(e)
+        alert(e.getAttribute('id'));
         
         console.log(e.attr('id'));
 //$(function () {
@@ -27,30 +28,10 @@
             },
             success: function(response) {
                 console.log("+++++++++++++++++++++++++++++++++++++++++");
-               // console.log(response);
-                /*
-                if(response) {
-                    alert("bjr");
-                }
-                /*
-                //$(produits) = produits;
-                var html = '';
-                console.log(produits);
-                $.each(produits, function(i,produit) {
-                    console.log(produit)
-                    //html += "<option value="+produit[i]+">"+produit[2]+"</option><br>";
-                    html += "<option value="+produit['nomp']+">"+produit['nomp']+"</option><br>";
-                })
-				
-                console.log(html);
-                $('#nom').prepend(html)	
-                */
-            },
+                
+            }
             
         })
     }
-    //})
-//})
-   
-//})
  }
+ 

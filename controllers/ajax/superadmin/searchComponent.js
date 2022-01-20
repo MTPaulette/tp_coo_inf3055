@@ -4,7 +4,7 @@ $(function () {
     $('#search').keyup(function(e){
         var search = $('#search').val();
         //alert(search.length)
-        if(search.length >= 3){
+        if(search.length >= 2){
         $.ajax({
             url: " ../../../controllers/php/superadmin/rechercherDirecteurAjax.php",
             type: "POST",
@@ -20,11 +20,11 @@ $(function () {
                 //$(response) = response;
                 var html = '';
                 console.log("------------------------------------------------------");
-                $(location).attr("href","../../../views/pages/superadmin/searchComponent.php");
+                $(location).attr("href","./../../../views/pages/superadmin/searchComponent.php");
 
                 //console.log(response);
                 $.each(response, function(i,element) {
-                    console.log("------------------------------------------------------");
+                   /* console.log("------------------------------------------------------");
                     console.log(element);
 
 

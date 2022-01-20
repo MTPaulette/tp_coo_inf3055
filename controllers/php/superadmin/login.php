@@ -14,7 +14,6 @@
         $e = $superadmin->authentifier($login,$password);
         
         if(!empty($e)) {
-            echo "njr";
             $_SESSION['superadmin'] = $e->getlogin();
             //var_dump($_SESSION['superadmin']->getLogin());
             header("Location:../../../views/pages/superadmin/dashboard.php");

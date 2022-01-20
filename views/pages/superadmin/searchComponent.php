@@ -7,7 +7,7 @@
 	}
 ?>
 <!DOCTYPE html>
-<html  lang="fr">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,12 +42,7 @@
 })
 		</script>
 		<script src="../../../controllers/js/authentification.js"></script>
-		<script src="../../../controllers/ajax/superadmin/search.js"></script>
     	<script src="../../plugins/bootstrap.bundle.min.js"></script>
-		<script src="../../../controllers/ajax/superadmin/searchComponent.js"></script>
-		<script src="../../../controllers/ajax/superadmin/supprimerDirecteur.js"></script>
-		<!--script src="../../../controllers/ajax/superadmin/suspendreDirecteur.js"></script>
-		<script src="../../../controllers/ajax/superadmin/activerDirecteur.js"></script-->
 
 		<script src="../../js/classie.js"></script>
 		<script src="../../js/gnmenu.js"></script>
@@ -56,3 +51,4 @@
 		</script>
 </body>
 </html>
+

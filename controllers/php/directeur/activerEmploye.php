@@ -8,6 +8,7 @@
         $motDePasse = $_POST['password'];
         $selectionne = $_POST['employeSelectionne'];
 
+
         //$directeur = new Directeur($nom, $prenom, $telephone,$adresse, $login, $motDePasse);
         $directeur = new Directeur();
         $directeur->setLogin($_SESSION['directeur']);

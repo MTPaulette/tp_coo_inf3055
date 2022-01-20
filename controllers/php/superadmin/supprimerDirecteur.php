@@ -8,25 +8,22 @@
         $motDePasse = $_POST['password'];
         $selectionne = $_POST['directeurSelectionne'];
 
-        echo($selectionne);
 
         //$directeur = new Directeur($nom, $prenom, $telephone,$adresse, $login, $motDePasse);
         $superadmin = new SuperAdmin();
         $e = $superadmin->supprimerPharmacie($motDePasse, $selectionne);
-        //echo $e;
-       /* var_dump($e);
-/*
-        $_SESSION['searchSuperAdmin'] = $e;
+       // var_dump($e);
 
         if($e) {
+        $_SESSION['searchSuperAdmin'] = $e;
             header("Location:../../../views/pages/superadmin/searchComponent.php");
         } else {
             echo ("aucun result");
-            /*
-            header("Location:../../../views/pages/superadmin/login.php");
+            
+            header("Location:../../../views/pages/superadmin/404.php");
             
         }
-        */
+        
     }
     
 

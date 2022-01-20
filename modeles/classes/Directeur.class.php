@@ -75,7 +75,7 @@
 			if ($this->confirmerMotDePasse($motDePasse, $table)) {
 				try {
 					$req = $bd->prepare('UPDATE employe SET etat = ? WHERE login =?');
-					$req->execute(array('supprime',$login));
+					$req->execute(array('supprimer',$login));
 					if($req){
 						return true;
 					}
@@ -130,7 +130,7 @@
 					$date = $dateJour->format('y-m-d H:i:s');
 					$reponse = $bd->prepare('UPDATE employe SET etat = ?, modifiedAt = ? WHERE login = ?');
 					$reponse->execute(array('poste',$date,$login));
-					if($req){
+					if(!empty($reponse)){
 						return true;
 					}
 					else{
@@ -151,7 +151,7 @@
 		public function tousSupprimes(){
 			$bd = $this->connecter();
 			$reponse = $bd->prepare('SELECT * FROM employe WHERE etat = ?  AND loginDirecteur = ?');	
-			$reponse->execute(array('supprime', $this->getLogin()));
+			$reponse->execute(array('supprimer', $this->getLogin()));
 			$employe = $reponse->fetchAll();
 			return $employe;
 		}
@@ -208,7 +208,7 @@
 				}
 				else{
 					//echo 'login incorect ou pharmacie suspendu';
-					return false;
+					//return false;
 				}
 			
 		}

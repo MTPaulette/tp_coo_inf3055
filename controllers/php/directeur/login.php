@@ -12,6 +12,8 @@
 
         $directeur = new Directeur();
         $e = $directeur->authentifier($login,$password);
+        //var_dump($e);
+        
         
         if(!empty($e)) {
             $_SESSION['directeur'] = $e->getlogin();

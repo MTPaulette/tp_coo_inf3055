@@ -12,19 +12,18 @@
         $superadmin = new SuperAdmin();
         $e = $superadmin->activerPharmacie($motDePasse, $selectionne);
 
-        var_dump($e);
-/*
+        //var_dump($e);
+
         $_SESSION['searchSuperAdmin'] = $e;
 
         if($e) {
             header("Location:../../../views/pages/superadmin/searchComponent.php");
         } else {
             echo ("aucun result");
-            /*
-            header("Location:../../../views/pages/superadmin/login.php");
+            header("Location:../../../views/pages/superadmin/404.php");
             
         }
-        */
+        
     }
     
 

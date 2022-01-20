@@ -11,7 +11,7 @@
 
         //var_dump($e);
 
-       
+      
 
         if(!empty($e)) {
             $_SESSION['tousSupprimes_directeur'] = $e;

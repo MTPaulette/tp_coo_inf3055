@@ -3,24 +3,23 @@
     $src = '../../public/directeur/upload/';
     foreach($_SESSION['searchDirecteur'] as $search) {
 
-        $_SESSION['bjr'] = $search;
-        echo "<div class='mysearch-dark'>";
-            echo "<div class='img'>";
-                /*echo "<p class='icon'><img src='./../../plugins/icons/person-circle.svg'></p>";*/
-                if(!$search['photo']) {
-                    echo "<p class='pasDePhoto'><img src=''></p>";
-                }else {
-                    echo "<img src=".$src.$search['photo']." alt=''>";
-                }
-            echo "</div>";
-            echo "<div class='mycard-body'>";
-                echo '<h5> Nom: '.$search['nom'].'</h5>';
-                echo '<h5> Prenom: '.$search['prenom'].'</h5>';
-                echo '<h5> telephone: '.$search['telephone'].'</h5>';
-                echo "<h5 class='mycard-title'>Adresse: ".$search['adresse']."</h5>";
-                echo "<h5 class='mycard-title'>Directeur: ".$search['loginDirecteur']."</h5>";
-                echo "<h5 class='mycard-title'>Etat: ".$search['etat']."</h5>";
-                echo "<h5 class='mycard-title'><span> creé le: ".$search['createdAt']."</span></h5>";
+        echo "<div class='mysearch-dark row no-gutters'>";
+        echo "<div class='img'>";
+            if(!$search['photo']) {
+                echo "<p class='pasDePhoto'><img src=''></p>";
+            }else {
+                echo "<img src=".$src.$search['photo']." alt=''>";
+            }
+        echo "</div>";
+        echo "<div class='card-body'>";
+
+
+        echo "<h5 class='card-title'> Nom: ".$search['nom']." ".$search['prenom']."</h5>";
+        echo "<p class='card-text'>Telephone: ".$search['telephone']."</p>";
+        echo "<p class='card-text'>Adresse: ".$search['adresse']."</p>";
+        echo "<p class='card-text'>Directeur: ".$search['loginDirecteur']."</p>";
+        echo "<p class='card-text'> <small class='text-muted'>Etat: ".$search['etat']."</small></p>";
+        echo "<p class='card-text'> <small class='text-muted'> créé le: ".$search['createdAt']."</small></p>";
 
                 /*modal pour la confirmation de l'activation */
                 echo "<button type='button' class='btn btn-success' data-toggle='modal' data-target='#activer'>activer</button>
