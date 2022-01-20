@@ -9,7 +9,7 @@
                     echo "<th scope='col'>Numero</th>";
                     echo "<th scope='col'>Produit</th>";
 
-                    echo "<th scope='col'>Prix Total</th>";
+                    echo "<th scope='col'>Prix Totale</th>";
                     echo "<th scope='col'>Quantite</th>";
 
                     echo "<th scope='col'>Jour de la vente </th>";

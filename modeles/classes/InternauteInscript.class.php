@@ -1,7 +1,7 @@
 <?php
-    require_once('../interface/Inscription.Interface.php');
-    require_once('../interface/Connexion.Interface.php');
-    include_once('Internaute.class.php');
+    require_once(__DIR__.'/../interface/Inscription.Interface.php');
+    require_once(__DIR__.'/../interface/Connexion.Interface.php');
+    include_once(__DIR__.'/Internaute.class.php');
     class InternauteInscript extends Internaute implements Inscription, Connexion{
         public function creerCompte($nom, $prenom, $tel, $adresse,$photo, $login, $password ){
 			$bd = $this->connecter();
@@ -71,11 +71,11 @@
 				$nomPharmacie = $resultat['nom'];
 				$localisation = $resultat['localisation'];
 				//je recupère le produit se trouvant dans une pharmacie ouverte 
-				$reponse2 = $bd->prepare('SELECT nomp, prix, nomPharmacie FROM produit WHERE  nomPharmacie = ?  AND quantite > ?');
+				$reponse2 = $bd->prepare('SELECT * FROM produit WHERE  nomPharmacie = ?  AND quantite > ?');
 				$reponse2->execute(array($nomPharmacie,0));
 				while($produit = $reponse2->fetch()){
 					//je stock le produit dans une liste
-					$liste = array($produit['nomp'],$produit['prix'],$produit['nomPharmacie'],$localisation);
+					$liste = array($produit['photo'],$produit['nomp'],$produit['prix'],$prouit['quantite'],$produit['nomPharmacie'],$localisation);
 					$listeProduit[] = $liste;
 					
 				}
@@ -97,11 +97,11 @@
 				$nomPharmacie = $resultat['nom'];
 				$localisation = $resultat['localisation'];
 				//je recupère le produit se trouvant dans une pharmacie ouverte 
-				$reponse2 = $bd->prepare('SELECT nomp, prix, nomPharmacie FROM produit WHERE nomP = ? AND nomPharmacie = ?  AND quantite > ?');
-				$reponse2->execute(array($nomProduit,$nomPharmacie,0));
+				$reponse2 = $bd->prepare('SELECT * FROM produit WHERE nomP LIKE ? AND nomPharmacie = ?  AND quantite > ?');
+				$reponse2->execute(array('%'.$nomProduit.'%',$nomPharmacie,0));
 				while($produit = $reponse2->fetch()){
 					//je stock le produit dans une liste
-					$liste = array($produit['nomp'],$produit['prix'],$produit['nomPharmacie'],$localisation);
+					$liste = array($produit['nomp'],$produit['prix'],$produit['photo'],$produit['quantite'],$produit['type'],$produit['description'],$produit['nomPharmacie'],$localisation);
 					$listeProduit[] = $liste;
 					
 				}

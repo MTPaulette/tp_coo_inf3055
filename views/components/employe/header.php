@@ -38,7 +38,7 @@
 				</li>
 				<span class="welcome" style="margin-left: 37%"> <?php echo '<span> Hello '.$_SESSION['employe'].'</span>';?>  </span>
 				
-				<li><a href="../../pages/internaute/Accueil.html">Pharmacie</a></li>
+				<li><a href="../../pages/internaute/Accueil.php">Pharmacie</a></li>
 			</ul>
 			
 			<!--ul >
