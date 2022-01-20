@@ -59,7 +59,7 @@
             <?php 
                 try
                 {
-                    $bdd = new PDO('mysql:host=localhost;dbname=tp_pharmacie', 'root', '');    
+                    $bdd = new PDO('mysql:host=localhost;dbname=tp_coo_inf3055', 'root', '');    
                 }
                 catch (Exception $e)
                 {
