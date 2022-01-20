@@ -56,7 +56,7 @@
             
                             <div class='modal-body'>
                                 <span class='msg'>Vous vous apprettez à effectuer une operation sensible. Veuillez entrer votre mot de passe pour confirmer</span>
-                                <form class='form-inline' action='../../../controllers/php/superadmin/supprimer.php'  method='post' name='rechercher'>";
+                                <form class='form-inline' action='../../../controllers/php/superadmin/supprimerDirecteur.php'  method='post' name='rechercher'>";
                                 echo "<input type='hidden' name='directeurSelectionne' value=".$ajout['nom'].">";
                                 echo "<div class='form-group mx-sm-3 mb-2'>
                                         <input type='password' class='form-control' id='password' name='password' placeholder=''>
