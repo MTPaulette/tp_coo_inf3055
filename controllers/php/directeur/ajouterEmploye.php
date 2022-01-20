@@ -74,7 +74,7 @@
           header("Location:../../../views/pages/directeur/dashboard.php");
       } 
       else {
-          header("Location:../../../views/pages/directeur/login.php");
+          header("Location:../../../views/pages/directeur/erreur.php");
       }
       
     }

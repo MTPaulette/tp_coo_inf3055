@@ -32,13 +32,7 @@
 
 		public function creerCompte($nom,$prenom,$telephone,$adresse,$photo,$login,$motDePasse){
 			
-			//recherche si le login et mot de passe existe
-			/*$reponse = $bd->prepare('SELECT nom FROM employe WHERE login = ?');
-			$reponse->execute(array($login));*/
 			$resulat = $this->check($login,'employe');
-			//recherche pour recupérer l'id du directeur
-			/*$reponse2 = $bd->prepare('SELECT id FROM directeur WHERE login = ?');
-			$reponse2->execute(array($loginD));*/
 			$loginDirecteur = $this->check($this->getLogin(),'directeur');
 			if(empty($resulat) and !empty($loginDirecteur)){
 				$bd = $this->connecter();

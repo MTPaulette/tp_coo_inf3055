@@ -76,20 +76,7 @@
         if($e) {
             header("Location:../../../views/pages/superadmin/dashboard.php");
         } else {
-            header("Location:../../../views/pages/superadmin/login.php");
+            header("Location:../../../views/pages/superadmin/erreur.php");
         }
     }
-?>
-
-
-<!--?php
-/*
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL|E_STRICT);
-    require("../../php/traitement.php");
-    if(isset($_POST['titre'])and isset($_POST['contenu'])and isset($_FILES['fic'])){
-
-		  $titre   = $_POST['titre'];
-      $contenu   = $_POST['contenu'];
-      }
 ?>

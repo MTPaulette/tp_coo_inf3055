@@ -13,7 +13,7 @@
         $directeur = new Directeur();
         $directeur->setLogin($_SESSION['directeur']);
         $e = $directeur->rechercherEmploye($search);
-        var_dump($e);
+        //var_dump($e);
 
         if($e) {
             $_SESSION['searchDirecteur'] = $e;

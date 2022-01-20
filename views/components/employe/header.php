@@ -18,9 +18,6 @@
 									<ul class="gn-submenu">
 										<li><a class="gn-icon gn-icon-addE" href="../../pages/employe/ajouterProduit.php">Ajouter P</a></li>
 										<li><a class="gn-icon gn-icon-addE" href="../../pages/employe/vendreProduit.php">Vendre P</a></li>
-										<li><a class="gn-icon gn-icon-deleteE">Supprimer p</a></li>
-										<li><a class="gn-icon gn-icon-suspendE">Suspendre E</a></li>
-										<li><a class="gn-icon gn-icon-restoreE">Restaurer E</a></li>
 									</ul>
 								</li>
 								<li>

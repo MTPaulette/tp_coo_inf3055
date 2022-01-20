@@ -20,7 +20,7 @@
         } else {
             echo ("aucun result");
             
-            header("Location:../../../views/pages/superadmin/404.php");
+            header("Location:../../../views/pages/superadmin/erreur.php");
             
         }
         

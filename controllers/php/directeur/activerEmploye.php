@@ -9,7 +9,6 @@
         $selectionne = $_POST['employeSelectionne'];
 
 
-        //$directeur = new Directeur($nom, $prenom, $telephone,$adresse, $login, $motDePasse);
         $directeur = new Directeur();
         $directeur->setLogin($_SESSION['directeur']);
         $e = $directeur->activerEmploye($motDePasse, $selectionne);
@@ -18,7 +17,7 @@
             //$_SESSION['searchSuperAdmin'] = $e;
             header("Location:../../../views/pages/directeur/rechercherEmploye.php");
         } else {
-            //header("Location:../../../views/pages/directeur/404.php");
+            header("Location:../../../views/pages/directeur/erreur.php");
             
         }
         

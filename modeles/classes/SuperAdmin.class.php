@@ -65,27 +65,7 @@
 
 		}
 
-		//authentification du superAdmin
-	/*
-		public function authentifier($login, $password){
 
-			$bdd = $this->connecter();
-			$req = $bdd->prepare('SELECT * FROM superadmin WHERE login = ? AND motDePasse = ?');
-			$req->execute(array($login,$password));
-			$param = $req->fetch();
-			if(empty($param))
-			{
-            	return false;
-			}
-			else
-			{
-		        return $this->creerSuperAdmin($param['nom'],$param['prenom'],$param['telephone'],$param['adresse'],$param['login']);
-            	//return true;
-
-			}
-
-		}
-*/
 		//deconnecion
 		public function deconnecter(){
 			$bd = $this->connecter();
@@ -164,25 +144,25 @@
 						$reponse3 = $bd->prepare('INSERT INTO pharmacie(nom, localisation,photo, createdAt, ouvert, etat, loginDirecteur, loginSuperAdmin) VALUES (?,?,?,?,?,?,?,?)');
 						$reponse3->execute(array($nom, $localisation,addslashes($photo), $date, 1,'disponible',$Directeur['login'],$SuperAdmin['login']));
 						echo 'creation de la pharmacie et du directeur reussi';
-						return 1;
+						return true;
 					}
 					else{
 						echo 'en cas décgec de création de la pharmacie';
-						return 2;
+						return false;
 					}
 					echo 'ajout du directeur reussi';
-					return 3 ;
+					return false;
 				}
 				else{
 					echo 'en cas déchec dajout de directeur';
-					return 4;
+					return false;
 				}
 				echo 'lorsquon trouve ladmin';
-				return 5;
+				return false;
 			}
 			else{
 				echo 'lorsque ladmin nexiste pas';
-				return 6;
+				return false;
 			}
 		}
 
@@ -285,23 +265,6 @@
 			$reponse->execute(array('%'.$nomPharmacie.'%'));
 			$pharmacie = $reponse->fetchAll();
 			return $pharmacie;
-
-//return json_encode($pharmacie);
-			/*
-			if(!empty($pharmacie)){
-
-				while($pharmacie){
-                    // on affiche le message (l'id servira plus tard)
-                    echo "<p id=\"" . $pharmacie[1] . "\">" . $pharmacie[2] . " dit : " . $pharmacie[3] . "</p>";
-                }
-
-                $pharmacie->closeCursor();
-			
-			}
-			else{
-				return null;
-			}
-			*/
 		}
 		
 	}

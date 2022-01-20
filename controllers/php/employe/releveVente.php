@@ -7,7 +7,7 @@
         $employe = new Employe();
         $employe->setLogin($_SESSION['employe']);
         $e = $employe->releveVente();
-       // var_dump($e);
+       var_dump($e);
 
         if(!empty($e)) {
             $_SESSION['releveVente'] = $e;

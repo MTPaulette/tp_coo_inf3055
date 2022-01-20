@@ -9,10 +9,8 @@
                     echo "<th scope='col'>Numero</th>";
                     echo "<th scope='col'>NomEmploye</th>";
                     echo "<th scope='col'>PrenomEmploye</th>";
-                    echo "<th scope='col'>produit</th>";
-
+                    echo "<th scope='col'>Produit</th>";
                     echo "<th scope='col'>Prix</th>";
-
                     echo "<th scope='col'>Jour de la vente </th>";
                     echo "<th scope='col'>Heure de la vente</th>";
                 echo "</tr>

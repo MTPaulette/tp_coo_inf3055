@@ -13,15 +13,16 @@
         $employe = new Employe();
         $employe->setLogin($_SESSION['employe']);
         $e = $employe->vendre($nom,$quantite);
-        var_dump($e);
-/*
+        //var_dump($e);
+
         if($e) {
             $_SESSION['produitRecherche'] = $e;
-            header("Location:../../../views/pages/employe/rechercherProduit.php");
+            header("Location:../../../views/pages/employe/releveVente.php");
+            //header("Location:../../../views/pages/employe/rechercherProduit.php");
         } else {
-            header("Location:../../../views/pages/employe/404.php");
+            header("Location:../../../views/pages/employe/erreur.php");
         }
-*/
+
     }
 
 ?>

@@ -6,30 +6,32 @@
                 <thead>
                     <tr>";
                     echo "<th scope='col'>Numero</th>";
-                    echo "<th scope='col'>NomEmploye</th>";
-                    echo "<th scope='col'>PrenomEmploye</th>";
-                    echo "<th scope='col'>produit</th>";
+                    echo "<th scope='col'>Produit</th>";
+                    echo "<th scope='col'>Description</th>";
+                    echo "<th scope='col'>Prix</th>";
+                    echo "<th scope='col'>Type</th>";
                     echo "<th scope='col'>Ancienne qte</th>";
                     echo "<th scope='col'>Qte ajoutée</th>";
-                    echo "<th scope='col'>Nouvelle qte</th>";
-                    echo "<th scope='col'>Type</th>";
-                    echo "<th scope='col'>Prix</th>";
+                    echo "<th scope='col'>Employe</th>";
+                    echo "<th scope='col'>Pharmacie</th>";
                     echo "<th scope='col'>Date</th>";
+                    echo "<th scope='col'>Heure</th>";
                 echo "</tr>
                 </thead>";
     foreach($_SESSION['releveAjout'] as $ajout) {
             echo "<tbody>
                     <tr>";
                 echo "<th scope='row'>".$i++."</th>";
-                echo "<td>".$ajout[0]."</td>";
-                echo "<td>".$ajout[1]."</td>";
-                echo "<td>".$ajout[2]."</td>";
-                echo "<td>".$ajout[3]."</td>";
-                echo "<td>".$ajout[4]."</td>";
-                echo "<td>".$ajout[5]."</td>";
-                echo "<td>".$ajout[6]."</td>";
-                echo "<td>".$ajout[7]."</td>";
-                echo "<td>".$ajout[8]."</td>";
+                echo "<td>".$ajout['nomp']."</td>";
+                echo "<td>".$ajout['description']."</td>";
+                echo "<td>".$ajout['prix']."francs CFA</td>";
+                echo "<td>".$ajout['type']."</td>";
+                echo "<td>".$ajout['ancienne_quantite']."</td>";
+                echo "<td>".$ajout['quantite_ajouter']."</td>";
+                echo "<td>".$ajout['loginEmploye']."</td>";
+                echo "<td>".$ajout['nomPharmacie']."</td>";
+                echo "<td>".$ajout['modifiedAt']."</td>";
+                echo "<td>".$ajout['heure']."</td>";
                 echo "</tr>
                 </tbody>";
 

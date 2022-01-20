@@ -140,8 +140,6 @@
 					//echo $nomPharmacie;
 					$req = $baseDeDonnees->prepare("INSERT INTO vendre(nomProduit, loginEmploye, dateVente, heure, quantite, prix,nomPharmacie) VALUES (?,?,?,?,?,?,?)");
 					$req->execute(array($nomProduit, $loginEmploye, $date, $date, $quantite,$prix,$nomPharmacie));
-					$req3 = $baseDeDonnees->prepare("INSERT INTO nouvelleVente(nomProduit, loginEmploye, dateVente, heure, quantite, prix,nomPharmacie) VALUES (?,?,?,?,?,?,?)");
-					$req3->execute(array($nomProduit, $loginEmploye, $date, $date, $quantite,$prix,$nomPharmacie));
 					$req2 = $baseDeDonnees->prepare("UPDATE `produit` SET `quantite` = ? WHERE `produit`.`nomp` =? AND `produit`.`nomPharmacie` =?");
 					$req2->execute(array($nouvelle_qte,$nomProduit,$val2['nom']));
 					echo 'reussi';
@@ -156,16 +154,12 @@
 		}
 
 		public function releveVente(){
-			$releveVente = array();
+	
 			$baseDeDonnees = $this->connecter();
-			$dateJour = new \DateTime('now');
-			$date = $dateJour->format('y-m-d H:i:s');
 			$req1 = $baseDeDonnees->prepare("SELECT * FROM vendre WHERE loginEmploye = ?");
 			$req1->execute(array( $this->getLogin()));
-			//$data = $req1->fetch();
-			$reponse = $baseDeDonnees->prepare('SELECT * FROM employe WHERE login = ?');
-			$reponse->execute(array($this->getLogin()));
-			$employe = $reponse->fetch();
+			$releveVente = $req1->fetchAll();
+			/*
 			while($data = $req1->fetch()){
 				$nomProduit = $data['nomProduit'];
 				$dateVente = $data['dateVente'];
@@ -176,6 +170,7 @@
 				$releveVente[] = $tab;
 				
 			}
+			*/
 			return $releveVente;
 		}
 		/*
@@ -190,6 +185,8 @@
 			$employe = $reponse->fetch();
 			$reponse2 = $bd->prepare('SELECT * FROM produit WHERE loginEmploye = ? ');
 			$reponse2->execute(array($this->getLogin()));
+			$releveAjout = $reponse2->fetchAll();
+			/*
 			while($data = $reponse2->fetch()){
 				$nomProduit = $data['nomp'];
 				$quantiteAjouter = $data['quantite_ajouter'];
@@ -200,6 +197,7 @@
 				$tab = array($employe['nom'],$employe['prenom'],$nomProduit,$quantiteAjouter,$ancienneQuantite,$quantite,$modifiedAt,$heure);
 				$releveAjout[] = $tab;
 			}
+			*/
 			return $releveAjout;
 		}
 

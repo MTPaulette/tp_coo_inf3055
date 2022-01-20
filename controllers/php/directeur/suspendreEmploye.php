@@ -16,7 +16,7 @@
         if($e) {
             header("Location:../../../views/pages/directeur/rechercherEmploye.php");
         } else {
-            header("Location:../../../views/pages/directeur/404.php");
+            header("Location:../../../views/pages/directeur/erreur.php");
         }
     }
     

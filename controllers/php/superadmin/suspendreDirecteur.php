@@ -17,7 +17,7 @@
             $_SESSION['searchSuperAdmin'] = $e;
             header("Location:../../../views/pages/superadmin/searchComponent.php");
         } else {
-            header("Location:../../../views/pages/superadmin/404.php");
+            header("Location:../../../views/pages/superadmin/erreur.php");
             
         }
         
