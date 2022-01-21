@@ -64,7 +64,8 @@
                 {
                     die('Erreur : ' . $e->getMessage());
                 }
-                $resultat = $bdd -> query('SELECT * FROM produit');
+                $resultat = $bdd -> prepare('SELECT * FROM produit WHERE type = ?');
+                $resultat->execute(array('alimentaire'));
                 while($ligne = $resultat -> fetch())
                 // echo $ligne['photo'];
                 {

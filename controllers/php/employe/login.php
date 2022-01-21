@@ -13,8 +13,8 @@
         $employe = new Employe();
         $employe->setLogin($login);
         $e = $employe->authentifier($login,$password);
-        
-        if(!empty($e)) {
+        var_dump($e);
+        if($e) {
             $_SESSION['employe'] = $employe->getLogin();
             header("Location:../../../views/pages/employe/dashboard.php");
         } else {

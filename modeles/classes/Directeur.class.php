@@ -9,7 +9,7 @@
 
 	class Directeur extends Personne implements Connexion,Consultation,Inscription
 	{
-
+		//création du directeur dans l
 		private function creerDirecteur($nom, $prenom, $tel, $adresse, $login)
 		{
 			$directeur = new Directeur();
@@ -21,7 +21,7 @@
 			return $directeur;
 		}
 
-		//rechrche
+		//recherche d'un login dans un tableau
 		private function check($login, $table){
 			$bd = $this->connecter();
 			$reponse = $bd->prepare("SELECT * FROM {$table} WHERE login = ?");
@@ -29,7 +29,7 @@
 			$resultat = $reponse->fetch(); 
 			return $resultat;
 		}
-
+		//creation d'un employe
 		public function creerCompte($nom,$prenom,$telephone,$adresse,$photo,$login,$motDePasse){
 			
 			$resulat = $this->check($login,'employe');
@@ -49,7 +49,7 @@
 			}
 		}
 
-		//confirmer lemot de passe
+		//confirmer l emot de passe lors d'une manipulation d'un employe
 		private function confirmerMotDePasse($motDePasse, $table){
 			$bd = $this->connecter();
 			$reponse = $bd->prepare("SELECT * FROM {$table} WHERE motDePasse = PASSWORD(?)");
@@ -62,7 +62,7 @@
 			}
 		}
 
-
+		//supression d'un employe
 		function supprimerEmploye($motDePasse, $login){
 			$bd = $this->connecter();
 			$table = 'directeur';
@@ -87,7 +87,7 @@
 			
 
 		}
-
+		//suspendre un employe
 		function suspendreEmploye($motDePasse, $login){
 			$bd = $this->connecter();
 			$table = 'directeur';
@@ -114,7 +114,7 @@
 		}
 
 
-
+		//activer un employe suspendu ou supprimer
 		function activerEmploye($motDePasse, $login){
 			$bd = $this->connecter();
 			$table = 'directeur';
@@ -141,7 +141,7 @@
 			
 
 		}
-
+		//afficher tous les employes supprimers
 		public function tousSupprimes(){
 			$bd = $this->connecter();
 			$reponse = $bd->prepare('SELECT * FROM employe WHERE etat = ?  AND loginDirecteur = ?');	
@@ -149,7 +149,7 @@
 			$employe = $reponse->fetchAll();
 			return $employe;
 		}
-
+		//afficher tous les employes suspendu
 		public function tousSuspendus(){
 			$bd = $this->connecter();
 			$reponse = $bd->prepare('SELECT * FROM employe WHERE etat = ? AND loginDirecteur = ?');	
@@ -158,7 +158,7 @@
 			return $employe;
 		}
 		
-
+		//afficher tous les employes actifs
 		public function tousActifs(){
 			$bd = $this->connecter();
 			$reponse = $bd->prepare('SELECT * FROM employe WHERE etat = ? AND loginDirecteur = ?');	
@@ -166,7 +166,7 @@
 			$employe = $reponse->fetchAll();
 			return $employe;
 		}
-
+		//rechercher un employe
 		public function rechercherEmploye($login){
 			$bd = $this->connecter();
 			$reponse = $bd->prepare('SELECT * FROM employe WHERE login LIKE ? and loginDirecteur = ?');	
@@ -180,7 +180,7 @@
 			}
 		}
 		
-
+		//authentifier un directeur avant la connexion
 		public function authentifier($login, $motDePasse)
 		{
 				$baseDeDonnees = $this->connecter();
@@ -202,14 +202,16 @@
 				}
 				else{
 					//echo 'login incorect ou pharmacie suspendu';
-					//return false;
+					return false;
 				}
 			
 		}
+		//deconnexion du directeur
 		public function deconnecter()
 		{
 			
 		}
+		//réinitialiser le mot de passe
 		public function reinitialiser($ancienMotDePasse, $nouveauMotDePasse)
 		{
 			$resultat = $this->check($this->getLogin(), 'directeur');
@@ -224,6 +226,7 @@
 			}
 
 		}
+		//afficher le relever de vente
 		public function releveVente()
 		{
 			$releve = array();
@@ -253,7 +256,7 @@
 			return $releve;
 		}
 
-
+		//afficher le releve d'ajout
 		public function releveAjout(){
 			$releve = array();
 			$baseDeDonnees = $this->connecter();

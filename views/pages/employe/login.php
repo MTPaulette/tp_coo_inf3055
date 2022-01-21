@@ -21,7 +21,7 @@
 			<label><b>Mot de passe</b></label>                
 			<input type="password" placeholder="Entrer le mot de passe" id="password" name="password" required>                
 			<input type="submit" id='submit' name="auth" id="auth" value="s'authentifier" class="submit" onclick="return validateConnexion()">
-			<a href="signin.php" >nouveau<a>                           
+			                           
 		</form>        
 	</div>
 	<script src="../../../controllers/js/authentification.js"></script>

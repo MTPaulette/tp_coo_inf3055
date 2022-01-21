@@ -34,10 +34,21 @@
                 {
                     die('Erreur : ' . $e->getMessage());
                 }
-                $resultat = $bdd -> query('SELECT * FROM produit');
-                while($ligne = $resultat -> fetch())
+                $reponse = $bdd->prepare('SELECT * FROM pharmacie WHERE etat = ? AND ouvert = ?');
+                $req = $reponse->execute(array('disponible',1));
+                //$req = $reponse->fetchAll();
+                //var_dump($req);
+                while($req = $reponse->fetch()){
+                    if(!empty($req)){
+
+                    
+                    $resultat = $bdd -> prepare('SELECT * FROM produit WHERE nomPharmacie = ?');
+                    $resultat->execute(array($req['nom']));
+                    while($ligne = $resultat -> fetch())
                 // echo $ligne['photo'];
                 {
+                
+                
             ?>           
             <section class="my-5">
             </section>
@@ -61,7 +72,9 @@
             </div>
             <?php
                 }
-                $resultat->closeCursor();
+                }
+            }
+             //   $resultat->closeCursor();
             ?>
        
         </main><!--end main.container-fluid-->
