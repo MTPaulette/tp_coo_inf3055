@@ -2,8 +2,8 @@
 	/**
 	 * 
 	 */
-	require('../interface/Bd.class.php');
-	 abstract Class Personne implements Bd
+	require(__DIR__."/../interface/Bd.interface.php");
+	abstract Class Personne implements Bd
 	{
 		
 		private $nom;
@@ -13,15 +13,14 @@
 		private $login;
 		private $adresse;
 
+	
 		
 		//connexion à la bd
 		public function connecter(){
 		try {
-			$bd = new PDO('mysql:host=localhost;dbname=sitepharmacie','root','');
-			//echo "connexion reussi";
+			$bd = new PDO('mysql:host=localhost;dbname=tp_coo_inf3055','root','');
 			} catch (PDOException $e) {
 				die('Erreur'.$e->getmessage());
-				echo "echec connexion";
 			}
 			return $bd;
 		}
