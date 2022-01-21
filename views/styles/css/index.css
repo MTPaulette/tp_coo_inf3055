@@ -1,0 +1,28 @@
+.indexSA , .indexDi, .indexEM, .index {
+    padding-bottom: 50px;
+}
+
+img {
+    height: 100px;
+    width: 90%;
+}
+
+.indexSA:hover {
+    color: #f0f9ff;
+    background-color: #282d32;
+}
+
+.indexDi:hover {
+    color: #fff;
+    background-color: #0069d9;
+}
+
+.indexEM:hover {
+    color: #212529;
+    background-color: #dee2e6;;
+}
+
+
+.index:hover {
+    background-color: #91e29b;
+}

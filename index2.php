@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="views/plugins/bootstrap.min.css">
     <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"-->
-	<link rel="stylesheet" type="text/css" href="views/styles/css/searchComponent.css" />
+	<link rel="stylesheet" type="text/css" href="views/styles/css/index.css" />
 	
 	<title>PHARMA-CENTER</title>
 </head>
@@ -24,44 +24,44 @@
     <section class="container-fluid mb-4">
         <main class="row">
             
-            <div class=" col-6"  style= "padding-bottom:50px">
-                <section class="card">
-                    <img src='views/plugins/icons/person-circle.svg' alt="Coding" class="card-img-top" style= "height: 100px; width:90%">
+            <div class=" col-6" >
+                <section class="card indexSA">
+                    <img src='views/plugins/icons/person-circle.svg' alt="Coding" class="card-img-top" >
                     <div class="card-body">
                         <h1 class="h5 card-title">SUPERADMIN</h1>
-                     <a href="#" class="btn btn-primary"> se connecter</a>
+                     <a href="views/pages/superadmin/dashboard.php" class="btn btn-primary"> se connecter</a>
                     </div>
                 </section>
             </div>
 
-            <div class=" col-6" style= "padding-bottom:50px">
-                <section class="card">
+            <div class="col-6" style= "padding-bottom:50px">
+                <section class="card indexDi">
                     <img src='views/plugins/icons/person-circle.svg' alt="Coding" class="card-img-top" style= "height: 100px; width:90%;">
                     <div class="card-body">
                         <h1 class="h5 card-title"> DIRECTEUR</h1>
-                     <a href="#" class="btn btn-primary"> se connecter</a>
+                     <a href="views/pages/directeur/dashboard.php" class="btn btn-primary"> se connecter</a>
                     </div>
                 </section>
             </div>
 
 
-            <div class=" col-6"  style= "padding-bottom:50px">
-                <section class="card">
-                    <img src='views/plugins/icons/person-circle.svg' alt="Coding" class="card-img-top" style= "height: 100px; width:90%">
+            <div class=" col-6" >
+                <section class="card indexEM">
+                    <img src='views/plugins/icons/person-circle.svg' alt="Coding" class="card-img-top" >
                     <div class="card-body">
                         <h1 class="h5 card-title">EMPLOYE</h1>
-                     <a href="#" class="btn btn-primary"> se connecter</a>
+                     <a href="views/pages/employe/dashboard.php" class="btn btn-primary"> se connecter</a>
                     </div>
                 </section>
             </div>
 
 
-            <div class=" col-6"  style= "padding-bottom:50px">
-                <section class="card">
-                    <img src='views/plugins/icons/person-circle.svg' alt="Coding" class="card-img-top" style= "height: 100px; width:90%">
+            <div class="col-6" >
+                <section class="card index">
+                    <img src='views/plugins/icons/person-circle.svg' alt="Coding" class="card-img-top" >
                     <div class="card-body">
                         <h1 class="h5 card-title">ACCUEIL</h1>
-                     <a href="views/pages/internaute/" class="btn btn-primary">Aller à</a>
+                     <a href="views/pages/internaute/Accueil.php" class="btn btn-success">Aller à</a>
                     </div>
                 </section>
             </div>
