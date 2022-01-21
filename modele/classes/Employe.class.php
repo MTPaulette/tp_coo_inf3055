@@ -55,14 +55,23 @@
 				return true;
 			}
 			else{
-				$reponse4 = $bd->prepare('SELECT * FROM produit WHERE nomp = ? AND nomPharmacie = ?');
-				$reponse4->execute(array($nom,$nomPharmacie['nom']));
+				$reponse4 = $bd->prepare('SELECT nomPharmqcie FROM produit WHERE nomp = ?');
+				$reponse4->execute(array($nom));
 				$produit = $reponse4->fetch();
+				if($produit['nomPharmacie'] == $nomPharmacie['nom']){
+					$nouvelle_qte = $produit['quantite'] + $quantite;
+					$reponse5 = $bd->prepare('UPDATE produit SET quantite = ?, ancienne_quantite = ?, quantite_ajouter = ?, modifiedAt = ?, loginEmploye = ? WHERE nomp = ? AND nomPharmacie = ?');
+					$reponse5->execute(array($nouvelle_qte,$produit['quantite'],$quantite,$date,$this->getLogin(),$nom, $nomPharmacie['nom']));
+					return true;
+				}
+				else{
+					$reponse1 = $bd->prepare('INSERT INTO produit(nomp,description,prix,quantite,ancienne_quantite,quantite_ajouter,type,photo,createdAt,heure,modifiedAt,loginEmploye,nomPharmacie) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)');
+					$reponse1->execute(array($nom,$description,$prix,$quantite,0,$quantite,$type,addslashes($photo),$date,$date,$date,$this->getLogin(),$nomPharmacie['nom']));
+					return true;
+				}
 				//$produit = $this->check($nom,'produit');
-				$nouvelle_qte = $produit['quantite'] + $quantite;
-				$reponse5 = $bd->prepare('UPDATE produit SET quantite = ?, ancienne_quantite = ?, quantite_ajouter = ?, modifiedAt = ?, loginEmploye = ?, nomPharmacie = ? WHERE nomp = ? AND nomPharmacie = ?');
-				$reponse5->execute(array($nouvelle_qte,$produit['quantite'],$quantite,$date,$this->getLogin(),$nomPharmacie['nom'],$nom, $nomPharmacie['nom']));
-				return true;
+				
+				
 			}
 		}
 
@@ -212,8 +221,8 @@
 					$req->execute(array($login, $motDePasse));
 					$data = $req->fetch();
 					if (empty($data)) {
-						echo 'mot de passe incorect';
-						return 1;
+						//echo 'mot de passe incorect';
+						return false;
 					}
 					else{
 						$dateJour = new \DateTime('now');
@@ -222,13 +231,13 @@
 						$reponse->execute(array($date,$date,$login));
 						$reponse2 = $baseDeDonnees->prepare('UPDATE pharmacie SET ouvert = ? WHERE loginDirecteur = ?');
 						$reponse2->execute(array(1,$data['loginDirecteur']));
-						echo 'mot de passe correct';
-						return 2;
+						//echo 'mot de passe correct';
+						return true;
 					}
 				}
 				else{
-				echo 'employe suspendu';
-					return 3;
+				//echo 'employe suspendu';
+					return false;
 				}
 			
 		}
