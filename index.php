@@ -1,37 +1,72 @@
 <!DOCTYPE html>
-<html  lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="views/plugins/bootstrap.min.css">
     <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"-->
-	<!--link rel="stylesheet" type="text/css" href="views/styles/css/searchComponent.css" /-->
+	<link rel="stylesheet" type="text/css" href="views/styles/css/index.css" />
 	
 	<title>PHARMA-CENTER</title>
 </head>
 <body>
-		<div class="main">
-            <div class='card'>
-            <div class='mysearch-dark row no-gutters'>
-                <div class='img'> 
-                    <p class='pasDePhoto'><img src='views/plugins/icons/person-circle.svg'></p> 
-                </div> 
-            <div class='card-body'>
-                <h5 class='card-title'> Nom</h5>
-                <p class='card-text'>Description: ".$search['description'] </p>
-                <p class='card-text'>Prix: ".$search['prix'] Francs CFA</p>
-                <p class='card-text'> <small class='text-muted'>Quantite en stock: ".$search['quantite'] </small></p>
-                <p class='card-text'> <small class='text-muted'>Type du produit: ".$search['type'] </small></p>
-                <p class='card-text'> <small class='text-muted'>Pharmacie: ".$search['nomPharmacie'] </small></p>
-                <p class='card-text'> <small class='text-muted'> ajouté le: ".$search['createdAt'] </small></p>
-                <p class='card-text'> <small class='text-muted'> modifié le: ".$search['modifiedAt'] </small></p>
-                <p class='card-text'> <small class='text-muted'> par: ".$search['loginEmploye'] </small></p>
-                <a href="#" class="btn btn-primary">se connecter</a>
-             </div> 			
-		</div>
+    <div class="container mb-5">
+        <h1 class = "text-center text-primary">
+            BIENVENUE SUR PHARMA-CENTER
+        </h1>
+        <p class="text-center h6">
+            Ce site a été créé dans le but de permettre aux personnes ayant urgemment besoin d'achater des medicaments de se les procurer beaucoup plus facilement. Vous pouvez aussi l'utiliser
+            vous besoin d'achat d'autres produits pharmaceutiques tel que les produits cosmétiques ou produits alimentaires pour bébé.
+        </p>
 
-		<script src="views/plugins/jquery-3.3.1.slim.min.js"></script>
-    	<script src="views/plugins/bootstrap.bundle.min.js"></script>
+    </div>
+    <section class="container-fluid mb-4">
+        <main class="row">
+            
+            <div class=" col-6" >
+                <section class="card indexSA">
+                    <img src='views/plugins/icons/person-circle.svg' alt="Coding" class="card-img-top" >
+                    <div class="card-body">
+                        <h1 class="h5 card-title">SUPERADMIN</h1>
+                     <a href="views/pages/superadmin/dashboard.php" class="btn btn-primary"> se connecter</a>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-6" style= "padding-bottom:50px">
+                <section class="card indexDi">
+                    <img src='views/plugins/icons/person-circle.svg' alt="Coding" class="card-img-top" style= "height: 100px; width:90%;">
+                    <div class="card-body">
+                        <h1 class="h5 card-title"> DIRECTEUR</h1>
+                     <a href="views/pages/directeur/dashboard.php" class="btn btn-primary"> se connecter</a>
+                    </div>
+                </section>
+            </div>
+
+
+            <div class=" col-6" >
+                <section class="card indexEM">
+                    <img src='views/plugins/icons/person-circle.svg' alt="Coding" class="card-img-top" >
+                    <div class="card-body">
+                        <h1 class="h5 card-title">EMPLOYE</h1>
+                     <a href="views/pages/employe/dashboard.php" class="btn btn-primary"> se connecter</a>
+                    </div>
+                </section>
+            </div>
+
+
+            <div class="col-6" >
+                <section class="card index">
+                    <img src='views/plugins/icons/person-circle.svg' alt="Coding" class="card-img-top" >
+                    <div class="card-body">
+                        <h1 class="h5 card-title">ACCUEIL</h1>
+                     <a href="views/pages/internaute/Accueil.php" class="btn btn-success">Aller à</a>
+                    </div>
+                </section>
+            </div>
+       
+        </main>
+    </section>
 </body>
-</html
+</html>
