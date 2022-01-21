@@ -6,9 +6,9 @@
 
 | TCHINDE  WAFFO Cyrille-Junior || 19M2392 || @cyrille |
 
-| NSANGOU ADAMOU || 18T2890 || @adams237 |
+| NSANGOU ADAMOU || 18T2890 || @Adams237 |
 
-| OUABO Samuel Jordan || 19M2143 || @samuel237 |
+| OUABO Samuel Jordan || 19M2143 || @Samuel-237 |
 
 | NDANG ESSI PIERRE JUNIOR || 18T2419 || @EssiJunior |
 
